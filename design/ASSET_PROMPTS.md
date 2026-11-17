@@ -1,0 +1,25 @@
+# Ảnh 3D V2
+
+Tạo bằng imagegen tích hợp. Ảnh là concept minh họa; không phải screenshot sản phẩm. Asset sử dụng trong website: `public/images/{hero,game,software,tools}.webp` và các bản `-640.webp`. Chuyển định dạng và resize bằng sharp; giữ ảnh PNG gốc trong workspace.
+
+## hero
+
+Use case: stylized-concept. Create a polished original 3D isometric illustration for a Vietnamese technology studio website, an image asset ONLY, not a website mockup. Materials: ruby red lacquer #B51F24, warm ivory ceramic #FCF8EF, subtle brass gold #B58B45, occasional soft green foliage. Soft diffused studio sunlight, premium playful tactile miniature, exquisite bevels and shadows, spacious uncluttered composition on solid warm ivory background. No blue palette. No text, no typography, no logo, no watermark, no recognizable IP. Landscape 3:2 composition, all key elements inside central 80%, softly blending edges. A floating stepped island digital game world: elegant ruby red arch portal standing on ivory cube terraces, tiny stylized trees, gold floating diamond and translucent amber cubes, a red and ivory game controller resting at foreground. Like a premium software agency hero isometric world. Beautiful restrained, mature, clean.
+
+## game
+
+Use case: stylized-concept. Create a polished original 3D isometric illustration for a Vietnamese technology studio website, an image asset ONLY, not a website mockup. Materials: ruby red lacquer #B51F24, warm ivory ceramic #FCF8EF, subtle brass gold #B58B45, occasional soft green foliage. Soft diffused studio sunlight, premium playful tactile miniature, exquisite bevels and shadows, spacious uncluttered composition on solid warm ivory background. No blue palette. No text, no typography, no logo, no watermark, no recognizable IP. Landscape 3:2 composition, all key elements inside central 80%, softly blending edges. A charming miniature Vietnamese countryside puzzle game world: terraced rice fields, tiny ivory village houses with red tiled roofs, curved path and little red bridge, floating gold geometric collectible gems, framed as an isolated diorama on ivory background. No people. A conceptual game cover.
+
+## software
+
+Use case: stylized-concept. Create a polished original 3D isometric illustration for a Vietnamese technology studio website, an image asset ONLY, not a website mockup. Materials: ruby red lacquer #B51F24, warm ivory ceramic #FCF8EF, subtle brass gold #B58B45, occasional soft green foliage. Soft diffused studio sunlight, premium playful tactile miniature, exquisite bevels and shadows, spacious uncluttered composition on solid warm ivory background. No blue palette. No text, no typography, no logo, no watermark, no recognizable IP. Landscape 3:2 composition, all key elements inside central 80%, softly blending edges. An elegant abstract productivity software workspace: a large floating ivory desktop monitor with a few simple red and gold rectangular interface panels, calendar tiles and rounded cube task blocks arranged on a low ivory podium, small red stylus. No readable letters or numbers. A conceptual software cover, not screenshot.
+
+## tools
+
+Use case: stylized-concept. Create a polished original 3D isometric illustration for a Vietnamese technology studio website, an image asset ONLY, not a website mockup. Materials: ruby red lacquer #B51F24, warm ivory ceramic #FCF8EF, subtle brass gold #B58B45, occasional soft green foliage. Soft diffused studio sunlight, premium playful tactile miniature, exquisite bevels and shadows, spacious uncluttered composition on solid warm ivory background. No blue palette. No text, no typography, no logo, no watermark, no recognizable IP. Landscape 3:2 composition, all key elements inside central 80%, softly blending edges. A developer toolkit sculpture: ruby red and ivory interlocking modular blocks, a glass amber code panel bearing only angle brackets and slash symbols, small red gear, gold connector paths on ivory stepped base. Minimal beautiful 3D modular ecosystem. A conceptual developer tools cover.
+
+
+## V3 — Prompt chỉnh sửa theo yêu cầu
+Các hình V2 trên là nguồn tham chiếu bố cục, đã được thay trên web bằng các phiên bản 2D/2.5D. Mỗi ảnh được chỉnh bằng imagegen với prompt sau (thay `<key>` bằng hero/game/software/tools):
+
+> Edit this illustration to a SIMPLE 2D / subtle 2.5D editorial illustration for a Vietnamese technology company. Preserve the subject, arrangement and broad silhouette of the reference image so it still depicts the same `<key>` concept. Replace all glossy 3D, glass transparency, realistic lighting, metallic bevels, deep extrusion and perspective with clean flat vector-like solid shapes, paper-cut layers, shallow isometric hint only, one very soft shadow beneath objects. Restrained palette: warm ivory #FCF8EF background, flat ruby red #B51F24, dark red #771B20, muted gold #B58B45, tiny natural green accents only where plants exist. Modern calm premium web illustration. Clear shapes, sparse details, generous blank margins, landscape composition. No text, no logo, no watermark, no UI labels, no photographic texture.

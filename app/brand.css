@@ -1,0 +1,13 @@
+.brand-mark {
+  display: block;
+  flex: none;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 0;
+}
+.footer-mark {
+  display: block;
+  flex: none;
+  object-fit: contain;
+  border: 0;
+}

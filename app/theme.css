@@ -1,0 +1,146 @@
+/* V7: exact supplied VPN artwork switches with the page palette. */
+:root {
+  color-scheme: light;
+  --brand-logo: url('/brand/theme/vpn-logo-light.png');
+  --brand-banner: url('/brand/theme/vpn-banner-light.png');
+  --brand-banner-ratio: 1344 / 346;
+  --contact-bg: #f2ebdf;
+  --facts-bg: #f2ebdf;
+  --hover-bg: #f2ebdf;
+  --badge-bg: #fcf8efed;
+  --footer-bg: #771b20;
+  --action-bg: #b51f24;
+  --action-hover: #95191e;
+  --action-text: #fffdf8;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --background: #100e0e;
+    --surface: #1d1918;
+    --primary: #f06469;
+    --primary-hover: #df5359;
+    --heading: #f8eee3;
+    --ink: #e8dfd7;
+    --muted: #c1b3a8;
+    --gold: #e0ad52;
+    --line: #51403d;
+    --brand-logo: url('/brand/theme/vpn-logo-dark.png');
+    --brand-banner: url('/brand/theme/vpn-banner-dark.png');
+    --brand-banner-ratio: 1342 / 367;
+    --contact-bg: #181414;
+    --facts-bg: #25201e;
+    --hover-bg: #302623;
+    --badge-bg: #302623;
+    --footer-bg: #080707;
+    --action-bg: #bd1e29;
+    --action-hover: #a71924;
+  }
+}
+html[data-theme='dark'] {
+  color-scheme: dark;
+  --background: #100e0e;
+  --surface: #1d1918;
+  --primary: #f06469;
+  --primary-hover: #df5359;
+  --heading: #f8eee3;
+  --ink: #e8dfd7;
+  --muted: #c1b3a8;
+  --gold: #e0ad52;
+  --line: #51403d;
+  --brand-logo: url('/brand/theme/vpn-logo-dark.png');
+  --brand-banner: url('/brand/theme/vpn-banner-dark.png');
+  --brand-banner-ratio: 1342 / 367;
+  --contact-bg: #181414;
+  --facts-bg: #25201e;
+  --hover-bg: #302623;
+  --badge-bg: #302623;
+  --footer-bg: #080707;
+  --action-bg: #bd1e29;
+  --action-hover: #a71924;
+}
+
+body, .site-header, .contact, .category-card, .product-card, .product-facts, .footer, .main-nav {
+  transition: background-color 240ms ease, border-color 240ms ease, color 240ms ease;
+}
+.brand-theme-logo, .footer-theme-logo {
+  display: block;
+  background-image: var(--brand-logo);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  background-color: transparent;
+}
+.footer-theme-logo {
+  --brand-logo: url('/brand/theme/vpn-logo-dark.png');
+  width: 37px;
+  height: 37px;
+}
+.brand-banner-section {
+  padding-block: 0 64px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 54px;
+}
+.brand-banner-section .eyebrow { margin-bottom: 16px; }
+.brand-theme-banner {
+  width: min(100%, 1080px);
+  aspect-ratio: var(--brand-banner-ratio);
+  margin-inline: auto;
+  background-image: var(--brand-banner);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 42px;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--surface);
+  color: var(--heading);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  transition: transform 220ms var(--motion-ease), color 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+.theme-toggle .theme-icon-sun { display: none; }
+html[data-theme='dark'] .theme-icon-sun { display: block; }
+html[data-theme='dark'] .theme-icon-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .theme-icon-sun { display: block; }
+  html:not([data-theme]) .theme-icon-moon { display: none; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .theme-toggle:hover { transform: translateY(-2px); border-color: var(--gold); color: var(--primary); }
+}
+.theme-toggle:active { transform: scale(.96); }
+
+.contact { background: var(--contact-bg); }
+.product-facts { background: var(--facts-bg); }
+.category-nav a:hover:not([aria-current='page']) { background: var(--hover-bg); }
+.demo-badge, .detail-image > span { background: var(--badge-bg); }
+.footer { background: var(--footer-bg); color: #fcf8ef; }
+.footer-bottom { color: #e9d8cb; }
+.button, .category-nav a[aria-current='page'] { background: var(--action-bg); border-color: var(--action-bg); color: var(--action-text); }
+.button:hover, .button:focus-visible { background: var(--action-hover); border-color: var(--action-hover); }
+@media (hover: none) { .button:hover { background: var(--action-bg); } }
+.text-link { border-bottom-color: var(--line); }
+
+@media (max-width: 760px) {
+  .brand-theme-logo { width: 42px; height: 42px; }
+  .brand-banner-section { padding-bottom: 38px; margin-bottom: 32px; }
+  .brand-banner-section .eyebrow { font-size: 8px; }
+  .theme-toggle { width: 100%; justify-content: flex-start; margin-top: 12px; padding: 12px; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body, .site-header, .contact, .category-card, .product-card, .product-facts, .footer, .main-nav, .theme-toggle { transition: none !important; }
+  .theme-toggle:hover, .theme-toggle:active { transform: none !important; }
+}

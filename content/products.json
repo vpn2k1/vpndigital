@@ -1,0 +1,134 @@
+[
+  {
+    "slug": "lang-viet-puzzle",
+    "category": "game",
+    "name": "Làng Việt Puzzle",
+    "subtitle": "Một góc làng, nhiều điều để khám phá.",
+    "summary": "Ý tưởng game giải đố sắp xếp những mảnh ghép để tạo nên một ngôi làng Việt thu nhỏ.",
+    "description": "Làng Việt Puzzle là nội dung demo cho một ý tưởng game giải đố nhẹ nhàng. Người chơi dự kiến ghép đường đi, khu vườn và những mái nhà để hoàn thiện từng không gian làng quê. Hình ảnh trên trang là concept art minh họa, chưa phải ảnh chụp gameplay.",
+    "features": [
+      "Ghép các mảnh địa hình thành một ngôi làng",
+      "Những màn chơi ngắn với nhịp độ thư giãn",
+      "Phong cách hình ảnh lấy cảm hứng từ làng quê Việt"
+    ],
+    "platform": "Mobile · định hướng demo",
+    "tags": [
+      "Giải đố",
+      "Thư giãn"
+    ],
+    "image": "/images/game.webp",
+    "imageAlt": "Concept làng quê Việt thu nhỏ với ruộng xanh và cầu đỏ",
+    "status": "demo",
+    "featured": true
+  },
+  {
+    "slug": "hanh-trinh-phuong-nam",
+    "category": "game",
+    "name": "Hành Trình Phương Nam",
+    "subtitle": "Mỗi hòn đảo mở ra một khám phá.",
+    "summary": "Ý tưởng game khám phá những hòn đảo nổi và giải các thử thách trong một thế giới số.",
+    "description": "Hành Trình Phương Nam là ý tưởng minh họa cho dòng game khám phá. Bối cảnh gồm những hòn đảo nhỏ nối với nhau qua cổng dịch chuyển. Nội dung, cơ chế và nền tảng bên dưới là mô tả demo, chưa phải tính năng của sản phẩm đã phát hành.",
+    "features": [
+      "Khám phá các không gian đảo nổi",
+      "Thu thập mảnh ghép để mở cổng mới",
+      "Kết hợp khám phá và những câu đố môi trường"
+    ],
+    "platform": "PC / Mobile · định hướng demo",
+    "tags": [
+      "Khám phá",
+      "Phiêu lưu"
+    ],
+    "image": "/images/hero.webp",
+    "imageAlt": "Concept đảo nổi với cổng đỏ ruby và các khối hình học",
+    "status": "demo",
+    "featured": false
+  },
+  {
+    "slug": "pn-workspace",
+    "category": "phan-mem",
+    "name": "PN Workspace",
+    "subtitle": "Gom công việc về một không gian.",
+    "summary": "Ý tưởng không gian quản lý đầu việc, ghi chú và kế hoạch cho nhóm phát triển nhỏ.",
+    "description": "PN Workspace là dữ liệu demo mô tả một phần mềm quản lý công việc. Ý tưởng tập trung vào việc theo dõi các đầu việc trong dự án và lưu trữ ghi chú cùng một nơi. Trang này giới thiệu concept, không cung cấp ứng dụng hoạt động hay tài khoản dùng thử.",
+    "features": [
+      "Bảng công việc theo từng dự án",
+      "Ghi chú gắn với đầu việc",
+      "Tổng quan kế hoạch theo tuần"
+    ],
+    "platform": "Web app · định hướng demo",
+    "tags": [
+      "Công việc",
+      "Cộng tác"
+    ],
+    "image": "/images/software.webp",
+    "imageAlt": "Concept không gian làm việc số với các bảng tác vụ",
+    "status": "demo",
+    "featured": true
+  },
+  {
+    "slug": "pn-asset-library",
+    "category": "phan-mem",
+    "name": "PN Asset Library",
+    "subtitle": "Tài nguyên gọn gàng, ý tưởng liền mạch.",
+    "summary": "Ý tưởng thư viện giúp nhóm sản xuất phân loại và tìm lại tài nguyên của dự án.",
+    "description": "PN Asset Library là một concept phần mềm quản lý tài nguyên được dùng để minh họa cấu trúc website. Ý tưởng cho phép nhóm tập hợp hình ảnh, âm thanh và tài liệu theo từng dự án. Chưa có chức năng tải lên hay lưu trữ dữ liệu được triển khai trên website này.",
+    "features": [
+      "Phân loại tài nguyên bằng nhãn",
+      "Tìm kiếm theo dự án và loại tài liệu",
+      "Ghi chú nguồn và phiên bản tài nguyên"
+    ],
+    "platform": "Web app · định hướng demo",
+    "tags": [
+      "Tài nguyên",
+      "Tổ chức"
+    ],
+    "image": "/images/tools.webp",
+    "imageAlt": "Concept các khối tài nguyên và mô-đun phát triển",
+    "status": "demo",
+    "featured": false
+  },
+  {
+    "slug": "sprite-kit",
+    "category": "cong-cu",
+    "name": "Sprite Kit",
+    "subtitle": "Chuẩn bị hình ảnh cho thế giới của bạn.",
+    "summary": "Ý tưởng công cụ sắp xếp sprite và chuẩn bị bộ hình cho dự án game 2D.",
+    "description": "Sprite Kit là dữ liệu demo cho một ý tưởng công cụ hỗ trợ game 2D. Các chức năng bên dưới chỉ mô tả định hướng minh họa. Website hiện là trang giới thiệu, không chạy tác vụ xử lý ảnh và chưa cung cấp bản tải về.",
+    "features": [
+      "Sắp xếp sprite theo nhóm",
+      "Xem trước thứ tự khung hình",
+      "Chuẩn bị cấu trúc sprite sheet"
+    ],
+    "platform": "Desktop · định hướng demo",
+    "tags": [
+      "Game 2D",
+      "Hình ảnh"
+    ],
+    "image": "/images/tools.webp",
+    "imageAlt": "Concept bộ công cụ lập trình với khối mô-đun và bảng code",
+    "status": "demo",
+    "featured": true
+  },
+  {
+    "slug": "level-sketch",
+    "category": "cong-cu",
+    "name": "Level Sketch",
+    "subtitle": "Phác thảo một màn chơi, mở ra nhiều khả năng.",
+    "summary": "Ý tưởng công cụ phác thảo bố cục màn chơi và ghi chú các điểm tương tác.",
+    "description": "Level Sketch là concept minh họa một công cụ phác thảo màn chơi. Ý tưởng dành cho việc sắp xếp các khối địa hình và ghi chú luồng di chuyển trước khi phát triển chi tiết. Chưa có trình chỉnh sửa trực tuyến hoặc bản phát hành thực tế.",
+    "features": [
+      "Phác thảo địa hình bằng các khối",
+      "Đánh dấu điểm tương tác trong màn chơi",
+      "Ghi chú ý tưởng thiết kế theo khu vực"
+    ],
+    "platform": "Web / Desktop · định hướng demo",
+    "tags": [
+      "Thiết kế màn",
+      "Prototype"
+    ],
+    "image": "/images/game.webp",
+    "imageAlt": "Concept địa hình isometric dùng để minh họa công cụ dựng màn",
+    "status": "demo",
+    "featured": false
+  }
+]
