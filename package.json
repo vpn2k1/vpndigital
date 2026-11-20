@@ -11,10 +11,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource/be-vietnam-pro": "^5.2.0",
+    "lucide-react": "1.76.0",
     "next": "16.4.6",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "@fontsource/be-vietnam-pro": "^5.2.0"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "typescript": "^5.9.0",

@@ -21,9 +21,17 @@ try {
         assert.equal(await page.locator('main h1').count(), 1, 'H1 count ' + route);
         if (route !== '/') assert(await page.getByText('SẮP RA MẮT', {exact:true}).count() > 0, 'coming soon label ' + route);
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+        if (overflow >= 3) {
+          const offenders = await page.evaluate(() => Array.from(document.querySelectorAll('body *')).map(el => {
+            const r = el.getBoundingClientRect();
+            return { element: el.tagName.toLowerCase() + (el.className && typeof el.className === 'string' ? '.' + el.className.trim().replaceAll(' ', '.') : ''), right: Math.round(r.right), left: Math.round(r.left), width: Math.round(r.width) };
+          }).filter(x => x.right > innerWidth + 2 || x.left < -2).slice(0, 8));
+          console.error('OVERFLOW DIAGNOSTIC ' + viewport.name + ' ' + route + ': ' + JSON.stringify(offenders));
+        }
         assert(overflow < 3, 'horizontal overflow ' + route + ' ' + overflow + 'px');
         const broken = await page.locator('img').evaluateAll(ims => ims.filter(im => !im.complete || im.naturalWidth === 0).map(im => im.src));
         assert.deepEqual(broken, [], 'broken images ' + route);
+        if(route === '/') assert(await page.locator('.contact-map-link svg.ui-lucide-icon').count() > 0, 'MapPin icon SVG missing');
         checked++;
         if (['/','/game/','/phan-mem/','/cong-cu/'].includes(route)) {
           const id = route === '/' ? 'home' : route.split('/')[1];
@@ -34,7 +42,7 @@ try {
     try {
       await page.goto('http://127.0.0.1:4173/', {waitUntil:'networkidle'});
       if(viewport.name==='mobile') {
-        const menu=page.getByRole('button',{name:'Mở menu'});
+        const menu=page.locator('.menu-toggle');
         await menu.click();
         assert.equal(await menu.getAttribute('aria-expanded'),'true');
       }

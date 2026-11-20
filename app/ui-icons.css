@@ -1,41 +1,9 @@
-/* WebP glyphs generated from consistent 24px strokes (see scripts/generate_ui_icons.py).
-   CurrentColor mask adapts to both light and dark modes; do not use for meaningful text. */
-.ui-webp-icon {
-  display: inline-block;
-  vertical-align: middle;
-  flex: none;
-  background-color: currentColor;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-.button .ui-webp-icon {
-  box-sizing: border-box;
-  width: 34px !important;
-  height: 34px !important;
-  padding: 8px;
-  border: 1px solid rgb(255 255 255 / .45);
-  border-radius: 50%;
-  background-color: currentColor;
-  -webkit-mask-origin: content-box;
-  mask-origin: content-box;
-  -webkit-mask-clip: content-box;
-  mask-clip: content-box;
-}
-.product-read .ui-webp-icon {
-  box-sizing: content-box;
-  padding: 8px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  -webkit-mask-origin: content-box;
-  mask-origin: content-box;
-  -webkit-mask-clip: content-box;
-  mask-clip: content-box;
-}
-.launch-link .ui-webp-icon { transition: transform 180ms ease; }
-.launch-link:hover .ui-webp-icon { transform: translate(2px,-2px); }
+/* Shared styles for built-in Lucide SVG icons.
+   Inherit currentColor from text/button and adapt to light/dark mode without image requests. */
+.ui-lucide-icon { display: block; flex-shrink: 0; vertical-align: middle; }
+.launch-link .ui-lucide-icon { transition: transform 180ms ease; }
+.launch-link:hover .ui-lucide-icon { transform: translate(2px,-2px); }
 .contact-map-link { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 7px; }
-@media(prefers-reduced-motion:reduce) { .launch-link .ui-webp-icon { transition: none; transform:none!important; } }
+@media (prefers-reduced-motion: reduce) {
+  .launch-link .ui-lucide-icon { transition: none; transform: none !important; }
+}
