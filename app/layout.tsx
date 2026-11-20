@@ -7,6 +7,7 @@ import './brand.css';
 import './theme.css';
 import './profile.css';
 import './launch.css';
+import './ui-icons.css';
 import '@fontsource/be-vietnam-pro/400.css';
 import '@fontsource/be-vietnam-pro/500.css';
 import '@fontsource/be-vietnam-pro/600.css';
