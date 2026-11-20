@@ -1,3 +1,4 @@
+import { Icon } from '@/components/Icon';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { products, getProduct, getProductsByCategory } from '@/lib/products';
@@ -32,7 +33,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <p className="launch-detail-subtitle">{product.subtitle}</p>
         <p className="launch-description">{product.summary}</p>
         <div className="launch-notice"><strong>Đang trong quá trình phát triển</strong><span>Đây là bản giới thiệu ý tưởng. Chức năng chưa khả dụng, chưa có phiên bản chơi thử hoặc tải xuống. Ngày ra mắt chưa được công bố.</span></div>
-        <div className="launch-actions"><a className="button" href={`/${category.slug}/`}>Khám phá {category.name} <span aria-hidden="true">↗</span></a><a className="launch-link" href="/#lien-he">Liên hệ <span aria-hidden="true">↗</span></a></div>
+        <div className="launch-actions"><a className="button" href={`/${category.slug}/`}>Khám phá {category.name} <Icon name="external" size={17} /></a><a className="launch-link" href="/#lien-he">Liên hệ <Icon name="external" size={17} /></a></div>
       </div>
       <div className="launch-detail-art" data-reveal><Artwork src={product.image} alt={product.imageAlt} priority sizes="(max-width: 760px) 100vw, 50vw" /><span>HÌNH ẢNH Ý TƯỞNG / CHƯA PHÁT HÀNH</span></div>
     </section>
@@ -40,6 +41,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <div><p className="eyebrow">VỀ Ý TƯỞNG</p><h2>Được hình dung để tạo khác biệt.</h2><p>{product.description}</p><h3>Hướng tính năng dự kiến</h3><ul className="feature-list">{product.features.map(feature => <li key={feature}>{feature}</li>)}</ul><p className="launch-disclaimer">Các tính năng trên chỉ mang tính định hướng và có thể thay đổi khi phát triển.</p></div>
       <aside className="launch-facts"><p className="eyebrow">THÔNG TIN DỰ ÁN</p><dl><div><dt>Danh mục</dt><dd>{category.name}</dd></div><div><dt>Nền tảng dự kiến</dt><dd>{product.platform}</dd></div><div><dt>Trạng thái</dt><dd>Sắp ra mắt · Chưa phát hành</dd></div></dl><div className="product-tags">{product.tags.map(tag => <span key={tag}>{tag}</span>)}</div></aside>
     </section>
-    {related.length > 0 && <section className="related launch-related" aria-labelledby="related-heading"><div className="launch-section-top"><div><p className="eyebrow">CÙNG DANH MỤC</p><h2 id="related-heading">Ý tưởng khác</h2></div><a className="launch-link" href={`/${category.slug}/`}>Xem danh mục <span aria-hidden="true">↗</span></a></div><div className="product-grid">{related.map(p => <ProductCard key={p.slug} product={p} />)}</div></section>}
+    {related.length > 0 && <section className="related launch-related" aria-labelledby="related-heading"><div className="launch-section-top"><div><p className="eyebrow">CÙNG DANH MỤC</p><h2 id="related-heading">Ý tưởng khác</h2></div><a className="launch-link" href={`/${category.slug}/`}>Xem danh mục <Icon name="external" size={17} /></a></div><div className="product-grid">{related.map(p => <ProductCard key={p.slug} product={p} />)}</div></section>}
   </main><Footer /></div>;
 }
