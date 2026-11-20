@@ -29,9 +29,14 @@ try {
           console.error('OVERFLOW DIAGNOSTIC ' + viewport.name + ' ' + route + ': ' + JSON.stringify(offenders));
         }
         assert(overflow < 3, 'horizontal overflow ' + route + ' ' + overflow + 'px');
-        const broken = await page.locator('img').evaluateAll(ims => ims.filter(im => !im.complete || im.naturalWidth === 0).map(im => im.src));
+        const broken = await page.locator('img').evaluateAll(ims => ims.filter(im => getComputedStyle(im).display !== 'none' && (!im.complete || im.naturalWidth === 0)).map(im => im.src));
         assert.deepEqual(broken, [], 'broken images ' + route);
         if(route === '/') assert(await page.locator('.contact-map-link svg.ui-lucide-icon').count() > 0, 'MapPin icon SVG missing');
+        if (route === '/' || route === '/game/' || route === '/phan-mem/' || route === '/cong-cu/') {
+          const images = page.locator('.theme-artwork');
+          assert(await images.count() > 0, 'missing paired theme artwork ' + route);
+          assert(await images.first().locator('img').count() === 2, 'missing light/dark pair ' + route);
+        }
         checked++;
         if (['/','/game/','/phan-mem/','/cong-cu/'].includes(route)) {
           const id = route === '/' ? 'home' : route.split('/')[1];

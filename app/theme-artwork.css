@@ -1,0 +1,15 @@
+/* Paired original illustrations: bright, airy light theme; neon navy dark theme.
+   Both variants use identical geometry, so switching themes does not shift layout. */
+.theme-artwork { display:block;position:relative;width:100%;overflow:hidden;line-height:0; }
+.theme-artwork > img {display:block;width:100%;height:auto;aspect-ratio:1600 / 1067;object-fit:cover;}
+.theme-artwork-light {display:none!important;}
+@media (prefers-color-scheme:light) {
+  :root:not([data-theme]) .theme-artwork-dark {display:none!important;}
+  :root:not([data-theme]) .theme-artwork-light {display:block!important;}
+}
+html[data-theme='light'] .theme-artwork-dark {display:none!important;}
+html[data-theme='light'] .theme-artwork-light {display:block!important;}
+html[data-theme='dark'] .theme-artwork-dark {display:block!important;}
+html[data-theme='dark'] .theme-artwork-light {display:none!important;}
+.launch-artwork .theme-artwork > img,.launch-detail-art .theme-artwork > img {aspect-ratio:1/.88;}
+.launch-detail-art .theme-artwork > img {aspect-ratio:1/.95;}

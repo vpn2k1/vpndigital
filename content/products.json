@@ -17,7 +17,7 @@
       "Thư giãn"
     ],
     "image": "/images/game.webp",
-    "imageAlt": "Concept làng quê Việt thu nhỏ với ruộng xanh và cầu đỏ",
+    "imageAlt": "Minh họa tay cầm game xanh lam trên bệ sáng, phong cách concept",
     "status": "demo",
     "featured": true
   },
@@ -39,7 +39,7 @@
       "Phiêu lưu"
     ],
     "image": "/images/hero.webp",
-    "imageAlt": "Concept đảo nổi với cổng đỏ ruby và các khối hình học",
+    "imageAlt": "Minh họa quả địa cầu kỹ thuật số xanh cyan với quỹ đạo ánh sáng",
     "status": "demo",
     "featured": false
   },
@@ -61,7 +61,7 @@
       "Cộng tác"
     ],
     "image": "/images/software.webp",
-    "imageAlt": "Concept không gian làm việc số với các bảng tác vụ",
+    "imageAlt": "Minh họa màn hình phần mềm xanh lam với các bảng tác vụ",
     "status": "demo",
     "featured": true
   },
@@ -83,7 +83,7 @@
       "Tổ chức"
     ],
     "image": "/images/tools.webp",
-    "imageAlt": "Concept các khối tài nguyên và mô-đun phát triển",
+    "imageAlt": "Minh họa hộp công cụ và bánh răng xanh cyan",
     "status": "demo",
     "featured": false
   },
@@ -105,7 +105,7 @@
       "Hình ảnh"
     ],
     "image": "/images/tools.webp",
-    "imageAlt": "Concept bộ công cụ lập trình với khối mô-đun và bảng code",
+    "imageAlt": "Minh họa hộp công cụ và bánh răng xanh cyan",
     "status": "demo",
     "featured": true
   },
@@ -127,7 +127,7 @@
       "Prototype"
     ],
     "image": "/images/game.webp",
-    "imageAlt": "Concept địa hình isometric dùng để minh họa công cụ dựng màn",
+    "imageAlt": "Minh họa tay cầm game và các khối pixel xanh cyan",
     "status": "demo",
     "featured": false
   }

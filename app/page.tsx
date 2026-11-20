@@ -26,7 +26,7 @@ export default function Home() {
           <a className="button" href="#gioi-thieu">Tìm hiểu về chúng tôi <Icon name="arrow" size={21} /></a>
           <div className="home-launch-note"><span className="launch-dot" aria-hidden="true" /> Game, phần mềm & công cụ — sắp ra mắt</div><div className="hero-note"><Icon name="sparkle" size={14} /><span>Từ Hưng Yên, Việt Nam</span><span className="note-line" /></div>
         </div>
-        <div className="hero-art hero-art-illustrated" data-reveal><Artwork src="/images/hero.webp" alt="Minh họa 2.5D đảo nổi với cổng đỏ ruby, khối ngà và tay cầm game" priority/><span className="art-caption">BẢN SẮC VIỆT · TINH THẦN SỐ</span></div>
+        <div className="hero-art hero-art-illustrated" data-reveal><Artwork src="/images/hero.webp" alt="Minh họa quả địa cầu kỹ thuật số xanh cyan, quỹ đạo ánh sáng và lưới công nghệ" priority/><span className="art-caption">BẢN SẮC VIỆT · TINH THẦN SỐ</span></div>
       </section>
       {sitePresentation.showBrandShowcase && <section className="brand-banner-section container" aria-label="Nhận diện thương hiệu VPN Digital" data-reveal>
         <span className="eyebrow">NHẬN DIỆN PHƯƠNG NAM</span>
