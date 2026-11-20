@@ -24,7 +24,7 @@ export default function Home() {
           <h1 id="hero-heading">Công nghệ Việt.<br /><span>Khát vọng số.</span></h1>
           <p className="hero-description">Phát triển trò chơi điện tử, phần mềm<br className="desktop-break" /> và công cụ phần mềm trò chơi điện tử.</p>
           <a className="button" href="#gioi-thieu">Tìm hiểu về chúng tôi <Icon name="arrow" size={21} /></a>
-          <div className="home-launch-note"><span className="launch-dot" aria-hidden="true" /> Game, phần mềm & công cụ — sắp ra mắt</div><div className="hero-note"><span className="small-star" aria-hidden="true">✦</span><span>Từ Hưng Yên, Việt Nam</span><span className="note-line" /></div>
+          <div className="home-launch-note"><span className="launch-dot" aria-hidden="true" /> Game, phần mềm & công cụ — sắp ra mắt</div><div className="hero-note"><Icon name="sparkle" size={14} /><span>Từ Hưng Yên, Việt Nam</span><span className="note-line" /></div>
         </div>
         <div className="hero-art hero-art-illustrated" data-reveal><Artwork src="/images/hero.webp" alt="Minh họa 2.5D đảo nổi với cổng đỏ ruby, khối ngà và tay cầm game" priority/><span className="art-caption">BẢN SẮC VIỆT · TINH THẦN SỐ</span></div>
       </section>
@@ -32,7 +32,7 @@ export default function Home() {
         <span className="eyebrow">NHẬN DIỆN PHƯƠNG NAM</span>
         <div className="brand-theme-banner" role="img" aria-label="Banner VPN Digital với hoa sen và quỹ đạo sao" />
       </section>}
-      <div className="launch-home-banner container"><div><strong>Sản phẩm đang được phát triển</strong><p>Khám phá những ý tưởng Game, Phần mềm và Công cụ của chúng tôi. Chức năng chưa khả dụng và chưa có ngày phát hành chính thức.</p></div><a className="launch-link" href="#linh-vuc">Khám phá các lĩnh vực <span aria-hidden="true">↗</span></a></div>
+      <div className="launch-home-banner container"><div><strong>Sản phẩm đang được phát triển</strong><p>Khám phá những ý tưởng Game, Phần mềm và Công cụ của chúng tôi. Chức năng chưa khả dụng và chưa có ngày phát hành chính thức.</p></div><a className="launch-link" href="#linh-vuc">Khám phá các lĩnh vực <Icon name="external" size={17} /></a></div>
       <section id="gioi-thieu" className="company-profile container" data-reveal aria-labelledby="about-heading">
         <div className="profile-intro">
           <p className="eyebrow">VỀ DOANH NGHIỆP</p>
@@ -63,7 +63,7 @@ export default function Home() {
       <section id="lien-he" className="contact" data-reveal aria-labelledby="contact-heading"><div className="container contact-inner">
         <div><p className="eyebrow">KẾT NỐI VỚI PHƯƠNG NAM</p><h2 id="contact-heading">Bắt đầu từ<br />một kết nối.</h2></div>
         <div className="contact-info"><span className="contact-label">ĐỊA CHỈ DOANH NGHIỆP</span><p>{company.address}</p>
-          <a className="text-link" href={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(company.address)} target="_blank" rel="noopener noreferrer">Xem vị trí trên bản đồ <Icon name="external" size={17} /><span className="sr-only"> (mở tab mới)</span></a>
+          <a className="text-link contact-map-link" href={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(company.address)} target="_blank" rel="noopener noreferrer"><Icon name="pin" size={19} /> Xem vị trí trên bản đồ <Icon name="external" size={15} /><span className="sr-only"> (mở tab mới)</span></a>
           {company.email && <a className="contact-channel" href={'mailto:' + company.email}><Icon name="mail" size={20} />{company.email}</a>}
           {company.phone && <a className="contact-channel" href={'tel:' + company.phone.replace(/[^+\d]/g, '')}><Icon name="phone" size={20} />{company.phone}</a>}
         </div>
