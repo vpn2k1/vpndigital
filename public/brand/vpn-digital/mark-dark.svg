@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="214" viewBox="0 0 260 214" fill="none"><defs>
+<linearGradient id="vBlue" x1="20" y1="20" x2="175" y2="190" gradientUnits="userSpaceOnUse"><stop stop-color="#56D9FF"/><stop offset=".54" stop-color="#188BD3"/><stop offset="1" stop-color="#C9EFFF"/></linearGradient>
+<linearGradient id="orbit" x1="25" y1="175" x2="236" y2="25" gradientUnits="userSpaceOnUse"><stop stop-color="#0865B3"/><stop offset=".52" stop-color="#119ADD"/><stop offset="1" stop-color="#16D4DD"/></linearGradient>
+<linearGradient id="aqua" x1="115" y1="155" x2="228" y2="12" gradientUnits="userSpaceOnUse"><stop stop-color="#075FAD"/><stop offset=".55" stop-color="#0DA2D2"/><stop offset="1" stop-color="#1CCFD8"/></linearGradient>
+<linearGradient id="blueWord" x1="500" y1="0" x2="900" y2="215" gradientUnits="userSpaceOnUse"><stop stop-color="#0C467E"/><stop offset=".48" stop-color="#156FB6"/><stop offset="1" stop-color="#21B8D6"/></linearGradient>
+</defs><g>
+<path d="M31 51L77 51L110 130L153 51L195 51L129 182L92 182Z" fill="url(#vBlue)"/>
+<path d="M89 63C122 28 172 12 209 27C239 39 247 66 234 92C217 127 171 151 132 153C160 138 189 116 200 88C211 61 194 48 169 48C137 48 111 61 88 80Z" fill="url(#aqua)"/>
+<path d="M48 121C20 147 15 170 33 181C56 196 115 183 158 161C202 139 237 109 251 80C243 120 208 158 165 182C115 210 44 214 20 193C-1 173 12 144 48 121Z" fill="url(#orbit)"/>
+<path d="M220 1C222 14 226 18 241 21C226 24 222 28 220 42C218 28 213 24 199 21C213 18 218 14 220 1Z" fill="#16C8D6"/>
+</g></svg>

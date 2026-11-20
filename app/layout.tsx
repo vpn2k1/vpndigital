@@ -8,6 +8,7 @@ import './theme.css';
 import './profile.css';
 import './launch.css';
 import './ui-icons.css';
+import './identity.css';
 import '@fontsource/be-vietnam-pro/400.css';
 import '@fontsource/be-vietnam-pro/500.css';
 import '@fontsource/be-vietnam-pro/600.css';
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   ...(siteUrl ? { metadataBase: siteUrl, alternates: { canonical: '/' } } : {}),
   robots: { index: indexable, follow: indexable },
   openGraph: { title, description, locale: 'vi_VN', type: 'website', siteName: 'PhuongNam Digital', ...(siteUrl ? { url: siteUrl.href, images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'PhuongNam Digital — Công nghệ Việt. Khát vọng số.' }] } : {}) },
-  icons: { icon: '/brand/theme/vpn-logo-light.png' },
+  icons: { icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }, { url: '/brand/vpn-digital/favicon-32.png', sizes: '32x32', type: 'image/png' }], apple: '/apple-touch-icon.png' },
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="vi"><head><script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('phuongnam-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}" }} /></head><body><MotionReveal />{children}</body></html>;

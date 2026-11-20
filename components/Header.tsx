@@ -19,9 +19,8 @@ export function Header() {
   }, [open]);
   return <header className="site-header">
     <div className="container header-inner">
-      <a className="brand" href="/" aria-label="PhuongNam Digital — đầu trang" onClick={() => setOpen(false)}>
-        <span className="brand-mark brand-theme-logo" aria-hidden="true" />
-        <span className="brand-name">{company.name}<small>CÔNG NGHỆ SỐ PHƯƠNG NAM</small></span>
+      <a className="brand" href="/" aria-label="VPN Digital — về trang chủ" onClick={() => setOpen(false)}>
+        <span className="brand-wordmark" aria-hidden="true" />
       </a>
       <button ref={toggleRef} className="menu-toggle" aria-expanded={open} aria-controls="main-navigation" aria-label={open ? 'Đóng menu' : 'Mở menu'} onClick={() => setOpen(!open)}><span /> <span /></button>
       <nav id="main-navigation" className={open ? 'main-nav is-open' : 'main-nav'} aria-label="Điều hướng chính">

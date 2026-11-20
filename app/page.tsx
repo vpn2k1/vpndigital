@@ -30,7 +30,7 @@ export default function Home() {
       </section>
       {sitePresentation.showBrandShowcase && <section className="brand-banner-section container" aria-label="Nhận diện thương hiệu VPN Digital" data-reveal>
         <span className="eyebrow">NHẬN DIỆN PHƯƠNG NAM</span>
-        <div className="brand-theme-banner" role="img" aria-label="Banner VPN Digital với hoa sen và quỹ đạo sao" />
+        <div className="brand-theme-banner" role="img" aria-label="Logo VPN Digital với chữ V, vòng quỹ đạo và ngôi sao" />
       </section>}
       <div className="launch-home-banner container"><div><strong>Sản phẩm đang được phát triển</strong><p>Khám phá những ý tưởng Game, Phần mềm và Công cụ của chúng tôi. Chức năng chưa khả dụng và chưa có ngày phát hành chính thức.</p></div><a className="launch-link" href="#linh-vuc">Khám phá các lĩnh vực <Icon name="external" size={17} /></a></div>
       <section id="gioi-thieu" className="company-profile container" data-reveal aria-labelledby="about-heading">
