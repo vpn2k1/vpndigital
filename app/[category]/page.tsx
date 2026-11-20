@@ -1,3 +1,4 @@
+import { Icon } from '@/components/Icon';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { categories, getCategory } from '@/content/catalog';
@@ -42,8 +43,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
             <p className="launch-description">{category.description}</p>
             <p className="launch-notice">Chức năng trong danh mục này đang được xây dựng. Hiện chưa có phiên bản để trải nghiệm hoặc tải xuống.</p>
             <div className="launch-actions">
-              <a className="button" href="#y-tuong">Khám phá ý tưởng <span aria-hidden="true">↓</span></a>
-              <a className="launch-link" href="/#lien-he">Liên hệ với chúng tôi <span aria-hidden="true">↗</span></a>
+              <a className="button" href="#y-tuong">Khám phá ý tưởng <Icon name="down" size={18} /></a>
+              <a className="launch-link" href="/#lien-he">Liên hệ với chúng tôi <Icon name="external" size={17} /></a>
             </div>
           </div>
           <div className="launch-artwork" data-reveal><Artwork src={category.image} alt={category.imageAlt} priority sizes="(max-width: 760px) 100vw, 50vw" /><div className="launch-image-caption"><span>VPN DIGITAL / {category.name.toUpperCase()}</span><span>CONCEPT PREVIEW</span></div></div>
@@ -54,7 +55,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
           <p className="launch-catalog-description">Các thẻ dưới đây giới thiệu hướng phát triển dự kiến. Nhấn vào một ý tưởng để xem thông tin; tất cả chức năng vẫn đang trong quá trình chuẩn bị.</p>
           {products.length ? <div className="product-grid category-grid">{products.map(product => <ProductCard key={product.slug} product={product} />)}</div> : <p className="empty-state">Nội dung đang được cập nhật. Vui lòng quay lại sau.</p>}
         </section>
-        <aside className="launch-bottom-cta" data-reveal><div><p className="eyebrow">CÙNG PHÁT TRIỂN NHỮNG Ý TƯỞNG MỚI</p><h2>Một điều mới đang bắt đầu.</h2><p>Khám phá PhuongNam Digital hoặc kết nối với chúng tôi để trao đổi về lĩnh vực bạn quan tâm.</p></div><a className="button" href="/#lien-he">Thông tin liên hệ <span aria-hidden="true">↗</span></a></aside>
+        <aside className="launch-bottom-cta" data-reveal><div><p className="eyebrow">CÙNG PHÁT TRIỂN NHỮNG Ý TƯỞNG MỚI</p><h2>Một điều mới đang bắt đầu.</h2><p>Khám phá PhuongNam Digital hoặc kết nối với chúng tôi để trao đổi về lĩnh vực bạn quan tâm.</p></div><a className="button" href="/#lien-he">Thông tin liên hệ <Icon name="external" size={18} /></a></aside>
       </div>
     </main><Footer />
   </div>;
