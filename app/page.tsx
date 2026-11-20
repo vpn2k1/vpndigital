@@ -24,14 +24,15 @@ export default function Home() {
           <h1 id="hero-heading">Công nghệ Việt.<br /><span>Khát vọng số.</span></h1>
           <p className="hero-description">Phát triển trò chơi điện tử, phần mềm<br className="desktop-break" /> và công cụ phần mềm trò chơi điện tử.</p>
           <a className="button" href="#gioi-thieu">Tìm hiểu về chúng tôi <Icon name="arrow" size={21} /></a>
-          <div className="hero-note"><span className="small-star" aria-hidden="true">✦</span><span>Từ Hưng Yên, Việt Nam</span><span className="note-line" /></div>
+          <div className="home-launch-note"><span className="launch-dot" aria-hidden="true" /> Game, phần mềm & công cụ — sắp ra mắt</div><div className="hero-note"><Icon name="sparkle" size={14} /><span>Từ Hưng Yên, Việt Nam</span><span className="note-line" /></div>
         </div>
-        <div className="hero-art hero-art-illustrated" data-reveal><Artwork src="/images/hero.webp" alt="Minh họa 2.5D đảo nổi với cổng đỏ ruby, khối ngà và tay cầm game" priority/><span className="art-caption">BẢN SẮC VIỆT · TINH THẦN SỐ</span></div>
+        <div className="hero-art hero-art-illustrated" data-reveal><Artwork src="/images/hero.webp" alt="Minh họa quả địa cầu kỹ thuật số xanh cyan, quỹ đạo ánh sáng và lưới công nghệ" priority/><span className="art-caption">BẢN SẮC VIỆT · TINH THẦN SỐ</span></div>
       </section>
       {sitePresentation.showBrandShowcase && <section className="brand-banner-section container" aria-label="Nhận diện thương hiệu VPN Digital" data-reveal>
         <span className="eyebrow">NHẬN DIỆN PHƯƠNG NAM</span>
-        <div className="brand-theme-banner" role="img" aria-label="Banner VPN Digital với hoa sen và quỹ đạo sao" />
+        <div className="brand-theme-banner" role="img" aria-label="Logo VPN Digital với chữ V, vòng quỹ đạo và ngôi sao" />
       </section>}
+      <div className="launch-home-banner container"><div><strong>Sản phẩm đang được phát triển</strong><p>Khám phá những ý tưởng Game, Phần mềm và Công cụ của chúng tôi. Chức năng chưa khả dụng và chưa có ngày phát hành chính thức.</p></div><a className="launch-link" href="#linh-vuc">Khám phá các lĩnh vực <Icon name="external" size={17} /></a></div>
       <section id="gioi-thieu" className="company-profile container" data-reveal aria-labelledby="about-heading">
         <div className="profile-intro">
           <p className="eyebrow">VỀ DOANH NGHIỆP</p>
@@ -55,14 +56,14 @@ export default function Home() {
       </section>
       <section id="linh-vuc" className="fields container" aria-labelledby="fields-heading">
         <div className="section-kicker"><span className="eyebrow" id="fields-heading">BA MẢNG HOẠT ĐỘNG</span><span className="kicker-rule" /></div>
-        <p className="fields-intro">Khám phá các nhóm nội dung về game, phần mềm và công cụ phát triển. Các sản phẩm trong danh mục hiện là ví dụ minh họa.</p>
-        <div className="category-cards">{categories.map(category => <a className="category-card" data-reveal key={category.slug} href={`/${category.slug}/`}><Artwork src={category.image} alt={category.imageAlt} sizes="(max-width: 760px) calc(100vw - 48px), 370px"/><div><h2>{category.name}</h2><p>{category.description}</p><span className="product-read">Khám phá <Icon name="arrow" size={18}/></span></div></a>)}</div>
+        <p className="fields-intro">Khám phá các nhóm nội dung về game, phần mềm và công cụ phát triển. Các trang danh mục đang giới thiệu ý tưởng và sẽ mở chức năng khi sẵn sàng.</p>
+        <div className="category-cards">{categories.map(category => <a className="category-card" data-reveal key={category.slug} href={`/${category.slug}/`}><Artwork src={category.image} alt={category.imageAlt} sizes="(max-width: 760px) calc(100vw - 48px), 370px"/><div><h2>{category.name}</h2><p>{category.description}</p><span className="product-read">Sắp ra mắt <Icon name="arrow" size={18}/></span></div></a>)}</div>
       </section>
-      <section className="featured container"><div className="section-heading-row" data-reveal><div><p className="eyebrow">KHÁM PHÁ SẢN PHẨM</p><h2>Một vài ý tưởng để bắt đầu.</h2></div></div><p className="demo-notice"><span className="demo-badge">DEMO</span> Các mục có nhãn DEMO là nội dung minh họa, chưa phải sản phẩm đã phát hành.</p><div className="product-grid">{products.filter(product => product.featured).slice(0, 3).map(product => <ProductCard key={product.slug} product={product}/>)}</div></section>
+      <section className="featured container"><div className="section-heading-row" data-reveal><div><p className="eyebrow">KHÁM PHÁ SẢN PHẨM</p><h2>Một vài ý tưởng để bắt đầu.</h2></div></div><p className="demo-notice"><span className="demo-badge">DEMO</span> Các ý tưởng dưới đây đang phát triển; chức năng và bản tải xuống chưa khả dụng.</p><div className="product-grid">{products.filter(product => product.featured).slice(0, 3).map(product => <ProductCard key={product.slug} product={product}/>)}</div></section>
       <section id="lien-he" className="contact" data-reveal aria-labelledby="contact-heading"><div className="container contact-inner">
         <div><p className="eyebrow">KẾT NỐI VỚI PHƯƠNG NAM</p><h2 id="contact-heading">Bắt đầu từ<br />một kết nối.</h2></div>
         <div className="contact-info"><span className="contact-label">ĐỊA CHỈ DOANH NGHIỆP</span><p>{company.address}</p>
-          <a className="text-link" href={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(company.address)} target="_blank" rel="noopener noreferrer">Xem vị trí trên bản đồ <Icon name="external" size={17} /><span className="sr-only"> (mở tab mới)</span></a>
+          <a className="text-link contact-map-link" href={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(company.address)} target="_blank" rel="noopener noreferrer"><Icon name="pin" size={19} /> Xem vị trí trên bản đồ <Icon name="external" size={15} /><span className="sr-only"> (mở tab mới)</span></a>
           {company.email && <a className="contact-channel" href={'mailto:' + company.email}><Icon name="mail" size={20} />{company.email}</a>}
           {company.phone && <a className="contact-channel" href={'tel:' + company.phone.replace(/[^+\d]/g, '')}><Icon name="phone" size={20} />{company.phone}</a>}
         </div>

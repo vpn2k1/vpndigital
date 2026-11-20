@@ -1,0 +1,9 @@
+/* Shared styles for built-in Lucide SVG icons.
+   Inherit currentColor from text/button and adapt to light/dark mode without image requests. */
+.ui-lucide-icon { display: block; flex-shrink: 0; vertical-align: middle; }
+.launch-link .ui-lucide-icon { transition: transform 180ms ease; }
+.launch-link:hover .ui-lucide-icon { transform: translate(2px,-2px); }
+.contact-map-link { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 7px; }
+@media (prefers-reduced-motion: reduce) {
+  .launch-link .ui-lucide-icon { transition: none; transform: none !important; }
+}

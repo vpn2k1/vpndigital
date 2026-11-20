@@ -12,7 +12,7 @@ function activeTheme(): 'light' | 'dark' {
 
 function updateFavicon() {
   const icon = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
-  if (icon) icon.href = `/brand/theme/vpn-logo-${activeTheme()}.png`;
+  if (icon) icon.href = activeTheme() === 'dark' ? '/brand/vpn-digital/mark-dark.svg' : '/favicon.svg';
 }
 
 export function ThemeToggle() {
