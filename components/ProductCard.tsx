@@ -19,3 +19,4 @@ export function ProductCard({ product, index }: { product: Product; index?: numb
       </div>
     </a>
   </article>;
+}
