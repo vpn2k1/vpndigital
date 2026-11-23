@@ -47,8 +47,8 @@ try {
             assert(await visible.isVisible(), 'theme ' + theme + ' has no visible image ' + route);
             assert(!await invisible.isVisible(), 'theme ' + theme + ' shows both images ' + route);
             const source = await visible.getAttribute('src');
-            assert(source && source.endsWith(theme === 'light' ? '-light.webp' : '.webp'), 'incorrect image filename ' + theme + ': ' + source);
-            if (theme === 'dark') assert(!source.endsWith('-light.webp'), 'dark theme uses light asset');
+            assert(source && source.endsWith(theme === 'dark' ? '-light.webp' : '.webp'), 'incorrect swapped image filename ' + theme + ': ' + source);
+            if (theme === 'light') assert(!source.endsWith('-light.webp'), 'light theme must use original dark-family WebP during A/B swap');
             await visible.evaluate(async img => await img.decode());
             assert((await visible.evaluate(img => img.naturalWidth)) > 0, 'failed to decode ' + theme + ' asset ' + route);
           }
@@ -57,11 +57,11 @@ try {
         checked++;
         if (['/','/ung-dung/','/phan-mem/','/cong-cu/'].includes(route)) {
           const id = route === '/' ? 'home' : route.split('/')[1];
-          await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '-light.png', fullPage:true});
+          await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '-swapped-light.png', fullPage:true});
           if (route === '/') {
             await page.evaluate(() => { document.documentElement.dataset.theme = 'dark'; });
             await page.locator('.hero-visual .theme-artwork-dark').evaluate(async img => await img.decode());
-            await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '-dark.png', fullPage:true});
+            await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '-swapped-dark.png', fullPage:true});
             await page.evaluate(() => { document.documentElement.removeAttribute('data-theme'); });
           }
         }
@@ -84,7 +84,7 @@ try {
       const activeArtwork = page.locator('.hero-visual .theme-artwork').first();
       const expectedArt = activeArtwork.locator(selected === 'light' ? '.theme-artwork-light' : '.theme-artwork-dark');
       assert(await expectedArt.isVisible(), 'hero artwork did not switch with theme ' + selected);
-      assert((await expectedArt.getAttribute('src')).endsWith(selected === 'light' ? '/hero-light.webp' : '/hero.webp'));
+      assert((await expectedArt.getAttribute('src')).endsWith(selected === 'dark' ? '/hero-light.webp' : '/hero.webp'), 'hero A/B swap does not match theme '+selected);
       
     } catch(error) {errors.push(viewport.name + ' theme/menu: ' + error.message)}
     await context.close();

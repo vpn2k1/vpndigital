@@ -584,3 +584,7 @@ html[data-theme=dark] {
  .visual-label .brand-lockup-overlay .brand-lockup-tagline{font-size:7px}
  .visual-order{font-size:8px}
 }
+
+/* V16 temporary artwork A/B swap: WebP file mapping is inverted in Artwork.tsx.
+   Light theme uses original unsuffixed WebP; dark theme uses -light.webp.
+   The brand icon and typography still follow their normal light/dark theme. */
