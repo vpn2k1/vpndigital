@@ -15,10 +15,10 @@ import { localizedCategory } from '@/lib/localized-content';
 import { siteUrl } from '@/lib/seo';
 
 const organization = {
-  '@context': 'https://schema.org', '@type': 'Organization', name: company.name,
-  legalName: company.legalName, alternateName: company.shortName, taxID: company.taxId,
+  '@context': 'https://schema.org', '@type': 'Organization',
+  name: company.internationalName, alternateName: company.shortName,
   ...(siteUrl ? { url: siteUrl.href } : {}),
-  address: { '@type': 'PostalAddress', streetAddress: 'thôn Phú Nhạn, Xã Mễ Sở', addressRegion: 'Hưng Yên', addressCountry: 'VN' },
+
 };
 
 export function HomeView({ locale }: { locale: Locale }) {
@@ -43,15 +43,15 @@ export function HomeView({ locale }: { locale: Locale }) {
         </div>
         <div className="hero-visual hero-visual-illustrated" data-reveal>
           <Artwork src="/images/hero.webp" alt={s.hero.artwork} priority sizes="(max-width: 960px) 92vw, 50vw"/>
-          <div className="hero-visual-top"><span className="visual-cross">✳</span><span>VPN DIGITAL / VIETNAM</span></div>
+          <div className="hero-visual-top"><span className="visual-cross" aria-hidden="true">VPN</span><span>VPN DIGITAL / VIETNAM</span></div>
           <div className="hero-visual-caption"><BrandLockup variant="overlay" locale={locale}/></div>
         </div>
       </section>
 
       <div className="container ticker-wrap" aria-label={s.ticker.status}>
         <span className="ticker-lead"><span className="status-dot" aria-hidden="true"/> {s.ticker.status}</span>
-        <span>{s.ticker.apps}</span><span className="ticker-separator">✳</span>
-        <span>{s.ticker.software}</span><span className="ticker-separator">✳</span>
+        <span>{s.ticker.apps}</span><span className="ticker-separator" aria-hidden="true">/</span>
+        <span>{s.ticker.software}</span><span className="ticker-separator" aria-hidden="true">/</span>
         <span>{s.ticker.tools}</span>
         <a href="#du-an">{s.ticker.explore} <Icon name="arrow" size={15}/></a>
       </div>
@@ -85,23 +85,22 @@ export function HomeView({ locale }: { locale: Locale }) {
 
       <section className="section container philosophy-section" aria-labelledby="philosophy-heading">
         <div className="section-header" data-reveal><div><p className="section-eyebrow"><span>03 /</span> {s.sections.philosophy.eyebrow}</p><h2 id="philosophy-heading">{s.sections.philosophy.first}<br/><span>{s.sections.philosophy.accent}</span></h2></div><p>{s.sections.philosophy.description}</p></div>
-        <div className="approach-grid">{s.approaches.map((item, index) => <div className="approach-card" key={item.title} data-reveal><span className="approach-no">{String(index + 1).padStart(2, '0')} / 03</span><span className="approach-symbol" aria-hidden="true"><Icon name="sparkle" size={23}/></span><h3>{item.title}</h3><p>{item.text}</p></div>)}</div>
+        <div className="approach-grid">{s.approaches.map((item, index) => <div className="approach-card" key={item.title} data-reveal><span className="approach-no">{String(index + 1).padStart(2, '0')} / 03</span><h3>{item.title}</h3><p>{item.text}</p></div>)}</div>
       </section>
 
       <section className="section about-section" id="gioi-thieu" aria-labelledby="about-heading">
         <div className="container about-grid">
-          <div className="about-intro" data-reveal><p className="section-eyebrow"><span>04 /</span> {s.sections.about.eyebrow}</p><h2 id="about-heading">{s.sections.about.first}<br/><span>{s.sections.about.accent}</span></h2><p>{s.sections.about.description}</p><div className="about-location"><Icon name="pin" size={17}/> {s.sections.about.location}</div></div>
-          <div className="company-panel" data-reveal>
-            <div className="company-panel-top"><span>{s.company.panel}</span><span className="panel-spark">✳</span></div>
-            <h3>{company.legalName}</h3>
-            <dl className="company-facts">
-              <div><dt>{s.company.international}</dt><dd>{company.internationalName}</dd></div>
-              <div><dt>{s.company.short}</dt><dd>{company.shortName}</dd></div>
-              <div><dt>{s.company.tax}</dt><dd>{company.taxId}</dd></div>
-              <div><dt>{s.company.representative}</dt><dd>{company.representative}</dd></div>
-              <div><dt>{s.company.address}</dt><dd>{company.address}</dd></div>
-              <div><dt>{s.company.mainIndustry}</dt><dd>{s.company.industry}</dd></div>
-            </dl><p className="company-note">{s.company.disclaimer}</p>
+          <div className="about-intro" data-reveal>
+            <p className="section-eyebrow"><span>04 /</span> {s.sections.about.eyebrow}</p>
+            <h2 id="about-heading">{s.sections.about.first}<br/><span>{s.sections.about.accent}</span></h2>
+            <p>{s.sections.about.description}</p>
+            <div className="about-location"><Icon name="pin" size={17}/> {s.sections.about.location}</div>
+          </div>
+          <div className="about-identity" data-reveal>
+            <span className="about-identity-overline">{s.sections.about.eyebrow}</span>
+            <h3 className="about-company-name" lang={locale}>{s.company.displayName}</h3>
+            <span className="about-identity-rule" aria-hidden="true" />
+            <p className="about-brand-name">VPN Digital</p>
           </div>
         </div>
       </section>
@@ -109,10 +108,10 @@ export function HomeView({ locale }: { locale: Locale }) {
       <section className="container contact-section" id="lien-he" aria-labelledby="contact-heading">
         <div className="contact-panel" data-reveal>
           <div className="contact-copy"><p className="section-eyebrow"><span>05 /</span> {s.sections.contact.eyebrow}</p><h2 id="contact-heading">{s.sections.contact.first}<br/><span>{s.sections.contact.accent}</span></h2><p>{s.sections.contact.description}</p>
-            <a className="button button-contact" href={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(company.address)} target="_blank" rel="noopener noreferrer"><Icon name="pin" size={18}/> {s.common.map} <Icon name="external" size={16}/><span className="sr-only"> {s.common.newTab}</span></a>
+            <a className="button button-contact" href={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(company.locality + ', Việt Nam')} target="_blank" rel="noopener noreferrer"><Icon name="pin" size={18}/> {s.common.map} <Icon name="external" size={16}/><span className="sr-only"> {s.common.newTab}</span></a>
           </div>
           <div className="contact-side"><ContactForm/>
-            <div className="contact-aside"><span className="contact-aside-label">{s.sections.contact.locationLabel}</span><strong>{company.locality}</strong><p>{company.address}</p>
+            <div className="contact-aside"><span className="contact-aside-label">{s.sections.contact.locationLabel}</span><strong>{company.locality}</strong><p>{company.locality}</p>
               {company.email && <a href={'mailto:' + company.email} className="contact-method"><Icon name="mail" size={18}/>{company.email}</a>}
               {company.phone && <a href={'tel:' + company.phone.replace(/[^+\d]/g, '')} className="contact-method"><Icon name="phone" size={18}/>{company.phone}</a>}
             </div>
@@ -121,6 +120,6 @@ export function HomeView({ locale }: { locale: Locale }) {
       </section>
     </main>
     <Footer/>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, '\\u003c') }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ ...organization, name: s.company.displayName }).replace(/</g, '\\u003c') }} />
   </div>;
 }

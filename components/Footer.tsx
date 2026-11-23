@@ -32,7 +32,6 @@ export function Footer() {
     </div>
     <div className="container footer-bottom">
       <span>© {new Date().getFullYear()} VPN Digital. {s.company.attribution}</span>
-      <span>{s.company.taxLabel}: {company.taxId}</span>
     </div>
   </footer>;
 }

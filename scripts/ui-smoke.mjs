@@ -81,6 +81,17 @@ try {
         assert.deepEqual(brokenImages, [], 'broken images ' + route.path);
 
         if (route.kind === 'home') {
+          const companyName = route.locale === 'vi'
+            ? 'Công ty TNHH Một Thành Viên Công Nghệ Số Phương Nam'
+            : 'PhuongNam Digital';
+          assert.equal((await page.locator('.about-company-name').innerText()).trim(), companyName,
+            'company identity not localized ' + route.path);
+          assert.equal(await page.locator('.company-panel, .company-facts').count(), 0,
+            'obsolete detailed company profile must be removed');
+          assert.equal(await page.locator('.panel-spark, .ticker-separator:has-text("✳"), .visual-cross:has-text("✳")').count(), 0,
+            'Claude-like decorative star must not be visible');
+          assert.equal(await page.locator('.footer-bottom').getByText(/0901258364/).count(), 0,
+            'registered tax ID must not appear in footer');
           const form = page.locator('.contact-form');
           assert.equal(await form.count(), 1, 'contact form missing ' + route.path);
           for (const field of ['name','phone','email']) assert.equal(await form.locator('input[name="' + field + '"]').count(), 1);

@@ -16,7 +16,7 @@ const vi: SiteStrings = {
     fields: { eyebrow: 'HỆ SINH THÁI', first: 'Ba hướng đi.', accent: 'Một tinh thần sáng tạo.', description: 'Ứng dụng, phần mềm và công cụ — ba mảnh ghép chúng tôi đang phát triển, cùng hướng đến những trải nghiệm hữu ích và khác biệt.' },
     projects: { eyebrow: 'ĐANG KIẾN TẠO', first: 'Những ý tưởng', accent: 'đang thành hình.', description: 'Từ một trò chơi nhỏ đến công cụ làm việc. Đây là những concept đang phát triển, chưa có chức năng sử dụng hoặc tải về.' },
     philosophy: { eyebrow: 'CÁCH CHÚNG TÔI NGHĨ', first: 'Công nghệ tốt.', accent: 'Bắt đầu từ con người.', description: 'Không chạy theo những điều phức tạp. Chúng tôi ưu tiên trải nghiệm dễ hiểu, có mục đích và có không gian để phát triển lâu dài.' },
-    about: { eyebrow: 'VỀ CHÚNG TÔI', first: 'Từ Phương Nam.', accent: 'Vươn đến thế giới số.', description: 'VPN Digital là thương hiệu của Công nghệ số Phương Nam, doanh nghiệp tại Hưng Yên, Việt Nam, định hướng phát triển ứng dụng, phần mềm và công cụ liên quan.', location: 'HƯNG YÊN · VIỆT NAM' },
+    about: { eyebrow: 'VỀ CHÚNG TÔI', first: 'Từ Phương Nam.', accent: 'Vươn đến thế giới số.', description: 'VPN Digital là thương hiệu của Công ty TNHH Một Thành Viên Công Nghệ Số Phương Nam, phát triển ý tưởng ứng dụng, phần mềm và công cụ số.', location: 'HƯNG YÊN · VIỆT NAM' },
     contact: { eyebrow: 'KẾT NỐI', first: 'Một cuộc trò chuyện.', accent: 'Nhiều khả năng mới.', description: 'Quan tâm đến lĩnh vực chúng tôi đang xây dựng? Hãy bắt đầu bằng một kết nối.', locationLabel: 'CHÚNG TÔI Ở ĐÂY' },
   },
   approaches: [
@@ -26,9 +26,8 @@ const vi: SiteStrings = {
   ],
   projectNotice: 'Tất cả sản phẩm giới thiệu trên website hiện ở trạng thái sắp ra mắt. Thời điểm phát hành chưa được công bố.',
   company: {
-    panel: 'HỒ SƠ DOANH NGHIỆP', international: 'Tên quốc tế', short: 'Tên viết tắt', tax: 'Mã số thuế', representative: 'Người đại diện', address: 'Địa chỉ', mainIndustry: 'Ngành nghề chính', disclaimer: 'Thông tin doanh nghiệp do công ty cung cấp.',
-    industry: 'Phát triển trò chơi điện tử, phần mềm trò chơi điện tử và các công cụ phần mềm trò chơi điện tử',
-    attribution: 'Một dự án của Công nghệ số Phương Nam.', taxLabel: 'Mã số thuế',
+    displayName: 'Công ty TNHH Một Thành Viên Công Nghệ Số Phương Nam',
+    attribution: 'Một dự án của Công ty TNHH Một Thành Viên Công Nghệ Số Phương Nam.',
   },
   categoryPage: {
     availability: 'Chúng tôi đang chuẩn bị những trải nghiệm thuộc lĩnh vực này. Hiện chưa có bản chơi thử, phần mềm hoạt động hoặc tệp tải xuống.',

@@ -53,7 +53,7 @@ export function ProductView({ locale, product }: { locale: Locale; product: Prod
           <div className="feature-heading"><p className="section-eyebrow"><span>02 /</span> {s.productPage.featureEyebrow}</p>
             <h3>{s.productPage.featureTitle}</h3></div>
           <ol className="feature-list">{copy.features.map((feature,i)=><li key={feature}>
-            <span className="feature-number">{String(i+1).padStart(2,'0')}</span><span>{feature}</span><Icon name="sparkle" size={18}/>
+            <span className="feature-number">{String(i+1).padStart(2,'0')}</span><span>{feature}</span>
           </li>)}</ol>
           <p className="small-disclaimer">{s.productPage.disclaimer}</p>
         </div>

@@ -14,7 +14,7 @@ const en = {
     fields: { eyebrow: 'ECOSYSTEM', first: 'Three directions.', accent: 'One creative vision.', description: 'Apps, software, and tools: three parts of what we are building, united by a focus on purposeful digital experiences.' },
     projects: { eyebrow: 'IN THE MAKING', first: 'New ideas', accent: 'taking shape.', description: 'From playful experiments to productivity tools. These concepts are still in development and cannot yet be used or downloaded.' },
     philosophy: { eyebrow: 'OUR APPROACH', first: 'Better technology.', accent: 'Built around people.', description: 'Less unnecessary complexity, more clarity and purpose. We believe useful digital experiences should feel natural and continue to improve.' },
-    about: { eyebrow: 'ABOUT US', first: 'Rooted in Vietnam.', accent: 'Looking to the digital world.', description: 'VPN Digital is the brand of Phuong Nam Digital Technology, a business based in Hung Yen, Vietnam, exploring apps, software, and digital tools.', location: 'HUNG YEN · VIETNAM' },
+    about: { eyebrow: 'ABOUT US', first: 'Rooted in Vietnam.', accent: 'Looking to the digital world.', description: 'VPN Digital is the digital product brand of PhuongNam Digital in Vietnam, exploring applications, software and tools.', location: 'HUNG YEN · VIETNAM' },
     contact: { eyebrow: 'GET IN TOUCH', first: 'One conversation.', accent: 'Many new possibilities.', description: 'Interested in the areas we are exploring? Start with a conversation.', locationLabel: 'WHERE TO FIND US' },
   },
   approaches: [
@@ -24,9 +24,8 @@ const en = {
   ],
   projectNotice: 'All products shown here are coming-soon concepts. No release date has been announced.',
   company: {
-    panel: 'COMPANY PROFILE', international: 'International name', short: 'Short name', tax: 'Tax ID', representative: 'Legal representative', address: 'Registered address', mainIndustry: 'Primary business', disclaimer: 'Company details provided by the business.',
-    industry: 'Development of video games, game software, and related development tools',
-    attribution: 'A project by Phuong Nam Digital Technology.', taxLabel: 'Tax ID',
+    displayName: 'PhuongNam Digital',
+    attribution: 'A project by PhuongNam Digital.',
   },
   categoryPage: {
     availability: 'We are preparing experiences in this field. There is no playable demo, working software, or downloadable file yet.',
