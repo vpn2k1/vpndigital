@@ -501,3 +501,86 @@ html[data-theme=light] .brand-lockup-footer .brand-icon-dark{display:block}
  .brand-lockup-stage .brand-lockup-name{font-size:24px}
  .brand-lockup-stage .brand-lockup-tagline{font-size:8px;white-space:normal;line-height:1.5}
 }
+
+
+/* v15 — Restore original 3D artwork on every visual surface.
+   Each uploaded WebP has a bright light version and a navy dark version.
+   CSS switches immediately with data-theme, or the system preference. */
+.theme-artwork { position:relative;display:block;width:100%;overflow:hidden;line-height:0; }
+.theme-artwork > img {width:100%;height:auto;display:block;aspect-ratio:1600/1067;object-fit:cover}
+.theme-artwork > .theme-artwork-dark { display:none; filter:contrast(1.05) saturate(1.08); }
+.theme-artwork > .theme-artwork-light { display:block; filter:contrast(1.14) saturate(1.25) brightness(1.015); }
+@media(prefers-color-scheme:dark) {
+  html:not([data-theme]) .theme-artwork > .theme-artwork-dark { display:block; }
+  html:not([data-theme]) .theme-artwork > .theme-artwork-light { display:none; }
+}
+html[data-theme=dark] .theme-artwork > .theme-artwork-dark { display:block; }
+html[data-theme=dark] .theme-artwork > .theme-artwork-light { display:none; }
+html[data-theme=light] .theme-artwork > .theme-artwork-dark { display:none; }
+html[data-theme=light] .theme-artwork > .theme-artwork-light { display:block; }
+:root {
+ --illustration-edge:#A8CDEB;
+ --illustration-shadow:0 16px 45px rgba(6,102,178,.16);
+}
+@media(prefers-color-scheme:dark) {
+ :root:not([data-theme]) {
+  --illustration-edge:#315F7C;
+  --illustration-shadow:0 18px 55px rgba(0,0,0,.24);
+ }
+}
+html[data-theme=dark] {
+ --illustration-edge:#315F7C;
+ --illustration-shadow:0 18px 55px rgba(0,0,0,.24);
+}
+.hero-visual-illustrated,.category-hero-illustrated,.detail-art-illustrated{
+ border-color:var(--illustration-edge);
+ background:#09223D;
+ box-shadow:var(--illustration-shadow);
+}
+.hero-visual-illustrated > .theme-artwork > img {aspect-ratio:1/.96;object-fit:cover}
+.category-hero-illustrated > .theme-artwork > img,
+.detail-art-illustrated > .theme-artwork > img {aspect-ratio:1/.96;object-fit:cover}
+.field-art > .theme-artwork > img,
+.product-cover > .theme-artwork > img {aspect-ratio:1.36;object-fit:cover}
+.field-art,.product-cover {background:#082747}
+.field-art .theme-artwork,.product-cover .theme-artwork{display:block}
+.field-art .theme-artwork img,.product-cover .theme-artwork img{transition:transform .35s ease,filter .2s ease}
+.field-card:hover .theme-artwork img,.product-card:hover .theme-artwork img{transform:scale(1.035)}
+.hero-visual-caption {
+ z-index:2;bottom:19px;left:19px;right:19px;padding:14px 16px;
+ background:rgba(4,19,39,.86);
+ border-color:rgba(203,241,255,.26);
+}
+.brand-lockup-overlay {align-items:center;gap:10px}
+.brand-lockup-overlay .brand-lockup-icon {width:39px}
+.brand-lockup-overlay .brand-lockup-icon .brand-icon-light {display:none !important}
+.brand-lockup-overlay .brand-lockup-icon .brand-icon-dark {display:block !important}
+.brand-lockup-overlay .brand-lockup-name{font-size:18px;letter-spacing:-.045em;color:#F1FAFF}
+.brand-lockup-overlay .brand-lockup-name>span{color:#5ADCEC}
+.brand-lockup-overlay .brand-lockup-tagline{color:#B4D9E9;font-size:9px}
+.visual-label {display:flex;align-items:center;gap:12px;justify-content:space-between}
+.visual-order {margin-left:auto;text-align:right;flex:none;color:#B7E8F9;font-size:9px;font-weight:700;letter-spacing:.08em}
+.product-card-body{min-height:252px;padding:23px}
+.product-card h3{margin-top:15px}
+.product-card-bottom{margin-top:auto}
+.product-card .product-cover-label{z-index:1}
+@media(max-width:960px) {
+ .hero-visual-illustrated > .theme-artwork > img,
+ .category-hero-illustrated > .theme-artwork > img,
+ .detail-art-illustrated > .theme-artwork > img {aspect-ratio:1.6}
+}
+@media(max-width:740px) {
+ .hero-visual-illustrated > .theme-artwork > img {aspect-ratio:1.06}
+ .category-hero-illustrated > .theme-artwork > img,
+ .detail-art-illustrated > .theme-artwork > img {aspect-ratio:1.13}
+ .product-card-body{min-height:0}
+ .hero-visual-caption {left:12px;right:12px;bottom:12px;padding:12px}
+ .brand-lockup-overlay .brand-lockup-icon{width:33px}
+ .brand-lockup-overlay .brand-lockup-name{font-size:16px}
+ .brand-lockup-overlay .brand-lockup-tagline{font-size:8px}
+ .visual-label{left:11px;right:11px;bottom:11px;padding:9px 11px}
+ .visual-label .brand-lockup-overlay .brand-lockup-icon{width:29px}
+ .visual-label .brand-lockup-overlay .brand-lockup-name{font-size:13px}
+ .visual-label .brand-lockup-overlay .brand-lockup-tagline{font-size:7px}
+ .visual-order{font-size:8px}
+}

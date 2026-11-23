@@ -1,5 +1,5 @@
 /** Logo artwork stays an image; brand name and tagline remain genuine HTML text. */
-export function BrandLockup({ variant = 'header' }: { variant?: 'header' | 'footer' | 'stage' }) {
+export function BrandLockup({ variant = 'header' }: { variant?: 'header' | 'footer' | 'stage' | 'overlay' }) {
   return <span className={'brand-lockup brand-lockup-' + variant}>
     <span className="brand-lockup-icon" aria-hidden="true">
       <img className="brand-icon-light" src="/brand/vpn-digital/mark.svg" alt="" width={260} height={214} decoding="async" />

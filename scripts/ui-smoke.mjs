@@ -32,18 +32,28 @@ try {
         const broken = await page.locator('img').evaluateAll(ims => ims.filter(im => getComputedStyle(im).display !== 'none' && (!im.complete || im.naturalWidth === 0)).map(im => im.src));
         assert.deepEqual(broken, [], 'broken images ' + route);
         if(route === '/') assert(await page.locator('.button-contact svg.ui-lucide-icon').count() > 0, 'MapPin icon SVG missing');
-        if (route === '/' || route === '/ung-dung/' || route === '/phan-mem/' || route === '/cong-cu/') {
-          const stages = page.locator('.brand-stage');
-          assert(await stages.count() > 0, 'missing logo stage ' + route);
-          const stageBrand = stages.first().locator('.brand-lockup-stage');
-          assert.equal(await stageBrand.count(), 1, 'brand lockup missing ' + route);
-          assert.equal((await stageBrand.locator('.brand-lockup-name').innerText()).trim(), 'VPN Digital', 'brand text must be HTML ' + route);
-          assert.equal((await stageBrand.locator('.brand-lockup-tagline').innerText()).trim(), 'Ứng dụng · Phần mềm · Công cụ', 'tagline missing ' + route);
-          assert.equal(await stageBrand.locator('.brand-lockup-icon img').count(), 2, 'missing logo icon light/dark variants ' + route);
+        const activeBrand = page.locator('.brand-lockup-header');
+        assert.equal((await activeBrand.locator('.brand-lockup-name').innerText()).trim(), 'VPN Digital', 'header text branding ' + route);
+        assert.equal((await activeBrand.locator('.brand-lockup-tagline').innerText()).trim(), 'Ứng dụng · Phần mềm · Công cụ', 'brand tagline ' + route);
+        if (route !== '/game/') {
+          const artwork = page.locator('.theme-artwork');
+          assert(await artwork.count() > 0, 'missing restored artwork ' + route);
+          const first = artwork.first();
+          assert.equal(await first.locator('img').count(), 2, 'missing light/dark variants ' + route);
+          for (const theme of ['light', 'dark']) {
+            await page.evaluate(value => { document.documentElement.dataset.theme = value; }, theme);
+            const visible = first.locator(theme === 'light' ? '.theme-artwork-light' : '.theme-artwork-dark');
+            const invisible = first.locator(theme === 'light' ? '.theme-artwork-dark' : '.theme-artwork-light');
+            assert(await visible.isVisible(), 'theme ' + theme + ' has no visible image ' + route);
+            assert(!await invisible.isVisible(), 'theme ' + theme + ' shows both images ' + route);
+            const source = await visible.getAttribute('src');
+            assert(source && source.endsWith(theme === 'light' ? '-light.webp' : '.webp'), 'incorrect image filename ' + theme + ': ' + source);
+            if (theme === 'dark') assert(!source.endsWith('-light.webp'), 'dark theme uses light asset');
+            await visible.evaluate(async img => await img.decode());
+            assert((await visible.evaluate(img => img.naturalWidth)) > 0, 'failed to decode ' + theme + ' asset ' + route);
+          }
+          await page.evaluate(() => { document.documentElement.removeAttribute('data-theme'); });
         }
-        const offBrandImages = await page.locator('main img').evaluateAll(images =>
-          images.filter(img => !img.getAttribute('src')?.startsWith('/brand/vpn-digital/mark')).map(img => img.getAttribute('src')));
-        assert.deepEqual(offBrandImages, [], 'non-logo illustrations found on page ' + route);
         checked++;
         if (['/','/ung-dung/','/phan-mem/','/cong-cu/'].includes(route)) {
           const id = route === '/' ? 'home' : route.split('/')[1];

@@ -4,6 +4,7 @@ import { products, getProduct, getProductsByCategory } from '@/lib/products';
 import { getCategory } from '@/content/catalog';
 import { Header } from '@/components/Header';
 import { BrandLockup } from '@/components/BrandLockup';
+import { Artwork } from '@/components/Artwork';
 import { Footer } from '@/components/Footer';
 import { ProductCard } from '@/components/ProductCard';
 import { Icon } from '@/components/Icon';
@@ -40,11 +41,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div className="availability-note detail-availability"><Icon name="clock" size={20}/><div><strong>Hiện chưa khả dụng</strong><p>Đây là concept giới thiệu ý tưởng, chưa có chức năng để sử dụng, chơi thử hoặc tải xuống. Ngày ra mắt chưa được công bố.</p></div></div>
             <div className="hero-actions"><a className="button button-primary" href={'/' + category.slug + '/'}>Khám phá {category.name} <Icon name="arrow" size={18}/></a><a className="button button-quiet" href="/#lien-he">Liên hệ <Icon name="external" size={17}/></a></div>
           </div>
-          <div className="brand-stage brand-stage-detail" data-reveal>
-          <span className="brand-stage-orbit" aria-hidden="true"/>
-          <BrandLockup variant="stage" />
-          <span className="brand-stage-index" aria-hidden="true">CONCEPT / {category.name.toUpperCase()}</span>
-        </div>
+          <div className="detail-art detail-art-illustrated" data-reveal>
+            <Artwork src={product.image} alt={product.imageAlt} priority sizes="(max-width: 960px) 90vw, 50vw"/>
+            <div className="visual-label"><BrandLockup variant="overlay" /><span className="visual-order">SẮP RA MẮT</span></div>
+          </div>
         </section>
         <section className="detail-content section" aria-labelledby="concept-heading">
           <div className="detail-story" data-reveal><p className="section-eyebrow"><span>01 /</span> VỀ Ý TƯỞNG</p><h2 id="concept-heading">Đằng sau concept<span className="accent-period">.</span></h2><p className="detail-description">{product.description}</p>
