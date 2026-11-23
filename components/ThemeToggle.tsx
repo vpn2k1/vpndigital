@@ -34,9 +34,15 @@ export function ThemeToggle() {
   }
 
   const label = theme === 'dark' ? 'Chuyển sang giao diện sáng' : theme === 'light' ? 'Chuyển sang giao diện tối' : 'Đổi giao diện sáng hoặc tối';
+
   return <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={label} aria-pressed={theme === 'dark'} title={label}>
-    <svg className="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.2 16.1A8.5 8.5 0 0 1 7.9 3.8a8.5 8.5 0 1 0 12.3 12.3Z" /></svg>
-    <svg className="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
-    <span>Giao diện</span>
+    <svg className="theme-icon-moon" viewBox="0 0 24 24" width="23" height="23" fill="currentColor" stroke="currentColor" strokeWidth="1.45" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+      <path d="M20.3 15.7A8.5 8.5 0 0 1 8.3 3.7a8.5 8.5 0 1 0 12 12Z" />
+    </svg>
+    <svg className="theme-icon-sun" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="4.2" />
+      <path d="M12 1.9v2.2m0 15.8v2.2M4.85 4.85l1.56 1.56m11.18 11.18 1.56 1.56M1.9 12h2.2m15.8 0h2.2M4.85 19.15l1.56-1.56M17.59 6.41l1.56-1.56" />
+    </svg>
+    <span className="sr-only">Đổi giao diện sáng tối</span>
   </button>;
 }

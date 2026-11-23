@@ -55,16 +55,6 @@ svg{flex-shrink:0}img{max-width:100%}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .theme-artwork{display:block;position:relative;width:100%;overflow:hidden;line-height:0}
 .theme-artwork>img{display:block;width:100%;height:auto;object-fit:cover;aspect-ratio:1600/1067}
-.theme-artwork>.theme-artwork-dark{display:none}
-.theme-artwork>.theme-artwork-light{display:block}
-@media(prefers-color-scheme:dark){
- html:not([data-theme]) .theme-artwork>.theme-artwork-dark{display:block}
- html:not([data-theme]) .theme-artwork>.theme-artwork-light{display:none}
-}
-html[data-theme=dark] .theme-artwork>.theme-artwork-dark{display:block}
-html[data-theme=dark] .theme-artwork>.theme-artwork-light{display:none}
-html[data-theme=light] .theme-artwork>.theme-artwork-dark{display:none}
-html[data-theme=light] .theme-artwork>.theme-artwork-light{display:block}
 .ui-lucide-icon{display:inline-block;vertical-align:middle;flex-shrink:0}
 /* Header */
 .site-header{position:sticky;top:0;z-index:70;background:color-mix(in srgb,var(--bg) 95%,transparent);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
@@ -503,21 +493,9 @@ html[data-theme=light] .brand-lockup-footer .brand-icon-dark{display:block}
 }
 
 
-/* v15 — Restore original 3D artwork on every visual surface.
-   Each uploaded WebP has a bright light version and a navy dark version.
-   CSS switches immediately with data-theme, or the system preference. */
+/* V17 — Keep the same WebP artwork regardless of Light/Dark Mode. */
 .theme-artwork { position:relative;display:block;width:100%;overflow:hidden;line-height:0; }
-.theme-artwork > img {width:100%;height:auto;display:block;aspect-ratio:1600/1067;object-fit:cover}
-.theme-artwork > .theme-artwork-dark { display:none; filter:contrast(1.05) saturate(1.08); }
-.theme-artwork > .theme-artwork-light { display:block; filter:contrast(1.14) saturate(1.25) brightness(1.015); }
-@media(prefers-color-scheme:dark) {
-  html:not([data-theme]) .theme-artwork > .theme-artwork-dark { display:block; }
-  html:not([data-theme]) .theme-artwork > .theme-artwork-light { display:none; }
-}
-html[data-theme=dark] .theme-artwork > .theme-artwork-dark { display:block; }
-html[data-theme=dark] .theme-artwork > .theme-artwork-light { display:none; }
-html[data-theme=light] .theme-artwork > .theme-artwork-dark { display:none; }
-html[data-theme=light] .theme-artwork > .theme-artwork-light { display:block; }
+.theme-artwork > img {display:block;width:100%;height:auto;aspect-ratio:1600/1067;object-fit:cover;filter:contrast(1.14) saturate(1.25) brightness(1.015)}
 :root {
  --illustration-edge:#A8CDEB;
  --illustration-shadow:0 16px 45px rgba(6,102,178,.16);
@@ -585,6 +563,51 @@ html[data-theme=dark] {
  .visual-order{font-size:8px}
 }
 
-/* V16 temporary artwork A/B swap: WebP file mapping is inverted in Artwork.tsx.
-   Light theme uses original unsuffixed WebP; dark theme uses -light.webp.
-   The brand icon and typography still follow their normal light/dark theme. */
+/* V17: The user chose the single original unsuffixed WebP used in the previous Light Mode for BOTH themes. */
+
+
+/* Strong, accessible mode switch: prominent solid moon on light, sun on dark.
+   Deliberately separate from image styling; the button changes site theme only. */
+.theme-toggle {
+  display:inline-flex;align-items:center;justify-content:center;
+  width:46px;min-width:46px;height:46px;min-height:46px;
+  padding:0;border-radius:13px;border:1.5px solid #3D92CD;
+  color:#07518C;background:#D8EFFD;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 2px 9px rgba(5,80,140,.13);
+  cursor:pointer;transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+.theme-toggle .theme-icon-moon,.theme-toggle .theme-icon-sun {display:block;width:23px;height:23px;flex:none}
+.theme-toggle .theme-icon-sun {display:none}
+.theme-toggle .theme-icon-moon {display:block}
+.theme-toggle:hover {
+  background:#B7E3FA;color:#043F79;border-color:#0872B8;
+  box-shadow:0 3px 14px rgba(0,105,175,.21);transform:translateY(-1px);
+}
+.theme-toggle:active {transform:translateY(0)}
+html[data-theme=dark] .theme-toggle {
+  color:#8CE9FF;background:#123E5D;border-color:#3E9CC0;
+  box-shadow:inset 0 1px 0 rgba(163,232,255,.1),0 2px 12px rgba(0,0,0,.2);
+}
+html[data-theme=dark] .theme-toggle:hover {
+  color:#B6F5FF;background:#165476;border-color:#63D8EF;
+}
+html[data-theme=dark] .theme-toggle .theme-icon-moon {display:none}
+html[data-theme=dark] .theme-toggle .theme-icon-sun {display:block}
+@media(prefers-color-scheme:dark) {
+  html:not([data-theme]) .theme-toggle {
+    color:#8CE9FF;background:#123E5D;border-color:#3E9CC0;
+    box-shadow:inset 0 1px 0 rgba(163,232,255,.1),0 2px 12px rgba(0,0,0,.2);
+  }
+  html:not([data-theme]) .theme-toggle .theme-icon-moon {display:none}
+  html:not([data-theme]) .theme-toggle .theme-icon-sun {display:block}
+  html:not([data-theme]) .theme-toggle:hover {
+    color:#B6F5FF;background:#165476;border-color:#63D8EF;
+  }
+}
+@media(max-width:400px) {
+  .theme-toggle {width:44px;min-width:44px;height:44px;min-height:44px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .theme-toggle {transition:none}
+  .theme-toggle:hover,.theme-toggle:active {transform:none}
+}

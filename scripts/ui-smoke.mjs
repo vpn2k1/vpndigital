@@ -39,29 +39,29 @@ try {
           const artwork = page.locator('.theme-artwork');
           assert(await artwork.count() > 0, 'missing restored artwork ' + route);
           const first = artwork.first();
-          assert.equal(await first.locator('img').count(), 2, 'missing light/dark variants ' + route);
+          const image = first.locator('img');
+          assert.equal(await image.count(), 1, 'one shared image expected per artwork ' + route);
+          const expected = await image.getAttribute('src');
+          assert(expected && expected.endsWith('.webp') && !expected.endsWith('-light.webp'), 'must use previous light mode image ' + route);
+          const expectedSrcSet = await image.getAttribute('srcset');
+          assert(expectedSrcSet.includes('-640.webp') && !expectedSrcSet.includes('-light-640.webp'), 'responsive images are not from the same source family');
           for (const theme of ['light', 'dark']) {
             await page.evaluate(value => { document.documentElement.dataset.theme = value; }, theme);
-            const visible = first.locator(theme === 'light' ? '.theme-artwork-light' : '.theme-artwork-dark');
-            const invisible = first.locator(theme === 'light' ? '.theme-artwork-dark' : '.theme-artwork-light');
-            assert(await visible.isVisible(), 'theme ' + theme + ' has no visible image ' + route);
-            assert(!await invisible.isVisible(), 'theme ' + theme + ' shows both images ' + route);
-            const source = await visible.getAttribute('src');
-            assert(source && source.endsWith(theme === 'dark' ? '-light.webp' : '.webp'), 'incorrect swapped image filename ' + theme + ': ' + source);
-            if (theme === 'light') assert(!source.endsWith('-light.webp'), 'light theme must use original dark-family WebP during A/B swap');
-            await visible.evaluate(async img => await img.decode());
-            assert((await visible.evaluate(img => img.naturalWidth)) > 0, 'failed to decode ' + theme + ' asset ' + route);
+            assert(await image.isVisible(), 'shared artwork hidden in ' + theme + ' theme ' + route);
+            assert.equal(await image.getAttribute('src'), expected, 'image src changed with theme ' + route);
+            await image.evaluate(async img => await img.decode());
+            assert((await image.evaluate(img => img.naturalWidth)) > 0, 'failed to decode shared asset ' + route);
           }
           await page.evaluate(() => { document.documentElement.removeAttribute('data-theme'); });
         }
         checked++;
         if (['/','/ung-dung/','/phan-mem/','/cong-cu/'].includes(route)) {
           const id = route === '/' ? 'home' : route.split('/')[1];
-          await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '-swapped-light.png', fullPage:true});
+          await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '-single-light.png', fullPage:true});
           if (route === '/') {
             await page.evaluate(() => { document.documentElement.dataset.theme = 'dark'; });
-            await page.locator('.hero-visual .theme-artwork-dark').evaluate(async img => await img.decode());
-            await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '-swapped-dark.png', fullPage:true});
+            await page.locator('.hero-visual .theme-artwork img').evaluate(async img => await img.decode());
+            await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '-single-dark.png', fullPage:true});
             await page.evaluate(() => { document.documentElement.removeAttribute('data-theme'); });
           }
         }
@@ -81,10 +81,15 @@ try {
       const icon = brand.locator(selected === 'light' ? '.brand-icon-light' : '.brand-icon-dark');
       assert(await icon.isVisible(), 'theme-specific icon not visible');
       assert.equal((await brand.locator('.brand-lockup-name').innerText()).trim(), 'VPN Digital');
-      const activeArtwork = page.locator('.hero-visual .theme-artwork').first();
-      const expectedArt = activeArtwork.locator(selected === 'light' ? '.theme-artwork-light' : '.theme-artwork-dark');
-      assert(await expectedArt.isVisible(), 'hero artwork did not switch with theme ' + selected);
-      assert((await expectedArt.getAttribute('src')).endsWith(selected === 'dark' ? '/hero-light.webp' : '/hero.webp'), 'hero A/B swap does not match theme '+selected);
+      const moon = page.locator('.theme-toggle .theme-icon-moon');
+      const sun = page.locator('.theme-toggle .theme-icon-sun');
+      assert(await (selected === 'dark' ? sun : moon).isVisible(), 'theme icon is not visible ' + selected);
+      assert(!await (selected === 'dark' ? moon : sun).isVisible(), 'incorrect theme icon still visible ' + selected);
+      const toggleBox = await page.locator('.theme-toggle').boundingBox();
+      assert(toggleBox && toggleBox.width >= 44 && toggleBox.height >= 44, 'theme button must be easy to tap');
+      const heroImage = page.locator('.hero-visual .theme-artwork img');
+      assert.equal(await heroImage.count(), 1, 'hero must contain exactly one image');
+      assert((await heroImage.getAttribute('src')).endsWith('/hero.webp'), 'shared hero image changed after toggling the theme');
       
     } catch(error) {errors.push(viewport.name + ' theme/menu: ' + error.message)}
     await context.close();
