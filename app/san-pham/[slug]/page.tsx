@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { products, getProduct, getProductsByCategory } from '@/lib/products';
 import { getCategory } from '@/content/catalog';
 import { Header } from '@/components/Header';
+import { BrandLockup } from '@/components/BrandLockup';
 import { Footer } from '@/components/Footer';
 import { ProductCard } from '@/components/ProductCard';
 import { Icon } from '@/components/Icon';
@@ -39,11 +40,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div className="availability-note detail-availability"><Icon name="clock" size={20}/><div><strong>Hiện chưa khả dụng</strong><p>Đây là concept giới thiệu ý tưởng, chưa có chức năng để sử dụng, chơi thử hoặc tải xuống. Ngày ra mắt chưa được công bố.</p></div></div>
             <div className="hero-actions"><a className="button button-primary" href={'/' + category.slug + '/'}>Khám phá {category.name} <Icon name="arrow" size={18}/></a><a className="button button-quiet" href="/#lien-he">Liên hệ <Icon name="external" size={17}/></a></div>
           </div>
-          <div className="brand-stage brand-stage-detail" data-reveal role="img" aria-label="Logo VPN Digital">
-            <span className="brand-stage-orbit" aria-hidden="true"/>
-            <span className="brand-stage-wordmark" aria-hidden="true"/>
-            <span className="brand-stage-index" aria-hidden="true">CONCEPT / {category.name.toUpperCase()}</span>
-          </div>
+          <div className="brand-stage brand-stage-detail" data-reveal>
+          <span className="brand-stage-orbit" aria-hidden="true"/>
+          <BrandLockup variant="stage" />
+          <span className="brand-stage-index" aria-hidden="true">CONCEPT / {category.name.toUpperCase()}</span>
+        </div>
         </section>
         <section className="detail-content section" aria-labelledby="concept-heading">
           <div className="detail-story" data-reveal><p className="section-eyebrow"><span>01 /</span> VỀ Ý TƯỞNG</p><h2 id="concept-heading">Đằng sau concept<span className="accent-period">.</span></h2><p className="detail-description">{product.description}</p>

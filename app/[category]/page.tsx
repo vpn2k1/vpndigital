@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { categories, getCategory } from '@/content/catalog';
 import { getProductsByCategory } from '@/lib/products';
 import { Header } from '@/components/Header';
+import { BrandLockup } from '@/components/BrandLockup';
 import { Footer } from '@/components/Footer';
 import { CategoryNav } from '@/components/CategoryNav';
 import { ProductCard } from '@/components/ProductCard';
@@ -44,11 +45,11 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
             <div className="availability-note"><Icon name="clock" size={20}/><p>Chúng tôi đang chuẩn bị những trải nghiệm thuộc lĩnh vực này. Hiện chưa có bản chơi thử, phần mềm hoạt động hoặc tệp tải xuống.</p></div>
             <div className="hero-actions"><a className="button button-primary" href="#y-tuong">Xem ý tưởng <Icon name="down" size={18}/></a><a className="button button-quiet" href="/#lien-he">Liên hệ <Icon name="external" size={17}/></a></div>
           </div>
-          <div className="brand-stage brand-stage-category" data-reveal role="img" aria-label="Logo VPN Digital">
-            <span className="brand-stage-orbit" aria-hidden="true"/>
-            <span className="brand-stage-wordmark" aria-hidden="true"/>
-            <span className="brand-stage-index" aria-hidden="true">{String(index).padStart(2, '0')} / 03</span>
-          </div>
+          <div className="brand-stage brand-stage-category" data-reveal>
+          <span className="brand-stage-orbit" aria-hidden="true"/>
+          <BrandLockup variant="stage" />
+          <span className="brand-stage-index" aria-hidden="true">{String(index).padStart(2, '0')} / 03</span>
+        </div>
         </section>
         <CategoryNav active={category.slug}/>
         <section className="category-collection section" id="y-tuong" aria-labelledby="collection-heading">

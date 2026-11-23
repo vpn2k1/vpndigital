@@ -35,11 +35,15 @@ try {
         if (route === '/' || route === '/ung-dung/' || route === '/phan-mem/' || route === '/cong-cu/') {
           const stages = page.locator('.brand-stage');
           assert(await stages.count() > 0, 'missing logo stage ' + route);
-          const logo = await stages.first().locator('.brand-stage-wordmark').evaluate(el => getComputedStyle(el).backgroundImage);
-          assert(logo.includes('wordmark-light.svg') || logo.includes('wordmark-dark.svg'), 'logo not visible ' + route);
+          const stageBrand = stages.first().locator('.brand-lockup-stage');
+          assert.equal(await stageBrand.count(), 1, 'brand lockup missing ' + route);
+          assert.equal((await stageBrand.locator('.brand-lockup-name').innerText()).trim(), 'VPN Digital', 'brand text must be HTML ' + route);
+          assert.equal((await stageBrand.locator('.brand-lockup-tagline').innerText()).trim(), 'Ứng dụng · Phần mềm · Công cụ', 'tagline missing ' + route);
+          assert.equal(await stageBrand.locator('.brand-lockup-icon img').count(), 2, 'missing logo icon light/dark variants ' + route);
         }
-        const offBrandImages = await page.locator('main img').count();
-        assert.equal(offBrandImages, 0, 'non-logo raster image found on page ' + route);
+        const offBrandImages = await page.locator('main img').evaluateAll(images =>
+          images.filter(img => !img.getAttribute('src')?.startsWith('/brand/vpn-digital/mark')).map(img => img.getAttribute('src')));
+        assert.deepEqual(offBrandImages, [], 'non-logo illustrations found on page ' + route);
         checked++;
         if (['/','/ung-dung/','/phan-mem/','/cong-cu/'].includes(route)) {
           const id = route === '/' ? 'home' : route.split('/')[1];
@@ -57,8 +61,10 @@ try {
       await page.locator('.theme-toggle').click();
       assert(['light','dark'].includes(await page.locator('html').getAttribute('data-theme')));
       const selected = await page.locator('html').getAttribute('data-theme');
-      const currentLogo = await page.locator('.brand-stage-wordmark').first().evaluate(el => getComputedStyle(el).backgroundImage);
-      assert(currentLogo.includes(selected === 'light' ? 'wordmark-light.svg' : 'wordmark-dark.svg'), 'theme-specific logo not selected');
+      const brand = page.locator('.brand-lockup-stage').first();
+      const icon = brand.locator(selected === 'light' ? '.brand-icon-light' : '.brand-icon-dark');
+      assert(await icon.isVisible(), 'theme-specific icon not visible');
+      assert.equal((await brand.locator('.brand-lockup-name').innerText()).trim(), 'VPN Digital');
       
     } catch(error) {errors.push(viewport.name + ' theme/menu: ' + error.message)}
     await context.close();

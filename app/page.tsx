@@ -1,4 +1,5 @@
 import { Header } from '@/components/Header';
+import { BrandLockup } from '@/components/BrandLockup';
 import { Footer } from '@/components/Footer';
 import { ProductCard } from '@/components/ProductCard';
 import { products } from '@/lib/products';
@@ -37,11 +38,10 @@ export default function Home() {
           </div>
           <div className="hero-meta"><span><strong>03</strong> Lĩnh vực</span><span className="meta-divider"/><span><strong>06</strong> Ý tưởng</span><span className="meta-divider"/><span><strong>∞</strong> Khả năng</span></div>
         </div>
-        <div className="brand-stage brand-stage-home" data-reveal role="img" aria-label="Logo VPN Digital xanh dương và cyan trên nền sáng">
+        <div className="brand-stage brand-stage-home" data-reveal>
           <span className="brand-stage-orbit" aria-hidden="true"/>
-          <span className="brand-stage-wordmark" aria-hidden="true"/>
+          <BrandLockup variant="stage" />
           <span className="brand-stage-index" aria-hidden="true">VPN / DIGITAL</span>
-          <span className="brand-stage-corner" aria-hidden="true">✳</span>
         </div>
       </section>
 

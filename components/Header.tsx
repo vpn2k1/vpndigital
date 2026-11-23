@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { navigation } from '@/content/company';
 import { ThemeToggle } from './ThemeToggle';
 import { Icon } from './Icon';
+import { BrandLockup } from './BrandLockup';
 
 export function Header() {
   const pathname = usePathname();
@@ -28,7 +29,7 @@ export function Header() {
   return <header className="site-header">
     <div className="container header-inner">
       <a className="brand" href="/" aria-label="VPN Digital — Trang chủ" onClick={() => setOpen(false)}>
-        <span className="brand-wordmark" aria-hidden="true" />
+        <BrandLockup variant="header" />
       </a>
       <nav id="main-navigation" className={open ? 'main-nav is-open' : 'main-nav'} aria-label="Điều hướng chính">
         {navigation.map(item => {

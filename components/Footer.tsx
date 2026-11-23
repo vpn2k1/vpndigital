@@ -1,12 +1,13 @@
 import { company } from '@/content/company';
 import { categories } from '@/content/catalog';
 import { Icon } from './Icon';
+import { BrandLockup } from './BrandLockup';
 
 export function Footer() {
   return <footer className="footer">
     <div className="container footer-main">
       <div className="footer-intro">
-        <a className="footer-brand" href="/" aria-label="VPN Digital — Trang chủ"><span className="footer-brand-wordmark" aria-hidden="true" /></a>
+        <a className="footer-brand" href="/" aria-label="VPN Digital — Trang chủ"><BrandLockup variant="footer" /></a>
         <p>Công nghệ Việt. Khát vọng số.</p>
         <span className="footer-status"><span className="status-dot" aria-hidden="true"/> Đang kiến tạo những trải nghiệm mới</span>
       </div>
