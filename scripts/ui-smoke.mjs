@@ -133,7 +133,7 @@ try {
         await page.goto('http://127.0.0.1:4173' + start, { waitUntil:'networkidle' });
         await page.locator('.language-switcher select').selectOption(targetLocale);
         await page.waitForURL(url => url.pathname === expectedPath, { timeout:15000 });
-        assert.equal(await page.locator('html').getAttribute('lang'), targetLocale, 'document language not updated');
+        await page.waitForFunction(value => document.documentElement.lang === value, targetLocale, { timeout:12000 });
         assert.match(await page.locator('main').innerText(), expectedText, 'translation missing');
       } catch (error) { errors.push(viewport.name + ' language switching ' + start + ': ' + error.message); }
     }
