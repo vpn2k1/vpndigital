@@ -30,7 +30,7 @@ jobs:
       - name: Commit rendered brand assets to PR branch
         if: github.event_name == 'push' && github.ref == 'refs/heads/feat/ui-refresh-coming-soon'
         run: |
-          git add public/brand/vpn-digital/ public/favicon.ico public/apple-touch-icon.png public/og-image.png design/og-image.svg
+          git add public/brand/vpn-digital/ public/favicon.ico public/apple-touch-icon.png public/og-image*.png design/og-image*.svg
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

@@ -9,7 +9,7 @@ import '@fontsource/be-vietnam-pro/600.css';
 import '@fontsource/be-vietnam-pro/700.css';
 
 const title = 'VPN Digital | Apps · Software · Tools';
-const description = 'VPN Digital — exploring digital applications, software and tools, by Phuong Nam Digital Technology in Vietnam.';
+const description = 'VPN Digital — exploring digital applications, software and tools, by PhuongNam Digital in Vietnam.';
 export const metadata: Metadata = {
   title, description,
   ...(siteUrl ? { metadataBase: siteUrl } : {}),

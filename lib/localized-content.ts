@@ -8,5 +8,8 @@ export function localizedCategory(locale: Locale, category: (typeof categories)[
   return { ...category, ...getStrings(locale).categoryContent[category.slug] };
 }
 export function localizedProduct(locale: Locale, product: Product): Product {
-  return locale === 'en' && productsEn[product.slug] ? { ...product, ...productsEn[product.slug] } : product;
+  if (locale !== 'en') return product;
+  const english = productsEn[product.slug];
+  if (!english) throw new Error(`Missing English content translation for product ${product.slug}`);
+  return { ...product, ...english };
 }

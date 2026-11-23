@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const description = s.hero.description;
   return {
     title, description, openGraph: { title, description, locale: locale === 'en' ? 'en_US' : 'vi_VN',
-      ...(siteUrl ? { url: homeHref(locale), images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'VPN Digital' }] } : {}) },
+      ...(siteUrl ? { url: homeHref(locale), images: [{ url: '/og-image-' + locale + '.png', width: 1200, height: 630, alt: 'VPN Digital' }] } : {}) },
     ...(siteUrl ? { alternates: { canonical: homeHref(locale), languages: { en: homeHref('en'), vi: homeHref('vi') } } } : {}),
   };
 }

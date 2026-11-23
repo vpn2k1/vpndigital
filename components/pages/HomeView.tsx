@@ -108,7 +108,7 @@ export function HomeView({ locale }: { locale: Locale }) {
       <section className="container contact-section" id="lien-he" aria-labelledby="contact-heading">
         <div className="contact-panel" data-reveal>
           <div className="contact-copy"><p className="section-eyebrow"><span>05 /</span> {s.sections.contact.eyebrow}</p><h2 id="contact-heading">{s.sections.contact.first}<br/><span>{s.sections.contact.accent}</span></h2><p>{s.sections.contact.description}</p>
-            <a className="button button-contact" href={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(company.locality + ', Việt Nam')} target="_blank" rel="noopener noreferrer"><Icon name="pin" size={18}/> {s.common.map} <Icon name="external" size={16}/><span className="sr-only"> {s.common.newTab}</span></a>
+            <a className="button button-contact" href={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(s.footer.location + ', ' + s.footer.vietnam)} target="_blank" rel="noopener noreferrer"><Icon name="pin" size={18}/> {s.common.map} <Icon name="external" size={16}/><span className="sr-only"> {s.common.newTab}</span></a>
           </div>
           <div className="contact-side"><ContactForm/>
             <div className="contact-aside"><span className="contact-aside-label">{s.sections.contact.locationLabel}</span><strong>{s.footer.location}</strong><p>{s.footer.vietnam}</p>
