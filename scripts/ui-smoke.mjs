@@ -33,10 +33,13 @@ try {
         assert.deepEqual(broken, [], 'broken images ' + route);
         if(route === '/') assert(await page.locator('.button-contact svg.ui-lucide-icon').count() > 0, 'MapPin icon SVG missing');
         if (route === '/' || route === '/ung-dung/' || route === '/phan-mem/' || route === '/cong-cu/') {
-          const images = page.locator('.theme-artwork');
-          assert(await images.count() > 0, 'missing paired theme artwork ' + route);
-          assert(await images.first().locator('img').count() === 2, 'missing light/dark pair ' + route);
+          const stages = page.locator('.brand-stage');
+          assert(await stages.count() > 0, 'missing logo stage ' + route);
+          const logo = await stages.first().locator('.brand-stage-wordmark').evaluate(el => getComputedStyle(el).backgroundImage);
+          assert(logo.includes('wordmark-light.svg') || logo.includes('wordmark-dark.svg'), 'logo not visible ' + route);
         }
+        const offBrandImages = await page.locator('main img').count();
+        assert.equal(offBrandImages, 0, 'non-logo raster image found on page ' + route);
         checked++;
         if (['/','/ung-dung/','/phan-mem/','/cong-cu/'].includes(route)) {
           const id = route === '/' ? 'home' : route.split('/')[1];
@@ -53,6 +56,10 @@ try {
       }
       await page.locator('.theme-toggle').click();
       assert(['light','dark'].includes(await page.locator('html').getAttribute('data-theme')));
+      const selected = await page.locator('html').getAttribute('data-theme');
+      const currentLogo = await page.locator('.brand-stage-wordmark').first().evaluate(el => getComputedStyle(el).backgroundImage);
+      assert(currentLogo.includes(selected === 'light' ? 'wordmark-light.svg' : 'wordmark-dark.svg'), 'theme-specific logo not selected');
+      
     } catch(error) {errors.push(viewport.name + ' theme/menu: ' + error.message)}
     await context.close();
   }

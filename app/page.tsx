@@ -1,5 +1,4 @@
 import { Header } from '@/components/Header';
-import { Artwork } from '@/components/Artwork';
 import { Footer } from '@/components/Footer';
 import { ProductCard } from '@/components/ProductCard';
 import { products } from '@/lib/products';
@@ -38,11 +37,11 @@ export default function Home() {
           </div>
           <div className="hero-meta"><span><strong>03</strong> Lĩnh vực</span><span className="meta-divider"/><span><strong>06</strong> Ý tưởng</span><span className="meta-divider"/><span><strong>∞</strong> Khả năng</span></div>
         </div>
-        <div className="hero-visual">
-          <Artwork src="/images/hero.webp" alt="Quả địa cầu công nghệ xanh với vòng quỹ đạo cyan phát sáng" priority sizes="(max-width: 960px) 92vw, 50vw" />
-          <div className="hero-visual-top"><span className="visual-cross">✳</span><span>VPN / DIGITAL</span></div>
-          <div className="hero-visual-caption"><span className="visual-caption-icon"><Icon name="sparkle" size={20}/></span><div><strong>Tinh thần số. Bản sắc riêng.</strong><small>Khám phá những khả năng phía trước.</small></div></div>
-          <span className="hero-visual-index">001 — 003</span>
+        <div className="brand-stage brand-stage-home" data-reveal role="img" aria-label="Logo VPN Digital xanh dương và cyan trên nền sáng">
+          <span className="brand-stage-orbit" aria-hidden="true"/>
+          <span className="brand-stage-wordmark" aria-hidden="true"/>
+          <span className="brand-stage-index" aria-hidden="true">VPN / DIGITAL</span>
+          <span className="brand-stage-corner" aria-hidden="true">✳</span>
         </div>
       </section>
 
@@ -61,9 +60,9 @@ export default function Home() {
         </div>
         <div className="field-grid">
           {categories.map((category, index) => <a href={'/' + category.slug + '/'} className="field-card" key={category.slug} data-reveal>
-            <div className="field-art">
-              <Artwork src={category.image} alt={category.imageAlt} sizes="(max-width: 740px) 90vw, (max-width: 1100px) 44vw, 375px"/>
-              <span className="field-number">/ 0{index + 1}</span>
+            <div className="field-art field-art-type" aria-hidden="true">
+              <span className="field-large-index">{String(index + 1).padStart(2, '0')}</span>
+              <span className="field-grid-marker">VPN / {category.slug.toUpperCase()}</span>
             </div>
             <div className="field-info"><div><span className="field-eyebrow">{category.eyebrow}</span><h3>{category.name}</h3><p>{category.description}</p></div><span className="field-action" aria-hidden="true"><Icon name="arrow" size={21}/></span></div>
           </a>)}
