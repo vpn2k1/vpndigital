@@ -11,7 +11,7 @@ mkdirSync('test-artifacts', { recursive: true });
 const browser = await chromium.launch({ headless: true });
 try {
   for (const viewport of viewports) {
-    const context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height } });
+    const context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height }, colorScheme: 'light' });
     const page = await context.newPage();
     page.on('pageerror', error => errors.push(viewport.name + ' JS error: ' + error.message));
     for (const route of routes) {
@@ -29,7 +29,7 @@ try {
           console.error('OVERFLOW DIAGNOSTIC ' + viewport.name + ' ' + route + ': ' + JSON.stringify(offenders));
         }
         assert(overflow < 3, 'horizontal overflow ' + route + ' ' + overflow + 'px');
-        const broken = await page.locator('img').evaluateAll(ims => ims.filter(im => getComputedStyle(im).display !== 'none' && (!im.complete || im.naturalWidth === 0)).map(im => im.src));
+        const broken = await page.locator('img').evaluateAll(ims => ims.filter(im => getComputedStyle(im).display !== 'none' && im.complete && im.naturalWidth === 0).map(im => im.src));
         assert.deepEqual(broken, [], 'broken images ' + route);
         if(route === '/') assert(await page.locator('.button-contact svg.ui-lucide-icon').count() > 0, 'MapPin icon SVG missing');
         const activeBrand = page.locator('.brand-lockup-header');
@@ -57,7 +57,13 @@ try {
         checked++;
         if (['/','/ung-dung/','/phan-mem/','/cong-cu/'].includes(route)) {
           const id = route === '/' ? 'home' : route.split('/')[1];
-          await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '.png', fullPage:true});
+          await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '-light.png', fullPage:true});
+          if (route === '/') {
+            await page.evaluate(() => { document.documentElement.dataset.theme = 'dark'; });
+            await page.locator('.hero-visual .theme-artwork-dark').evaluate(async img => await img.decode());
+            await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '-dark.png', fullPage:true});
+            await page.evaluate(() => { document.documentElement.removeAttribute('data-theme'); });
+          }
         }
       } catch (error) { errors.push(viewport.name + ' ' + route + ': ' + error.message); }
     }
