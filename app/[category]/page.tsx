@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   return {
     title, description: category.description + ' Các ý tưởng đang trong quá trình phát triển, chưa có bản phát hành.',
     ...(siteUrl ? { alternates: { canonical: '/' + category.slug + '/' } } : {}),
-    openGraph: { title, description: category.description, ...(siteUrl ? { url: '/' + category.slug + '/', images: [{ url: category.image, width: 1600, height: 1067, alt: category.imageAlt }] } : {}) }
+    openGraph: { title, description: category.description, ...(siteUrl ? { url: '/' + category.slug + '/', images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'VPN Digital' }] } : {}) }
   };
 }
 

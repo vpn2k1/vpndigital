@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const product = getProduct(slug);
   if (!product) return {};
   const title = product.name + ' — Sắp ra mắt | VPN Digital';
-  return { title, description: product.summary + ' Đây là ý tưởng, chưa có chức năng sử dụng.', ...(siteUrl ? { alternates: { canonical: '/san-pham/' + slug + '/' } } : {}), openGraph: { title, description: product.summary, ...(siteUrl ? { url: '/san-pham/' + slug + '/', images: [{ url: product.image, width: 1600, height: 1067, alt: product.imageAlt }] } : {}) } };
+  return { title, description: product.summary + ' Đây là ý tưởng, chưa có chức năng sử dụng.', ...(siteUrl ? { alternates: { canonical: '/san-pham/' + slug + '/' } } : {}), openGraph: { title, description: product.summary, ...(siteUrl ? { url: '/san-pham/' + slug + '/', images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'VPN Digital' }] } : {}) } };
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
