@@ -20,7 +20,7 @@ export function ProductView({ locale, product }: { locale: Locale; product: Prod
   return <div className="site-shell" id="top" lang={locale}>
     <a className="skip-link" href="#noi-dung">{s.nav.home}</a><Header/>
     <main id="noi-dung"><div className="container">
-      <nav className="breadcrumb" aria-label={locale === 'en' ? 'Breadcrumb' : 'Đường dẫn'}>
+      <nav className="breadcrumb" aria-label={s.breadcrumb}>
         <a href={homeHref(locale)}>{s.productPage.home}</a><Icon name="arrow" size={13}/>
         <a href={categoryHref(locale, category.slug)}>{categoryName}</a><Icon name="arrow" size={13}/>
         <span aria-current="page">{copy.name}</span>

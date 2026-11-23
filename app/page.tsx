@@ -5,4 +5,4 @@ export const metadata: Metadata = {
   title: 'VPN Digital — English',
   robots: { index: false, follow: true },
 };
-export default function RootGateway() { return <LegacyRedirect to="/en/" label="Continue in English"/>; }
+export default function RootGateway() { return <LegacyRedirect to="/en/" />; }

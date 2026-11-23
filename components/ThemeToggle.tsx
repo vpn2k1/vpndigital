@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { getStrings } from '@/config/strings';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const storageKey = 'phuongnam-theme';
 
@@ -16,6 +18,8 @@ function updateFavicon() {
 }
 
 export function ThemeToggle() {
+  const { locale } = useLanguage();
+  const copy = getStrings(locale).theme;
   const [theme, setTheme] = useState<'light' | 'dark' | null>(null);
   useEffect(() => {
     const sync = () => { setTheme(activeTheme()); updateFavicon(); };
@@ -33,7 +37,7 @@ export function ThemeToggle() {
     updateFavicon();
   }
 
-  const label = theme === 'dark' ? 'Chuyển sang giao diện sáng' : theme === 'light' ? 'Chuyển sang giao diện tối' : 'Đổi giao diện sáng hoặc tối';
+  const label = theme === 'dark' ? copy.switchLight : theme === 'light' ? copy.switchDark : copy.toggle;
 
   return <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={label} aria-pressed={theme === 'dark'} title={label}>
     <svg className="theme-icon-moon" viewBox="0 0 24 24" width="23" height="23" fill="currentColor" stroke="currentColor" strokeWidth="1.45" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
@@ -43,6 +47,6 @@ export function ThemeToggle() {
       <circle cx="12" cy="12" r="4.2" />
       <path d="M12 1.9v2.2m0 15.8v2.2M4.85 4.85l1.56 1.56m11.18 11.18 1.56 1.56M1.9 12h2.2m15.8 0h2.2M4.85 19.15l1.56-1.56M17.59 6.41l1.56-1.56" />
     </svg>
-    <span className="sr-only">Đổi giao diện sáng tối</span>
+    <span className="sr-only">{copy.toggle}</span>
   </button>;
 }

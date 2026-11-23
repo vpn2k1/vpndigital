@@ -22,7 +22,7 @@ export function CategoryView({ locale, slug }: { locale: Locale; slug: (typeof c
     <a className="skip-link" href="#noi-dung">{s.nav.home}</a>
     <Header/>
     <main id="noi-dung"><div className="container">
-      <nav className="breadcrumb" aria-label={locale === 'en' ? 'Breadcrumb' : 'Đường dẫn'}>
+      <nav className="breadcrumb" aria-label={s.breadcrumb}>
         <a href={homeHref(locale)}>{s.nav.home}</a><Icon name="arrow" size={13}/><span aria-current="page">{copy.name}</span>
       </nav>
       <section className="category-hero" aria-labelledby="category-heading">

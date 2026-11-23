@@ -25,7 +25,7 @@ export function Footer() {
       </nav>
       <div className="footer-contact">
         <p className="footer-heading">{s.footer.connect}</p>
-        <p>{company.locality}, {s.footer.vietnam}</p>
+        <p>{s.footer.location}, {s.footer.vietnam}</p>
         <a href={homeHref(locale) + '#lien-he'}>{s.footer.contactInfo} <Icon name="external" size={15}/></a>
         <a href="#top" className="footer-top-link">{s.footer.top} <Icon name="up" size={16}/></a>
       </div>

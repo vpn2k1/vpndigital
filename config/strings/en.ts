@@ -1,13 +1,15 @@
 const en = {
   language: { label: 'Language', english: 'English', vietnamese: 'Tiếng Việt' },
   brand: { tagline: 'Apps · Software · Tools' },
-  nav: { home: 'Home', about: 'About', apps: 'Apps', software: 'Software', tools: 'Tools', contact: 'Contact', connect: 'Get in touch', mobileConnect: 'Connect with us' },
+  theme: { switchLight: 'Switch to light mode', switchDark: 'Switch to dark mode', toggle: 'Toggle light and dark mode' },
+  legacy: { redirecting: 'Redirecting to the updated page…', continue: 'Continue' },
+  nav: { home: 'Home', about: 'About', apps: 'Apps', software: 'Software', tools: 'Tools', contact: 'Contact', connect: 'Get in touch', mobileConnect: 'Connect with us', mainNavigation: 'Main navigation', menuOpen: 'Open menu', menuClose: 'Close menu' },
   common: { comingSoon: 'COMING SOON', developing: 'IN DEVELOPMENT', explore: 'Explore', contact: 'Contact', concept: 'CONCEPT', unavailable: 'Not available yet', field: 'FIELD', readMore: 'View concept', backHome: 'Back to homepage', map: 'View on Google Maps', newTab: '(opens in a new tab)' },
   hero: {
     eyebrow: 'DIGITAL PRODUCT STUDIO', location: '/ VIETNAM', status: 'Something new is taking shape',
     first: 'Fresh ideas.', accent: 'Better digital', last: 'experiences.',
     description: 'At VPN Digital, we create thoughtful digital experiences across apps, software, and tools for makers and curious minds.',
-    explore: 'Explore our concepts', about: 'About us', fields: 'Fields', ideas: 'Ideas', possibilities: 'Possibilities', artwork: 'Digital globe with a glowing cyan orbit',
+    explore: 'Explore our concepts', about: 'About us', fields: 'Fields', ideas: 'Ideas', possibilities: 'Possibilities', artwork: 'Digital globe with a glowing cyan orbit', visualLabel: 'VPN DIGITAL / VIETNAM',
   },
   ticker: { status: 'IN DEVELOPMENT', apps: 'Digital applications', software: 'Software', tools: 'Creative tools', explore: 'Explore' },
   sections: {
@@ -23,6 +25,7 @@ const en = {
     { title: 'Keep improving', text: 'Experiment, learn, and iterate as products take shape.' },
   ],
   projectNotice: 'All products shown here are coming-soon concepts. No release date has been announced.',
+  breadcrumb: 'Breadcrumb',
   company: {
     displayName: 'PhuongNam Digital',
     attribution: 'A project by PhuongNam Digital.',
@@ -45,7 +48,7 @@ const en = {
     facts: 'CONCEPT DETAILS', unavailable: 'Not released yet', category: 'Category', platform: 'Planned platform', statusLabel: 'Status',
     relatedEyebrow: 'IN THE SAME FIELD', relatedTitle: 'Keep exploring.', all: 'All', teaser: 'View coming-soon concept',
   },
-  footer: { mission: 'Vietnamese technology. Digital ambition.', status: 'Building new experiences', explore: 'EXPLORE', about: 'About VPN Digital', connect: 'CONNECT', contactInfo: 'Contact information', top: 'Back to top', vietnam: 'Vietnam' },
+  footer: { mission: 'Vietnamese technology. Digital ambition.', status: 'Building new experiences', explore: 'EXPLORE', about: 'About VPN Digital', connect: 'CONNECT', contactInfo: 'Contact information', top: 'Back to top', vietnam: 'Vietnam', location: 'Me So, Hung Yen' },
   form: {
     title: 'Leave your details', description: 'This contact form is currently a preview.',
     name: 'Full name', namePlaceholder: 'Enter your full name', phone: 'Phone number', phonePlaceholder: 'Enter your phone number',

@@ -5,17 +5,17 @@ type TranslatedProduct = Pick<Product, 'name' | 'subtitle' | 'summary' | 'descri
 /** The Vietnamese product catalog lives in content/products.json. */
 export const productsEn: Record<string, TranslatedProduct> = {
   'lang-viet-puzzle': {
-    name: 'Làng Việt Puzzle', subtitle: 'A little village with plenty to discover.',
+    name: 'Vietnamese Village Puzzle', subtitle: 'A little village with plenty to discover.',
     summary: 'A relaxed puzzle game concept about arranging pieces to create a miniature Vietnamese village.',
-    description: 'Làng Việt Puzzle is a demonstration concept for a gentle puzzle experience. Players may eventually connect paths, gardens, and rooftops to complete village scenes. Illustrations are concept art, not screenshots of working gameplay.',
+    description: 'Vietnamese Village Puzzle is a demonstration concept for a gentle puzzle experience. Players may eventually connect paths, gardens, and rooftops to complete village scenes. Illustrations are concept art, not screenshots of working gameplay.',
     features: ['Arrange landscape tiles into a village', 'Short, relaxing puzzle levels', 'Visuals inspired by Vietnamese rural life'],
     platform: 'Mobile · concept only', tags: ['Puzzle', 'Relaxing'],
     imageAlt: 'Glowing blue game controller, illustrative concept art',
   },
   'hanh-trinh-phuong-nam': {
-    name: 'Hành Trình Phương Nam', subtitle: 'Every island invites a new discovery.',
+    name: 'Southern Journey', subtitle: 'Every island invites a new discovery.',
     summary: 'An exploration game concept with floating islands and environmental challenges.',
-    description: 'Hành Trình Phương Nam is an illustrative exploration game idea. The imagined world features floating islands connected by portals. All descriptions and mechanics are early-stage concepts, not shipped product features.',
+    description: 'Southern Journey is an illustrative exploration game idea. The imagined world features floating islands connected by portals. All descriptions and mechanics are early-stage concepts, not shipped product features.',
     features: ['Explore floating island environments', 'Collect fragments to unlock portals', 'Combine exploration with environmental puzzles'],
     platform: 'PC / Mobile · concept only', tags: ['Exploration', 'Adventure'],
     imageAlt: 'A blue digital globe with a glowing cyan orbit, illustrative concept art',

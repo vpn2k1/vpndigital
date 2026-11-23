@@ -41,7 +41,7 @@ export function Header() {
       <a className="brand" href={homeHref(locale)} aria-label={'VPN Digital — ' + s.nav.home} onClick={() => setOpen(false)}>
         <BrandLockup variant="header" locale={locale} />
       </a>
-      <nav id="main-navigation" className={open ? 'main-nav is-open' : 'main-nav'} aria-label={locale === 'en' ? 'Main navigation' : 'Điều hướng chính'}>
+      <nav id="main-navigation" className={open ? 'main-nav is-open' : 'main-nav'} aria-label={s.nav.mainNavigation}>
         {navigation.map(item => {
           const active = !item.href.includes('#') && pathname.replace(/\/$/, '') === item.href.replace(/\/$/, '');
           return <a key={item.href} href={item.href} aria-current={active ? 'page' : undefined} onClick={() => setOpen(false)}>{item.label}</a>;
@@ -52,7 +52,7 @@ export function Header() {
         <LanguageSwitcher />
         <ThemeToggle />
         <a className="header-cta" href={homeHref(locale) + '#lien-he'}>{s.nav.connect} <Icon name="external" size={16} /></a>
-        <button className="menu-toggle" ref={toggleRef} type="button" aria-expanded={open} aria-controls="main-navigation" aria-label={open ? 'Close menu' : 'Mở menu'} onClick={() => setOpen(value => !value)}>
+        <button className="menu-toggle" ref={toggleRef} type="button" aria-expanded={open} aria-controls="main-navigation" aria-label={open ? s.nav.menuClose : s.nav.menuOpen} onClick={() => setOpen(value => !value)}>
           <span/><span/>
         </button>
       </div>

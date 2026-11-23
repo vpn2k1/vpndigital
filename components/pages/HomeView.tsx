@@ -43,7 +43,7 @@ export function HomeView({ locale }: { locale: Locale }) {
         </div>
         <div className="hero-visual hero-visual-illustrated" data-reveal>
           <Artwork src="/images/hero.webp" alt={s.hero.artwork} priority sizes="(max-width: 960px) 92vw, 50vw"/>
-          <div className="hero-visual-top"><span className="visual-cross" aria-hidden="true">VPN</span><span>VPN DIGITAL / VIETNAM</span></div>
+          <div className="hero-visual-top"><span className="visual-cross" aria-hidden="true">VPN</span><span>{s.hero.visualLabel}</span></div>
           <div className="hero-visual-caption"><BrandLockup variant="overlay" locale={locale}/></div>
         </div>
       </section>
@@ -111,7 +111,7 @@ export function HomeView({ locale }: { locale: Locale }) {
             <a className="button button-contact" href={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(company.locality + ', Việt Nam')} target="_blank" rel="noopener noreferrer"><Icon name="pin" size={18}/> {s.common.map} <Icon name="external" size={16}/><span className="sr-only"> {s.common.newTab}</span></a>
           </div>
           <div className="contact-side"><ContactForm/>
-            <div className="contact-aside"><span className="contact-aside-label">{s.sections.contact.locationLabel}</span><strong>{company.locality}</strong><p>{company.locality}</p>
+            <div className="contact-aside"><span className="contact-aside-label">{s.sections.contact.locationLabel}</span><strong>{s.footer.location}</strong><p>{s.footer.vietnam}</p>
               {company.email && <a href={'mailto:' + company.email} className="contact-method"><Icon name="mail" size={18}/>{company.email}</a>}
               {company.phone && <a href={'tel:' + company.phone.replace(/[^+\d]/g, '')} className="contact-method"><Icon name="phone" size={18}/>{company.phone}</a>}
             </div>
