@@ -87,14 +87,30 @@ try {
           const requests = [];
           const watch = request => { if (!['GET','HEAD'].includes(request.method())) requests.push(request.method() + ' ' + request.url()); };
           page.on('request', watch);
+          // Invalid input must show localized field errors, not the success toast.
+          await form.locator('button[type="submit"]').click();
+          assert.equal(await form.locator('.contact-field-error').count(), 3, 'empty form requires three field errors');
+          assert.equal(await page.locator('.contact-toast').count(), 0, 'toast must not appear for invalid fields');
           await form.locator('input[name="name"]').fill('Example Name');
+          await form.locator('input[name="phone"]').fill('123');
+          await form.locator('input[name="email"]').fill('not-an-email');
+          await form.locator('button[type="submit"]').click();
+          assert((await form.locator('.contact-field-error').count()) >= 2, 'invalid phone/email must be rejected');
+          assert.equal(await page.locator('.contact-toast').count(), 0, 'toast must not show for invalid data');
+          // Valid fields show a success-style preview toast but remain unsent.
           await form.locator('input[name="phone"]').fill('0912345678');
           await form.locator('input[name="email"]').fill('test@example.com');
           await form.locator('button[type="submit"]').click();
-          for (const field of ['name','phone','email']) assert.equal(await form.locator('input[name="' + field + '"]').inputValue(), '', 'form did not clear ' + field);
-          const statusText = await form.locator('[role="status"]').innerText();
-          assert.match(statusText, route.locale === 'en' ? /no information was sent/i : /chưa gửi dữ liệu/i, 'incorrect localized form status');
-          assert.deepEqual(requests, [], 'demo form made a network submission');
+          const toast = page.locator('.contact-toast');
+          await toast.waitFor({ state:'visible', timeout:6000 });
+          const successText = await toast.innerText();
+          assert.match(successText, route.locale === 'en' ? /submitted successfully/i : /gửi thông tin thành công/i);
+          assert.match(successText, route.locale === 'en' ? /demo only/i : /bản demo/i, 'must disclose simulated submission');
+          assert.equal(await form.locator('.contact-field-error').count(), 0, 'validation errors did not clear');
+          assert.equal(await form.locator('input[name="name"]').inputValue(), 'Example Name', 'valid submit must not silently clear fields');
+          assert.deepEqual(requests, [], 'preview form must never send POST/PUT or other requests');
+          await toast.locator('.contact-toast-dismiss').click();
+          assert.equal(await page.locator('.contact-toast').count(), 0, 'toast close action failed');
           page.off('request', watch);
           assert.equal(new URL(page.url()).pathname, route.path);
         }

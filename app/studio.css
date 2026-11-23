@@ -707,3 +707,50 @@ html[data-theme=dark] .theme-toggle .theme-icon-sun {display:block}
  .language-switcher:after{right:8px}
  .header-actions{gap:5px}
 }
+
+
+/* V20 — RHF + Zod field feedback and successful preview toast. */
+.contact-field input[aria-invalid='true'] {
+  border-color:#F38F91;
+  background:#FFF9FA;
+  box-shadow:0 0 0 2px rgba(249,122,137,.2);
+}
+.contact-field-error {
+  margin:0;
+  color:#FFC8CA;
+  font-size:11px;
+  line-height:1.55;
+  font-weight:600;
+}
+.contact-form-button:disabled {cursor:wait;opacity:.75}
+.contact-toast {
+  position:fixed;
+  bottom:clamp(18px,4vw,36px);
+  right:clamp(16px,4vw,38px);
+  z-index:150;
+  width:min(420px,calc(100vw - 32px));
+  min-height:82px;
+  display:flex;align-items:flex-start;gap:13px;
+  padding:16px 15px;
+  background:#F0FFFB;color:#0D4D40;
+  border:1px solid #61C5AE;
+  border-left:5px solid #119F7F;
+  border-radius:14px;
+  box-shadow:0 14px 46px rgba(0,20,40,.22);
+}
+.contact-toast-icon {
+  color:#059C75;
+  flex:none;display:flex;align-items:center;justify-content:center;
+  width:30px;height:30px;
+}
+.contact-toast-copy {min-width:0;flex:1;line-height:1.45}
+.contact-toast-copy strong {display:block;color:#0A604B;font-size:13px;font-weight:700}
+.contact-toast-copy small {display:block;color:#3E7169;font-size:11px;margin-top:4px}
+.contact-toast-dismiss {
+  width:32px;height:32px;flex:none;display:grid;place-items:center;
+  border:0;border-radius:8px;background:transparent;color:#356D62;
+}
+.contact-toast-dismiss:hover {background:#D6F4EB;color:#063D30}
+@media(max-width:740px) {
+  .contact-toast {bottom:16px;right:16px;padding:14px 12px}
+}
