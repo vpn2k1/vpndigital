@@ -3,7 +3,7 @@ import { readFileSync, mkdirSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
 const products = JSON.parse(readFileSync(new URL('../content/products.json', import.meta.url)));
-const routes = ['/', '/game/', '/phan-mem/', '/cong-cu/', ...products.map(p => '/san-pham/' + p.slug + '/')];
+const routes = ['/', '/ung-dung/', '/phan-mem/', '/cong-cu/', '/game/', ...products.map(p => '/san-pham/' + p.slug + '/')];
 const viewports = [{name:'desktop',width:1440,height:900},{name:'mobile',width:390,height:844}];
 const errors = [];
 let checked = 0;
@@ -19,7 +19,7 @@ try {
         const response = await page.goto('http://127.0.0.1:4173' + route, { waitUntil:'networkidle' });
         assert(response?.ok(), 'HTTP fail ' + route);
         assert.equal(await page.locator('main h1').count(), 1, 'H1 count ' + route);
-        if (route !== '/') assert(await page.getByText('SẮP RA MẮT', {exact:true}).count() > 0, 'coming soon label ' + route);
+        if (route !== '/' && route !== '/game/') assert(await page.getByText('SẮP RA MẮT', {exact:true}).count() > 0, 'coming soon label ' + route);
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
         if (overflow >= 3) {
           const offenders = await page.evaluate(() => Array.from(document.querySelectorAll('body *')).map(el => {
@@ -31,14 +31,14 @@ try {
         assert(overflow < 3, 'horizontal overflow ' + route + ' ' + overflow + 'px');
         const broken = await page.locator('img').evaluateAll(ims => ims.filter(im => getComputedStyle(im).display !== 'none' && (!im.complete || im.naturalWidth === 0)).map(im => im.src));
         assert.deepEqual(broken, [], 'broken images ' + route);
-        if(route === '/') assert(await page.locator('.contact-map-link svg.ui-lucide-icon').count() > 0, 'MapPin icon SVG missing');
-        if (route === '/' || route === '/game/' || route === '/phan-mem/' || route === '/cong-cu/') {
+        if(route === '/') assert(await page.locator('.button-contact svg.ui-lucide-icon').count() > 0, 'MapPin icon SVG missing');
+        if (route === '/' || route === '/ung-dung/' || route === '/phan-mem/' || route === '/cong-cu/') {
           const images = page.locator('.theme-artwork');
           assert(await images.count() > 0, 'missing paired theme artwork ' + route);
           assert(await images.first().locator('img').count() === 2, 'missing light/dark pair ' + route);
         }
         checked++;
-        if (['/','/game/','/phan-mem/','/cong-cu/'].includes(route)) {
+        if (['/','/ung-dung/','/phan-mem/','/cong-cu/'].includes(route)) {
           const id = route === '/' ? 'home' : route.split('/')[1];
           await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '.png', fullPage:true});
         }
