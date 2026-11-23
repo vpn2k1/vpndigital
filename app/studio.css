@@ -611,3 +611,65 @@ html[data-theme=dark] .theme-toggle .theme-icon-sun {display:block}
   .theme-toggle {transition:none}
   .theme-toggle:hover,.theme-toggle:active {transform:none}
 }
+
+
+/* V18: Client-only contact form preview in a strongly contrasted dark surface. */
+.contact-panel {
+  background:#071D35;
+  grid-template-columns:minmax(0,1fr) minmax(0,.94fr);
+  gap:clamp(32px,5vw,70px);
+  align-items:start;
+}
+.contact-copy{position:relative;z-index:1;min-width:0}
+.contact-side{position:relative;z-index:1;min-width:0;display:grid;gap:26px}
+.contact-form {
+  display:grid;gap:14px;
+  padding:clamp(22px,3vw,32px);border-radius:18px;
+  background:#102D49;color:#EFF9FF;
+  border:1px solid #365D79;
+  box-shadow:0 13px 32px rgba(0,7,25,.16);
+}
+.contact-form-title{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-.025em;color:#F4FBFF}
+.contact-form-description{font-size:11px;line-height:1.8;color:#BDDCEC;margin-top:-8px}
+.contact-field{display:flex;flex-direction:column;gap:7px}
+.contact-field label{font-size:11px;font-weight:700;color:#E0F3FF}
+.contact-field input {
+  display:block;width:100%;min-width:0;min-height:48px;
+  font:500 13px/1.45 'Be Vietnam Pro',Arial,sans-serif;
+  padding:12px 14px;border:1.5px solid #9EC0D4;border-radius:9px;
+  background:#F6FAFF;color:#082846;outline:none;
+  box-shadow:inset 0 1px 2px rgba(0,27,60,.05);
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+.contact-field input::placeholder{color:#708DA5;opacity:1}
+.contact-field input:focus{border-color:#27C7EA;box-shadow:0 0 0 3px rgba(39,199,234,.23)}
+.contact-field input:focus-visible{outline:2px solid #64E2F5;outline-offset:2px}
+.contact-form-button{
+  margin-top:5px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  width:100%;min-height:50px;padding:13px 17px;
+  background:#31CBE5;border:1px solid #31CBE5;border-radius:10px;color:#05304D;
+  font-size:12px;font-weight:700;line-height:1.4;
+  transition:background-color .2s ease,transform .2s ease;
+}
+.contact-form-button:hover{background:#78ECF8;transform:translateY(-1px)}
+.contact-form-button:active{transform:none}
+.contact-form-hint{font-size:10px;line-height:1.75;color:#B9D5E7}
+.contact-form-status{font-size:11px;line-height:1.7;color:#9EF1E8;font-weight:600}
+.contact-form-status:empty{display:none}
+.contact-side .contact-aside{
+  align-self:start;border-left:0;border-top:1px solid #426C86;padding:21px 5px 0;
+}
+.contact-side .contact-aside strong{font-size:19px;margin-block:10px 8px}
+@media(max-width:960px){
+  .contact-panel{grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:25px}
+  .contact-form{padding:22px}
+}
+@media(max-width:740px){
+  .contact-panel{grid-template-columns:1fr;gap:27px}
+  .contact-form{padding:22px}
+  .contact-side .contact-aside{border-top:1px solid #426C86;padding:20px 1px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .contact-field input,.contact-form-button{transition:none}
+  .contact-form-button:hover{transform:none}
+}

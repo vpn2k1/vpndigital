@@ -1,4 +1,5 @@
 import { Header } from '@/components/Header';
+import { ContactForm } from '@/components/ContactForm';
 import { BrandLockup } from '@/components/BrandLockup';
 import { Artwork } from '@/components/Artwork';
 import { Footer } from '@/components/Footer';
@@ -106,9 +107,14 @@ export default function Home() {
           <div className="contact-copy"><p className="section-eyebrow"><span>05 /</span> KẾT NỐI</p><h2 id="contact-heading">Một cuộc trò chuyện.<br/><span>Nhiều khả năng mới.</span></h2><p>Quan tâm đến lĩnh vực chúng tôi đang xây dựng? Hãy bắt đầu bằng một kết nối.</p>
             <a className="button button-contact" href={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(company.address)} target="_blank" rel="noopener noreferrer"><Icon name="pin" size={18}/> Xem vị trí trên bản đồ <Icon name="external" size={16}/><span className="sr-only"> (mở tab mới)</span></a>
           </div>
-          <div className="contact-aside"><span className="contact-aside-label">CHÚNG TÔI Ở ĐÂY</span><strong>{company.locality}</strong><p>{company.address}</p>
-            {company.email && <a href={'mailto:' + company.email} className="contact-method"><Icon name="mail" size={18}/>{company.email}</a>}
-            {company.phone && <a href={'tel:' + company.phone.replace(/[^+\d]/g, '')} className="contact-method"><Icon name="phone" size={18}/>{company.phone}</a>}
+          <div className="contact-side">
+            <ContactForm />
+            <div className="contact-aside">
+              <span className="contact-aside-label">CHÚNG TÔI Ở ĐÂY</span>
+              <strong>{company.locality}</strong><p>{company.address}</p>
+              {company.email && <a href={'mailto:' + company.email} className="contact-method"><Icon name="mail" size={18}/>{company.email}</a>}
+              {company.phone && <a href={'tel:' + company.phone.replace(/[^+\d]/g, '')} className="contact-method"><Icon name="phone" size={18}/>{company.phone}</a>}
+            </div>
           </div>
         </div>
       </section>

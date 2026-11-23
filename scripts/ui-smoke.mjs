@@ -32,6 +32,14 @@ try {
         const broken = await page.locator('img').evaluateAll(ims => ims.filter(im => getComputedStyle(im).display !== 'none' && im.complete && im.naturalWidth === 0).map(im => im.src));
         assert.deepEqual(broken, [], 'broken images ' + route);
         if(route === '/') assert(await page.locator('.button-contact svg.ui-lucide-icon').count() > 0, 'MapPin icon SVG missing');
+        if (route === '/') {
+          const form = page.locator('.contact-form');
+          assert.equal(await form.count(), 1, 'contact form missing');
+          assert.equal(await form.locator('input').count(), 3, 'expected name phone email fields');
+          assert.equal(await form.locator('input[name="name"]').getAttribute('type'), 'text');
+          assert.equal(await form.locator('input[name="phone"]').getAttribute('type'), 'tel');
+          assert.equal(await form.locator('input[name="email"]').getAttribute('type'), 'email');
+        }
         const activeBrand = page.locator('.brand-lockup-header');
         assert.equal((await activeBrand.locator('.brand-lockup-name').innerText()).trim(), 'VPN Digital', 'header text branding ' + route);
         assert.equal((await activeBrand.locator('.brand-lockup-tagline').innerText()).trim(), 'Ứng dụng · Phần mềm · Công cụ', 'brand tagline ' + route);
@@ -64,6 +72,23 @@ try {
             await page.screenshot({path:'test-artifacts/' + viewport.name + '-' + id + '-single-dark.png', fullPage:true});
             await page.evaluate(() => { document.documentElement.removeAttribute('data-theme'); });
           }
+        }
+        if (route === '/') {
+          const form = page.locator('.contact-form');
+          const submits = [];
+          const watch = request => { if (!['GET','HEAD'].includes(request.method())) submits.push(request.method() + ' ' + request.url()); };
+          page.on('request', watch);
+          await form.locator('input[name="name"]').fill('Nguyễn Văn A');
+          await form.locator('input[name="phone"]').fill('0912345678');
+          await form.locator('input[name="email"]').fill('nguyenvana@example.com');
+          await form.locator('button[type="submit"]').click();
+          for (const field of ['name','phone','email']) {
+            assert.equal(await form.locator('input[name="' + field + '"]').inputValue(), '', 'field not cleared: ' + field);
+          }
+          assert.match(await form.locator('[role="status"]').innerText(), /chưa gửi dữ liệu/i, 'missing no-send confirmation');
+          assert.deepEqual(submits, [], 'form made an unexpected network submission');
+          assert.equal(new URL(page.url()).pathname, '/', 'form unexpectedly navigated');
+          page.off('request', watch);
         }
       } catch (error) { errors.push(viewport.name + ' ' + route + ': ' + error.message); }
     }
