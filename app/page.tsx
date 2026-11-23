@@ -5,69 +5,113 @@ import { ProductCard } from '@/components/ProductCard';
 import { products } from '@/lib/products';
 import { categories } from '@/content/catalog';
 import { Icon } from '@/components/Icon';
-import { company, sitePresentation } from '@/content/company';
+import { company } from '@/content/company';
 import { siteUrl } from '@/lib/seo';
+
 const organization = {
   '@context': 'https://schema.org', '@type': 'Organization', name: company.name,
   legalName: company.legalName, alternateName: company.shortName, taxID: company.taxId,
   ...(siteUrl ? { url: siteUrl.href } : {}),
   address: { '@type': 'PostalAddress', streetAddress: 'thôn Phú Nhạn, Xã Mễ Sở', addressRegion: 'Hưng Yên', addressCountry: 'VN' },
 };
+const approaches = [
+  { no: '01', title: 'Từ ý tưởng', text: 'Mỗi trải nghiệm bắt đầu từ một câu hỏi, một nhu cầu hoặc một cách nhìn mới.' },
+  { no: '02', title: 'Đến trải nghiệm', text: 'Ưu tiên sự rõ ràng, cảm xúc và tính hữu ích trong từng tương tác.' },
+  { no: '03', title: 'Và không ngừng hoàn thiện', text: 'Thử nghiệm, học hỏi và phát triển sản phẩm theo từng bước.' },
+];
+
 export default function Home() {
-  return <div id="top">
+  const featured = products.filter(product => product.featured).slice(0, 3);
+  return <div id="top" className="site-shell">
     <a href="#noi-dung" className="skip-link">Đến nội dung chính</a>
     <Header />
     <main id="noi-dung">
-      <section className="hero container" aria-labelledby="hero-heading">
+      <section className="container home-hero" aria-labelledby="hero-heading">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> CÔNG NGHỆ SỐ PHƯƠNG NAM</p>
-          <h1 id="hero-heading">Công nghệ Việt.<br /><span>Khát vọng số.</span></h1>
-          <p className="hero-description">Phát triển trò chơi điện tử, phần mềm<br className="desktop-break" /> và công cụ phần mềm trò chơi điện tử.</p>
-          <a className="button" href="#gioi-thieu">Tìm hiểu về chúng tôi <Icon name="arrow" size={21} /></a>
-          <div className="home-launch-note"><span className="launch-dot" aria-hidden="true" /> Game, phần mềm & công cụ — sắp ra mắt</div><div className="hero-note"><Icon name="sparkle" size={14} /><span>Từ Hưng Yên, Việt Nam</span><span className="note-line" /></div>
+          <p className="eyebrow"><span className="eyebrow-line"/> DIGITAL PRODUCT STUDIO <span className="eyebrow-muted">/ VIỆT NAM</span></p>
+          <span className="hero-status"><span className="status-dot" aria-hidden="true"/> Những điều mới đang được tạo nên</span>
+          <h1 id="hero-heading">Ý tưởng mới.<br/><span>Trải nghiệm</span><br/>khác biệt<span className="accent-period">.</span></h1>
+          <p className="hero-description">Tại VPN Digital, chúng tôi hướng tới những trải nghiệm số chỉn chu trong game, phần mềm và công cụ dành cho người sáng tạo.</p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#du-an">Khám phá dự án <Icon name="arrow" size={19}/></a>
+            <a className="button button-quiet" href="#gioi-thieu">Về chúng tôi <Icon name="down" size={17}/></a>
+          </div>
+          <div className="hero-meta"><span><strong>03</strong> Lĩnh vực</span><span className="meta-divider"/><span><strong>06</strong> Ý tưởng</span><span className="meta-divider"/><span><strong>∞</strong> Khả năng</span></div>
         </div>
-        <div className="hero-art hero-art-illustrated" data-reveal><Artwork src="/images/hero.webp" alt="Minh họa quả địa cầu kỹ thuật số xanh cyan, quỹ đạo ánh sáng và lưới công nghệ" priority/><span className="art-caption">BẢN SẮC VIỆT · TINH THẦN SỐ</span></div>
-      </section>
-      {sitePresentation.showBrandShowcase && <section className="brand-banner-section container" aria-label="Nhận diện thương hiệu VPN Digital" data-reveal>
-        <span className="eyebrow">NHẬN DIỆN PHƯƠNG NAM</span>
-        <div className="brand-theme-banner" role="img" aria-label="Logo VPN Digital với chữ V, vòng quỹ đạo và ngôi sao" />
-      </section>}
-      <div className="launch-home-banner container"><div><strong>Sản phẩm đang được phát triển</strong><p>Khám phá những ý tưởng Game, Phần mềm và Công cụ của chúng tôi. Chức năng chưa khả dụng và chưa có ngày phát hành chính thức.</p></div><a className="launch-link" href="#linh-vuc">Khám phá các lĩnh vực <Icon name="external" size={17} /></a></div>
-      <section id="gioi-thieu" className="company-profile container" data-reveal aria-labelledby="about-heading">
-        <div className="profile-intro">
-          <p className="eyebrow">VỀ DOANH NGHIỆP</p>
-          <h2 id="about-heading">PhuongNam<br />Digital<span className="period">.</span></h2>
-          <p className="profile-lead">Từ Mễ Sở, Hưng Yên, PhuongNam Digital tập trung vào lĩnh vực trò chơi điện tử: phát triển game, phần mềm trò chơi và các công cụ phần mềm liên quan.</p>
-          <div className="profile-location"><span aria-hidden="true" /> HƯNG YÊN · VIỆT NAM</div>
-        </div>
-        <div className="profile-card">
-          <div className="profile-card-top"><span>HỒ SƠ DOANH NGHIỆP</span><span>PHƯƠNG NAM / VIỆT NAM</span></div>
-          <h3>{company.legalName}</h3>
-          <p className="profile-note">Thông tin doanh nghiệp do công ty cung cấp.</p>
-          <dl className="profile-facts">
-            <div><dt>Tên quốc tế</dt><dd>{company.internationalName}</dd></div>
-            <div><dt>Tên viết tắt</dt><dd>{company.shortName}</dd></div>
-            <div><dt>Mã số thuế</dt><dd>{company.taxId}</dd></div>
-            <div><dt>Người đại diện</dt><dd>{company.representative}</dd></div>
-            <div className="profile-fact-wide"><dt>Địa chỉ doanh nghiệp</dt><dd>{company.address}</dd></div>
-          </dl>
-          <div className="profile-industry"><span>NGÀNH NGHỀ CHÍNH</span><p>{company.mainIndustry}</p></div>
+        <div className="hero-visual">
+          <Artwork src="/images/hero.webp" alt="Quả địa cầu công nghệ xanh với vòng quỹ đạo cyan phát sáng" priority sizes="(max-width: 960px) 92vw, 50vw" />
+          <div className="hero-visual-top"><span className="visual-cross">✳</span><span>VPN / DIGITAL</span></div>
+          <div className="hero-visual-caption"><span className="visual-caption-icon"><Icon name="sparkle" size={20}/></span><div><strong>Tinh thần số. Bản sắc riêng.</strong><small>Khám phá những khả năng phía trước.</small></div></div>
+          <span className="hero-visual-index">001 — 003</span>
         </div>
       </section>
-      <section id="linh-vuc" className="fields container" aria-labelledby="fields-heading">
-        <div className="section-kicker"><span className="eyebrow" id="fields-heading">BA MẢNG HOẠT ĐỘNG</span><span className="kicker-rule" /></div>
-        <p className="fields-intro">Khám phá các nhóm nội dung về game, phần mềm và công cụ phát triển. Các trang danh mục đang giới thiệu ý tưởng và sẽ mở chức năng khi sẵn sàng.</p>
-        <div className="category-cards">{categories.map(category => <a className="category-card" data-reveal key={category.slug} href={`/${category.slug}/`}><Artwork src={category.image} alt={category.imageAlt} sizes="(max-width: 760px) calc(100vw - 48px), 370px"/><div><h2>{category.name}</h2><p>{category.description}</p><span className="product-read">Sắp ra mắt <Icon name="arrow" size={18}/></span></div></a>)}</div>
-      </section>
-      <section className="featured container"><div className="section-heading-row" data-reveal><div><p className="eyebrow">KHÁM PHÁ SẢN PHẨM</p><h2>Một vài ý tưởng để bắt đầu.</h2></div></div><p className="demo-notice"><span className="demo-badge">DEMO</span> Các ý tưởng dưới đây đang phát triển; chức năng và bản tải xuống chưa khả dụng.</p><div className="product-grid">{products.filter(product => product.featured).slice(0, 3).map(product => <ProductCard key={product.slug} product={product}/>)}</div></section>
-      <section id="lien-he" className="contact" data-reveal aria-labelledby="contact-heading"><div className="container contact-inner">
-        <div><p className="eyebrow">KẾT NỐI VỚI PHƯƠNG NAM</p><h2 id="contact-heading">Bắt đầu từ<br />một kết nối.</h2></div>
-        <div className="contact-info"><span className="contact-label">ĐỊA CHỈ DOANH NGHIỆP</span><p>{company.address}</p>
-          <a className="text-link contact-map-link" href={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(company.address)} target="_blank" rel="noopener noreferrer"><Icon name="pin" size={19} /> Xem vị trí trên bản đồ <Icon name="external" size={15} /><span className="sr-only"> (mở tab mới)</span></a>
-          {company.email && <a className="contact-channel" href={'mailto:' + company.email}><Icon name="mail" size={20} />{company.email}</a>}
-          {company.phone && <a className="contact-channel" href={'tel:' + company.phone.replace(/[^+\d]/g, '')}><Icon name="phone" size={20} />{company.phone}</a>}
+
+      <div className="container ticker-wrap" aria-label="Trạng thái dự án">
+        <span className="ticker-lead"><span className="status-dot" aria-hidden="true"/> ĐANG PHÁT TRIỂN</span>
+        <span>Trò chơi điện tử</span><span className="ticker-separator">✳</span>
+        <span>Phần mềm</span><span className="ticker-separator">✳</span>
+        <span>Công cụ sáng tạo</span>
+        <a href="#du-an">Khám phá <Icon name="arrow" size={15}/></a>
+      </div>
+
+      <section className="section container section-fields" id="linh-vuc" aria-labelledby="fields-heading">
+        <div className="section-header" data-reveal>
+          <div><p className="section-eyebrow"><span>01 /</span> HỆ SINH THÁI</p><h2 id="fields-heading">Ba hướng đi.<br/><span>Một tinh thần sáng tạo.</span></h2></div>
+          <p>Game, phần mềm và công cụ — ba mảnh ghép chúng tôi đang phát triển, cùng hướng đến những trải nghiệm hữu ích và khác biệt.</p>
         </div>
-      </div></section>
+        <div className="field-grid">
+          {categories.map((category, index) => <a href={'/' + category.slug + '/'} className="field-card" key={category.slug} data-reveal>
+            <div className="field-art">
+              <Artwork src={category.image} alt={category.imageAlt} sizes="(max-width: 740px) 90vw, (max-width: 1100px) 44vw, 375px"/>
+              <span className="field-number">/ 0{index + 1}</span>
+            </div>
+            <div className="field-info"><div><span className="field-eyebrow">{category.eyebrow}</span><h3>{category.name}</h3><p>{category.description}</p></div><span className="field-action" aria-hidden="true"><Icon name="arrow" size={21}/></span></div>
+          </a>)}
+        </div>
+      </section>
+
+      <section className="section section-projects" id="du-an" aria-labelledby="projects-heading">
+        <div className="container">
+          <div className="section-header" data-reveal><div><p className="section-eyebrow"><span>02 /</span> ĐANG KIẾN TẠO</p><h2 id="projects-heading">Những ý tưởng<br/><span>đang thành hình.</span></h2></div><p>Từ một trò chơi nhỏ đến công cụ làm việc. Đây là những concept đang trong giai đoạn phát triển, chưa có chức năng sử dụng hoặc tải về.</p></div>
+          <div className="product-grid">{featured.map((product, index) => <ProductCard key={product.slug} product={product} index={index}/>)}</div>
+          <div className="projects-footnote"><span className="notice-icon"><Icon name="clock" size={18}/></span><span>Tất cả sản phẩm trên website hiện ở trạng thái <strong>Sắp ra mắt</strong>. Thời điểm phát hành chưa được công bố.</span></div>
+        </div>
+      </section>
+
+      <section className="section container philosophy-section" aria-labelledby="philosophy-heading">
+        <div className="section-header" data-reveal><div><p className="section-eyebrow"><span>03 /</span> CÁCH CHÚNG TÔI NGHĨ</p><h2 id="philosophy-heading">Công nghệ tốt.<br/><span>Bắt đầu từ con người.</span></h2></div><p>Không chạy theo những điều phức tạp. Chúng tôi ưu tiên trải nghiệm dễ hiểu, có mục đích và có không gian để phát triển lâu dài.</p></div>
+        <div className="approach-grid">{approaches.map(item => <div className="approach-card" key={item.no} data-reveal><span className="approach-no">{item.no} / 03</span><span className="approach-symbol" aria-hidden="true"><Icon name="sparkle" size={23}/></span><h3>{item.title}</h3><p>{item.text}</p></div>)}</div>
+      </section>
+
+      <section className="section about-section" id="gioi-thieu" aria-labelledby="about-heading">
+        <div className="container about-grid">
+          <div className="about-intro" data-reveal><p className="section-eyebrow"><span>04 /</span> VỀ CHÚNG TÔI</p><h2 id="about-heading">Từ Phương Nam.<br/><span>Vươn đến thế giới số.</span></h2><p>VPN Digital là tên viết tắt của Công nghệ số Phương Nam, doanh nghiệp tại Hưng Yên, Việt Nam, định hướng phát triển trò chơi điện tử, phần mềm và công cụ liên quan.</p><div className="about-location"><Icon name="pin" size={17}/> HƯNG YÊN · VIỆT NAM</div></div>
+          <div className="company-panel" data-reveal>
+            <div className="company-panel-top"><span>HỒ SƠ DOANH NGHIỆP</span><span className="panel-spark">✳</span></div>
+            <h3>{company.legalName}</h3>
+            <dl className="company-facts">
+              <div><dt>Tên quốc tế</dt><dd>{company.internationalName}</dd></div>
+              <div><dt>Tên viết tắt</dt><dd>{company.shortName}</dd></div>
+              <div><dt>Mã số thuế</dt><dd>{company.taxId}</dd></div>
+              <div><dt>Người đại diện</dt><dd>{company.representative}</dd></div>
+              <div><dt>Địa chỉ</dt><dd>{company.address}</dd></div>
+              <div><dt>Ngành nghề chính</dt><dd>{company.mainIndustry}</dd></div>
+            </dl><p className="company-note">Thông tin doanh nghiệp do công ty cung cấp.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="container contact-section" id="lien-he" aria-labelledby="contact-heading">
+        <div className="contact-panel" data-reveal>
+          <div className="contact-copy"><p className="section-eyebrow"><span>05 /</span> KẾT NỐI</p><h2 id="contact-heading">Một cuộc trò chuyện.<br/><span>Nhiều khả năng mới.</span></h2><p>Quan tâm đến lĩnh vực chúng tôi đang xây dựng? Hãy bắt đầu bằng một kết nối.</p>
+            <a className="button button-contact" href={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(company.address)} target="_blank" rel="noopener noreferrer"><Icon name="pin" size={18}/> Xem vị trí trên bản đồ <Icon name="external" size={16}/><span className="sr-only"> (mở tab mới)</span></a>
+          </div>
+          <div className="contact-aside"><span className="contact-aside-label">CHÚNG TÔI Ở ĐÂY</span><strong>{company.locality}</strong><p>{company.address}</p>
+            {company.email && <a href={'mailto:' + company.email} className="contact-method"><Icon name="mail" size={18}/>{company.email}</a>}
+            {company.phone && <a href={'tel:' + company.phone.replace(/[^+\d]/g, '')} className="contact-method"><Icon name="phone" size={18}/>{company.phone}</a>}
+          </div>
+        </div>
+      </section>
     </main>
     <Footer/>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, '\\u003c') }} />
