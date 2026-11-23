@@ -3,6 +3,18 @@ import { readFileSync, mkdirSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
 const products = JSON.parse(readFileSync(new URL('../content/products.json', import.meta.url)));
+const englishSource = readFileSync(new URL('../config/strings/products-en.ts', import.meta.url), 'utf8');
+for (const p of products) {
+  assert(englishSource.includes("'" + p.slug + "':"), 'missing English product translation: ' + p.slug);
+}
+for (const locale of ['en', 'vi']) {
+  const image = readFileSync(new URL('../public/og-image-' + locale + '.png', import.meta.url));
+  assert(image.byteLength > 20000, 'missing or tiny localized social image ' + locale);
+  const svg = readFileSync(new URL('../design/og-image-' + locale + '.svg', import.meta.url), 'utf8');
+  assert(svg.includes(locale === 'en' ? 'PhuongNam Digital' : 'Công ty TNHH Một Thành Viên Công Nghệ Số Phương Nam'), 'localized social identity missing: ' + locale);
+  assert(svg.includes(locale === 'en' ? 'Apps · Software · Tools' : 'Ứng dụng · Phần mềm · Công cụ'), 'localized social tagline missing: ' + locale);
+  if (locale === 'en') assert(!svg.includes('Công nghệ Việt.'), 'English social image contains Vietnamese slogan');
+}
 const categories = [
   ['apps','ung-dung'], ['software','phan-mem'], ['tools','cong-cu'],
 ];
@@ -47,6 +59,42 @@ try {
         const tagline = route.locale === 'en' ? 'Apps · Software · Tools' : 'Ứng dụng · Phần mềm · Công cụ';
         assert.equal((await page.locator('.brand-lockup-header .brand-lockup-tagline').innerText()).trim(), tagline);
         assert.equal((await page.locator('.brand-lockup-header .brand-lockup-name').innerText()).trim(), 'VPN Digital');
+        const english = route.locale === 'en';
+        const nav = page.locator('.main-nav');
+        assert.equal(await nav.getAttribute('aria-label'), english ? 'Main navigation' : 'Điều hướng chính', 'untranslated navigation aria label ' + route.path);
+        assert.equal(await page.locator('.menu-toggle').getAttribute('aria-label'), english ? 'Open menu' : 'Mở menu', 'untranslated menu button ' + route.path);
+        const themeLabel = await page.locator('.theme-toggle').getAttribute('aria-label');
+        assert.match(themeLabel, english ? /Switch to (light|dark) mode/ : /Chuyển sang giao diện (sáng|tối)/, 'untranslated theme button ' + route.path);
+        const currentLocation = english ? 'Me So, Hung Yen' : 'Mễ Sở, Hưng Yên';
+        const currentCountry = english ? 'Vietnam' : 'Việt Nam';
+        assert((await page.locator('.footer-contact').innerText()).includes(currentLocation + ', ' + currentCountry),
+          'footer location not translated ' + route.path);
+        if (route.kind === 'home') {
+          assert.equal((await page.locator('.hero-visual-top').innerText()).includes(english ? 'VIETNAM' : 'VIỆT NAM'), true,
+            'hero overlay location not translated ' + route.path);
+          assert((await page.locator('.home-hero .eyebrow').innerText()).includes(
+            english ? 'DIGITAL PRODUCT STUDIO' : 'KHÔNG GIAN SÁNG TẠO SẢN PHẨM SỐ'),
+            'hero eyebrow not translated ' + route.path);
+          assert((await page.locator('.contact-aside strong').innerText()).includes(currentLocation),
+            'contact location not translated ' + route.path);
+          assert(!(await page.locator('main').innerText()).includes(english ? 'Mễ Sở' : 'DIGITAL PRODUCT STUDIO'),
+            'untranslated literal in homepage ' + route.path);
+        }
+        if (route.kind === 'product') {
+          const heading = await page.locator('#detail-heading').innerText();
+          if (route.path.endsWith('/lang-viet-puzzle/')) {
+            assert(heading.includes(english ? 'Vietnamese Village Puzzle' : 'Làng Việt Puzzle'),
+              'example product name not translated ' + route.path);
+          }
+          if (route.path.endsWith('/hanh-trinh-phuong-nam/')) {
+            assert(heading.includes(english ? 'Southern Journey' : 'Hành Trình Phương Nam'),
+              'second example product name not translated ' + route.path);
+          }
+          if (!english) {
+            const body = await page.locator('.detail-story').innerText();
+            assert(!/\bconcept\b/i.test(body), 'leftover English concept text in Vietnamese detail ' + route.path);
+          }
+        }
 
         if (route.kind !== 'home') {
           const status = route.locale === 'en' ? 'COMING SOON' : 'SẮP RA MẮT';
@@ -101,6 +149,9 @@ try {
           // Invalid input must show localized field errors, not the success toast.
           await form.locator('button[type="submit"]').click();
           assert.equal(await form.locator('.contact-field-error').count(), 3, 'empty form requires three field errors');
+          assert.match(await form.locator('#contact-name-error').innerText(),
+            route.locale === 'en' ? /Please enter your full name/ : /Vui lòng nhập họ và tên/,
+            'wrong locale for name validation');
           assert.equal(await page.locator('.contact-toast').count(), 0, 'toast must not appear for invalid fields');
           await form.locator('input[name="name"]').fill('Example Name');
           await form.locator('input[name="phone"]').fill('123');
@@ -155,6 +206,7 @@ try {
       ['/en/products/pn-workspace/', 'vi', '/vi/san-pham/pn-workspace/', /SẮP RA MẮT/i],
       ['/vi/san-pham/sprite-kit/', 'en', '/en/products/sprite-kit/', /COMING SOON/i],
     ];
+    // Language changes must also update the theme and menu's ARIA descriptions.
     for (const [start, targetLocale, expectedPath, expectedText] of switches) {
       try {
         await page.goto('http://127.0.0.1:4173' + start, { waitUntil:'networkidle' });
@@ -162,6 +214,14 @@ try {
         await page.waitForURL(url => url.pathname === expectedPath, { timeout:15000 });
         await page.waitForFunction(value => document.documentElement.lang === value, targetLocale, { timeout:12000 });
         assert.match(await page.locator('main').innerText(), expectedText, 'translation missing');
+        assert.equal(await page.locator('.main-nav').getAttribute('aria-label'),
+          targetLocale === 'en' ? 'Main navigation' : 'Điều hướng chính',
+          'navigation aria-label did not switch languages');
+        assert.match(await page.locator('.theme-toggle').getAttribute('aria-label'),
+          targetLocale === 'en' ? /Switch to (light|dark) mode/ : /Chuyển sang giao diện (sáng|tối)/,
+          'theme aria-label did not switch languages');
+        assert.equal(await page.locator('.language-switcher select').inputValue(), targetLocale,
+          'locale select not updated after navigation');
       } catch (error) { errors.push(viewport.name + ' language switching ' + start + ': ' + error.message); }
     }
 
