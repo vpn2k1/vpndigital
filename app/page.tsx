@@ -31,7 +31,7 @@ export default function Home() {
           <p className="eyebrow"><span className="eyebrow-line"/> DIGITAL PRODUCT STUDIO <span className="eyebrow-muted">/ VIỆT NAM</span></p>
           <span className="hero-status"><span className="status-dot" aria-hidden="true"/> Những điều mới đang được tạo nên</span>
           <h1 id="hero-heading">Ý tưởng mới.<br/><span>Trải nghiệm</span><br/>khác biệt<span className="accent-period">.</span></h1>
-          <p className="hero-description">Tại VPN Digital, chúng tôi hướng tới những trải nghiệm số chỉn chu trong game, phần mềm và công cụ dành cho người sáng tạo.</p>
+          <p className="hero-description">Tại VPN Digital, chúng tôi hướng tới những trải nghiệm số chỉn chu trong ứng dụng, phần mềm và công cụ dành cho người sáng tạo.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#du-an">Khám phá dự án <Icon name="arrow" size={19}/></a>
             <a className="button button-quiet" href="#gioi-thieu">Về chúng tôi <Icon name="down" size={17}/></a>
@@ -48,7 +48,7 @@ export default function Home() {
 
       <div className="container ticker-wrap" aria-label="Trạng thái dự án">
         <span className="ticker-lead"><span className="status-dot" aria-hidden="true"/> ĐANG PHÁT TRIỂN</span>
-        <span>Trò chơi điện tử</span><span className="ticker-separator">✳</span>
+        <span>Ứng dụng số</span><span className="ticker-separator">✳</span>
         <span>Phần mềm</span><span className="ticker-separator">✳</span>
         <span>Công cụ sáng tạo</span>
         <a href="#du-an">Khám phá <Icon name="arrow" size={15}/></a>
@@ -57,7 +57,7 @@ export default function Home() {
       <section className="section container section-fields" id="linh-vuc" aria-labelledby="fields-heading">
         <div className="section-header" data-reveal>
           <div><p className="section-eyebrow"><span>01 /</span> HỆ SINH THÁI</p><h2 id="fields-heading">Ba hướng đi.<br/><span>Một tinh thần sáng tạo.</span></h2></div>
-          <p>Game, phần mềm và công cụ — ba mảnh ghép chúng tôi đang phát triển, cùng hướng đến những trải nghiệm hữu ích và khác biệt.</p>
+          <p>Ứng dụng, phần mềm và công cụ — ba mảnh ghép chúng tôi đang phát triển, cùng hướng đến những trải nghiệm hữu ích và khác biệt.</p>
         </div>
         <div className="field-grid">
           {categories.map((category, index) => <a href={'/' + category.slug + '/'} className="field-card" key={category.slug} data-reveal>

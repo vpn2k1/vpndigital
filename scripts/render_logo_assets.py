@@ -43,7 +43,7 @@ og = '''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBo
 <circle cx="1060" cy="80" r="208" fill="#075E8E" opacity=".12"/>
 <rect x="72" y="77" width="6" height="50" rx="3" fill="#18C7D7"/>
 <text x="101" y="111" fill="#A3CDE3" font-family="DejaVu Sans,Arial,sans-serif" font-weight="bold" font-size="22" letter-spacing="3">CÔNG NGHỆ SỐ PHƯƠNG NAM</text>
-<svg x="76" y="172" width="1040" height="242" viewBox="0 0 930 216">''' + svg_inner + '''</svg>
+<svg x="76" y="172" width="1040" height="242" viewBox="0 0 905 216">''' + svg_inner + '''</svg>
 <rect x="76" y="464" width="1046" height="1" fill="#2B5373"/>
 <text x="78" y="524" fill="#E2F3FC" font-family="DejaVu Sans,Arial,sans-serif" font-weight="bold" font-size="30">Công nghệ Việt. Khát vọng số.</text>
 <text x="80" y="564" fill="#8DADC2" font-family="DejaVu Sans,Arial,sans-serif" font-size="19">Game · Software · Tools</text>

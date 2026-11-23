@@ -11,7 +11,7 @@ export const company = {
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || '',
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE?.trim() || '',
   fields: [
-    { icon: 'game', title: 'Trò chơi điện tử', detail: 'Phát triển trò chơi điện tử.' },
+    { icon: 'game', title: 'Ứng dụng', detail: 'Phát triển các ứng dụng và trải nghiệm số.' },
     { icon: 'code', title: 'Phần mềm game', detail: 'Phát triển phần mềm trò chơi điện tử.' },
     { icon: 'layers', title: 'Công cụ phát triển', detail: 'Phát triển các công cụ phần mềm trò chơi điện tử.' },
   ],
@@ -19,7 +19,7 @@ export const company = {
 export const sitePresentation = { showBrandShowcase: false } as const;
 export const navigation = [
   { href: '/#gioi-thieu', label: 'Giới thiệu' },
-  { href: '/game/', label: 'Game' },
+  { href: '/ung-dung/', label: 'Ứng dụng' },
   { href: '/phan-mem/', label: 'Phần mềm' },
   { href: '/cong-cu/', label: 'Công cụ' },
   { href: '/#lien-he', label: 'Liên hệ' },

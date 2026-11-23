@@ -1,7 +1,7 @@
 [
   {
     "slug": "lang-viet-puzzle",
-    "category": "game",
+    "category": "ung-dung",
     "name": "Làng Việt Puzzle",
     "subtitle": "Một góc làng, nhiều điều để khám phá.",
     "summary": "Ý tưởng game giải đố sắp xếp những mảnh ghép để tạo nên một ngôi làng Việt thu nhỏ.",
@@ -23,7 +23,7 @@
   },
   {
     "slug": "hanh-trinh-phuong-nam",
-    "category": "game",
+    "category": "ung-dung",
     "name": "Hành Trình Phương Nam",
     "subtitle": "Mỗi hòn đảo mở ra một khám phá.",
     "summary": "Ý tưởng game khám phá những hòn đảo nổi và giải các thử thách trong một thế giới số.",

@@ -14,8 +14,8 @@ import '@fontsource/be-vietnam-pro/400.css';
 import '@fontsource/be-vietnam-pro/500.css';
 import '@fontsource/be-vietnam-pro/600.css';
 import '@fontsource/be-vietnam-pro/700.css';
-const title = 'PhuongNam Digital | Công nghệ số Phương Nam';
-const description = 'PhuongNam Digital — Công ty TNHH Một Thành Viên Công Nghệ Số Phương Nam. Phát triển trò chơi điện tử, phần mềm và công cụ phần mềm trò chơi điện tử.';
+const title = 'VPN Digital | Ứng dụng · Phần mềm · Công cụ';
+const description = 'PhuongNam Digital — Công ty TNHH Một Thành Viên Công Nghệ Số Phương Nam. Phát triển ứng dụng, phần mềm và công cụ số.';
 export const metadata: Metadata = {
   title, description,
   ...(siteUrl ? { metadataBase: siteUrl, alternates: { canonical: '/' } } : {}),
