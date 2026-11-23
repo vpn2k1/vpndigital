@@ -71,10 +71,14 @@ try {
       await page.locator('.theme-toggle').click();
       assert(['light','dark'].includes(await page.locator('html').getAttribute('data-theme')));
       const selected = await page.locator('html').getAttribute('data-theme');
-      const brand = page.locator('.brand-lockup-stage').first();
+      const brand = page.locator('.brand-lockup-header').first();
       const icon = brand.locator(selected === 'light' ? '.brand-icon-light' : '.brand-icon-dark');
       assert(await icon.isVisible(), 'theme-specific icon not visible');
       assert.equal((await brand.locator('.brand-lockup-name').innerText()).trim(), 'VPN Digital');
+      const activeArtwork = page.locator('.hero-visual .theme-artwork').first();
+      const expectedArt = activeArtwork.locator(selected === 'light' ? '.theme-artwork-light' : '.theme-artwork-dark');
+      assert(await expectedArt.isVisible(), 'hero artwork did not switch with theme ' + selected);
+      assert((await expectedArt.getAttribute('src')).endsWith(selected === 'light' ? '/hero-light.webp' : '/hero.webp'));
       
     } catch(error) {errors.push(viewport.name + ' theme/menu: ' + error.message)}
     await context.close();
