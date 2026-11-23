@@ -1,0 +1,66 @@
+import type { SiteStrings } from './en';
+
+const vi: SiteStrings = {
+  language: { label: 'Ngôn ngữ', english: 'English', vietnamese: 'Tiếng Việt' },
+  brand: { tagline: 'Ứng dụng · Phần mềm · Công cụ' },
+  nav: { home: 'Trang chủ', about: 'Giới thiệu', apps: 'Ứng dụng', software: 'Phần mềm', tools: 'Công cụ', contact: 'Liên hệ', connect: 'Kết nối', mobileConnect: 'Kết nối với chúng tôi' },
+  common: { comingSoon: 'SẮP RA MẮT', developing: 'ĐANG PHÁT TRIỂN', explore: 'Khám phá', contact: 'Liên hệ', concept: 'Ý TƯỞNG', unavailable: 'Chưa khả dụng', field: 'LĨNH VỰC', readMore: 'Xem ý tưởng', backHome: 'Trở về trang chủ', map: 'Xem vị trí trên bản đồ', newTab: '(mở tab mới)' },
+  hero: {
+    eyebrow: 'DIGITAL PRODUCT STUDIO', location: '/ VIỆT NAM', status: 'Những điều mới đang được tạo nên',
+    first: 'Ý tưởng mới.', accent: 'Trải nghiệm', last: 'khác biệt.',
+    description: 'Tại VPN Digital, chúng tôi hướng tới những trải nghiệm số chỉn chu trong ứng dụng, phần mềm và công cụ dành cho người sáng tạo.',
+    explore: 'Khám phá dự án', about: 'Về chúng tôi', fields: 'Lĩnh vực', ideas: 'Ý tưởng', possibilities: 'Khả năng', artwork: 'Quả địa cầu số với quỹ đạo xanh cyan phát sáng',
+  },
+  ticker: { status: 'ĐANG PHÁT TRIỂN', apps: 'Ứng dụng số', software: 'Phần mềm', tools: 'Công cụ sáng tạo', explore: 'Khám phá' },
+  sections: {
+    fields: { eyebrow: 'HỆ SINH THÁI', first: 'Ba hướng đi.', accent: 'Một tinh thần sáng tạo.', description: 'Ứng dụng, phần mềm và công cụ — ba mảnh ghép chúng tôi đang phát triển, cùng hướng đến những trải nghiệm hữu ích và khác biệt.' },
+    projects: { eyebrow: 'ĐANG KIẾN TẠO', first: 'Những ý tưởng', accent: 'đang thành hình.', description: 'Từ một trò chơi nhỏ đến công cụ làm việc. Đây là những concept đang phát triển, chưa có chức năng sử dụng hoặc tải về.' },
+    philosophy: { eyebrow: 'CÁCH CHÚNG TÔI NGHĨ', first: 'Công nghệ tốt.', accent: 'Bắt đầu từ con người.', description: 'Không chạy theo những điều phức tạp. Chúng tôi ưu tiên trải nghiệm dễ hiểu, có mục đích và có không gian để phát triển lâu dài.' },
+    about: { eyebrow: 'VỀ CHÚNG TÔI', first: 'Từ Phương Nam.', accent: 'Vươn đến thế giới số.', description: 'VPN Digital là thương hiệu của Công nghệ số Phương Nam, doanh nghiệp tại Hưng Yên, Việt Nam, định hướng phát triển ứng dụng, phần mềm và công cụ liên quan.', location: 'HƯNG YÊN · VIỆT NAM' },
+    contact: { eyebrow: 'KẾT NỐI', first: 'Một cuộc trò chuyện.', accent: 'Nhiều khả năng mới.', description: 'Quan tâm đến lĩnh vực chúng tôi đang xây dựng? Hãy bắt đầu bằng một kết nối.', locationLabel: 'CHÚNG TÔI Ở ĐÂY' },
+  },
+  approaches: [
+    { title: 'Từ ý tưởng', text: 'Mỗi trải nghiệm bắt đầu từ một câu hỏi, một nhu cầu hoặc một cách nhìn mới.' },
+    { title: 'Đến trải nghiệm', text: 'Ưu tiên sự rõ ràng, cảm xúc và tính hữu ích trong từng tương tác.' },
+    { title: 'Và không ngừng hoàn thiện', text: 'Thử nghiệm, học hỏi và phát triển sản phẩm theo từng bước.' },
+  ],
+  projectNotice: 'Tất cả sản phẩm giới thiệu trên website hiện ở trạng thái sắp ra mắt. Thời điểm phát hành chưa được công bố.',
+  company: {
+    panel: 'HỒ SƠ DOANH NGHIỆP', international: 'Tên quốc tế', short: 'Tên viết tắt', tax: 'Mã số thuế', representative: 'Người đại diện', address: 'Địa chỉ', mainIndustry: 'Ngành nghề chính', disclaimer: 'Thông tin doanh nghiệp do công ty cung cấp.',
+    industry: 'Phát triển trò chơi điện tử, phần mềm trò chơi điện tử và các công cụ phần mềm trò chơi điện tử',
+    attribution: 'Một dự án của Công nghệ số Phương Nam.', taxLabel: 'Mã số thuế',
+  },
+  categoryPage: {
+    availability: 'Chúng tôi đang chuẩn bị những trải nghiệm thuộc lĩnh vực này. Hiện chưa có bản chơi thử, phần mềm hoạt động hoặc tệp tải xuống.',
+    explore: 'Xem ý tưởng', contact: 'Liên hệ', areas: 'LĨNH VỰC',
+    collectionEyebrow: 'KHÁM PHÁ /', collectionFirst: 'Ý tưởng hôm nay.', collectionAccent: 'Tiềm năng ngày mai.',
+    collectionText: 'concept đang phát triển. Mỗi trang giới thiệu định hướng sản phẩm, chưa phải chức năng đã phát hành.',
+    bottomEyebrow: 'MỌI ĐIỀU ĐỀU BẮT ĐẦU TỪ Ý TƯỞNG', bottomTitle: 'Chưa phải điểm đến cuối cùng.',
+    bottomDescription: 'Những nội dung ở đây là bản giới thiệu định hướng. Khi có thông tin phát hành, chúng tôi sẽ cập nhật trên website.',
+    bottomCta: 'Kết nối với chúng tôi',
+  },
+  productPage: {
+    home: 'Trang chủ', availabilityTitle: 'Hiện chưa khả dụng',
+    availabilityText: 'Đây là concept giới thiệu ý tưởng, chưa có chức năng để sử dụng, chơi thử hoặc tải xuống. Ngày ra mắt chưa được công bố.',
+    explore: 'Khám phá', contact: 'Liên hệ', status: 'SẮP RA MẮT', storyEyebrow: 'VỀ Ý TƯỞNG',
+    storyTitle: 'Đằng sau concept', featureEyebrow: 'TÍNH NĂNG DỰ KIẾN', featureTitle: 'Những điều đang được hình dung.',
+    disclaimer: 'Thông tin và tính năng mang tính định hướng, có thể thay đổi khi phát triển.',
+    facts: 'HỒ SƠ CONCEPT', unavailable: 'Chưa phát hành', category: 'Danh mục', platform: 'Nền tảng dự kiến', statusLabel: 'Trạng thái',
+    relatedEyebrow: 'CÙNG LĨNH VỰC', relatedTitle: 'Tiếp tục khám phá.', all: 'Tất cả', teaser: 'Xem ý tưởng sắp ra mắt',
+  },
+  footer: { mission: 'Công nghệ Việt. Khát vọng số.', status: 'Đang kiến tạo những trải nghiệm mới', explore: 'KHÁM PHÁ', about: 'Về VPN Digital', connect: 'KẾT NỐI', contactInfo: 'Thông tin liên hệ', top: 'Về đầu trang', vietnam: 'Việt Nam' },
+  form: {
+    title: 'Để lại thông tin', description: 'Biểu mẫu liên hệ hiện đang trong giai đoạn thử nghiệm.',
+    name: 'Họ và tên', namePlaceholder: 'Nhập họ và tên', phone: 'Số điện thoại', phonePlaceholder: 'Nhập số điện thoại',
+    email: 'Email', emailPlaceholder: 'Nhập địa chỉ email', send: 'Gửi thông tin',
+    hint: 'Chức năng gửi chưa được kích hoạt. Nhấn Gửi chỉ làm trống biểu mẫu; thông tin không được gửi hoặc lưu lại.',
+    cleared: 'Đã xóa nội dung biểu mẫu — chưa gửi dữ liệu.',
+  },
+  error: { eyebrow: 'LẠC KHỎI QUỸ ĐẠO', first: 'Trang bạn tìm', second: 'không có ở đây.', description: 'Đường dẫn có thể đã thay đổi. Hãy quay về VPN Digital để tiếp tục khám phá.' },
+  categoryContent: {
+    'ung-dung': { name: 'Ứng dụng', eyebrow: 'TRẢI NGHIỆM ỨNG DỤNG SỐ', headline: 'Từ ý tưởng nhỏ.\nĐến trải nghiệm lớn.', description: 'Khám phá các ý tưởng ứng dụng số dành cho học tập, giải trí và sáng tạo — gồm cả trò chơi tương tác lấy cảm hứng từ Việt Nam.', imageAlt: 'Minh họa tay cầm game xanh lam trên bệ phát sáng và các khối pixel' },
+    'phan-mem': { name: 'Phần mềm', eyebrow: 'KHÔNG GIAN LÀM VIỆC SỐ', headline: 'Gọn công việc.\nRộng không gian sáng tạo.', description: 'Các ý tưởng phần mềm giúp tổ chức công việc, quản lý nội dung và phối hợp trong quá trình phát triển sản phẩm số.', imageAlt: 'Minh họa màn hình phần mềm và các bảng tác vụ xanh cyan' },
+    'cong-cu': { name: 'Công cụ', eyebrow: 'DÀNH CHO NGƯỜI KIẾN TẠO', headline: 'Từ một công cụ nhỏ.\nĐến một ý tưởng mới.', description: 'Các ý tưởng công cụ hỗ trợ người làm game và phần mềm sắp xếp tài nguyên, thử nghiệm và phát triển sản phẩm.', imageAlt: 'Minh họa hộp công cụ, bánh răng và cờ lê xanh lam cyan' },
+  },
+};
+export default vi;

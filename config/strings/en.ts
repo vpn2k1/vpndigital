@@ -1,0 +1,65 @@
+const en = {
+  language: { label: 'Language', english: 'English', vietnamese: 'Tiếng Việt' },
+  brand: { tagline: 'Apps · Software · Tools' },
+  nav: { home: 'Home', about: 'About', apps: 'Apps', software: 'Software', tools: 'Tools', contact: 'Contact', connect: 'Get in touch', mobileConnect: 'Connect with us' },
+  common: { comingSoon: 'COMING SOON', developing: 'IN DEVELOPMENT', explore: 'Explore', contact: 'Contact', concept: 'CONCEPT', unavailable: 'Not available yet', field: 'FIELD', readMore: 'View concept', backHome: 'Back to homepage', map: 'View on Google Maps', newTab: '(opens in a new tab)' },
+  hero: {
+    eyebrow: 'DIGITAL PRODUCT STUDIO', location: '/ VIETNAM', status: 'Something new is taking shape',
+    first: 'Fresh ideas.', accent: 'Better digital', last: 'experiences.',
+    description: 'At VPN Digital, we create thoughtful digital experiences across apps, software, and tools for makers and curious minds.',
+    explore: 'Explore our concepts', about: 'About us', fields: 'Fields', ideas: 'Ideas', possibilities: 'Possibilities', artwork: 'Digital globe with a glowing cyan orbit',
+  },
+  ticker: { status: 'IN DEVELOPMENT', apps: 'Digital applications', software: 'Software', tools: 'Creative tools', explore: 'Explore' },
+  sections: {
+    fields: { eyebrow: 'ECOSYSTEM', first: 'Three directions.', accent: 'One creative vision.', description: 'Apps, software, and tools: three parts of what we are building, united by a focus on purposeful digital experiences.' },
+    projects: { eyebrow: 'IN THE MAKING', first: 'New ideas', accent: 'taking shape.', description: 'From playful experiments to productivity tools. These concepts are still in development and cannot yet be used or downloaded.' },
+    philosophy: { eyebrow: 'OUR APPROACH', first: 'Better technology.', accent: 'Built around people.', description: 'Less unnecessary complexity, more clarity and purpose. We believe useful digital experiences should feel natural and continue to improve.' },
+    about: { eyebrow: 'ABOUT US', first: 'Rooted in Vietnam.', accent: 'Looking to the digital world.', description: 'VPN Digital is the brand of Phuong Nam Digital Technology, a business based in Hung Yen, Vietnam, exploring apps, software, and digital tools.', location: 'HUNG YEN · VIETNAM' },
+    contact: { eyebrow: 'GET IN TOUCH', first: 'One conversation.', accent: 'Many new possibilities.', description: 'Interested in the areas we are exploring? Start with a conversation.', locationLabel: 'WHERE TO FIND US' },
+  },
+  approaches: [
+    { title: 'Start with an idea', text: 'Every experience begins with a question, a need, or a different perspective.' },
+    { title: 'Shape the experience', text: 'We value clarity, emotion, and usefulness in every interaction.' },
+    { title: 'Keep improving', text: 'Experiment, learn, and iterate as products take shape.' },
+  ],
+  projectNotice: 'All products shown here are coming-soon concepts. No release date has been announced.',
+  company: {
+    panel: 'COMPANY PROFILE', international: 'International name', short: 'Short name', tax: 'Tax ID', representative: 'Legal representative', address: 'Registered address', mainIndustry: 'Primary business', disclaimer: 'Company details provided by the business.',
+    industry: 'Development of video games, game software, and related development tools',
+    attribution: 'A project by Phuong Nam Digital Technology.', taxLabel: 'Tax ID',
+  },
+  categoryPage: {
+    availability: 'We are preparing experiences in this field. There is no playable demo, working software, or downloadable file yet.',
+    explore: 'Explore concepts', contact: 'Contact us', areas: 'FIELDS',
+    collectionEyebrow: 'EXPLORE /', collectionFirst: 'Ideas today.', collectionAccent: 'Possibilities tomorrow.',
+    collectionText: 'concepts in development. These pages describe directions we are exploring, not released features.',
+    bottomEyebrow: 'EVERYTHING STARTS WITH AN IDEA', bottomTitle: 'There is more to come.',
+    bottomDescription: 'These pages are previews of possible directions. We will post release information here when it becomes available.',
+    bottomCta: 'Connect with us',
+  },
+  productPage: {
+    home: 'Home', availabilityTitle: 'Not yet available',
+    availabilityText: 'This is an idea preview, not a playable or downloadable product. No release date has been announced.',
+    explore: 'Explore', contact: 'Contact us', status: 'COMING SOON', storyEyebrow: 'ABOUT THE IDEA',
+    storyTitle: 'Behind the concept', featureEyebrow: 'POTENTIAL FEATURES', featureTitle: 'What we are imagining.',
+    disclaimer: 'These are proposed directions and may change during development.',
+    facts: 'CONCEPT DETAILS', unavailable: 'Not released yet', category: 'Category', platform: 'Planned platform', statusLabel: 'Status',
+    relatedEyebrow: 'IN THE SAME FIELD', relatedTitle: 'Keep exploring.', all: 'All', teaser: 'View coming-soon concept',
+  },
+  footer: { mission: 'Vietnamese technology. Digital ambition.', status: 'Building new experiences', explore: 'EXPLORE', about: 'About VPN Digital', connect: 'CONNECT', contactInfo: 'Contact information', top: 'Back to top', vietnam: 'Vietnam' },
+  form: {
+    title: 'Leave your details', description: 'This contact form is currently a preview.',
+    name: 'Full name', namePlaceholder: 'Enter your full name', phone: 'Phone number', phonePlaceholder: 'Enter your phone number',
+    email: 'Email', emailPlaceholder: 'Enter your email address', send: 'Submit details',
+    hint: 'Sending is not enabled. Clicking Submit only clears the fields; nothing is sent or saved.',
+    cleared: 'Form cleared — no information was sent.',
+  },
+  error: { eyebrow: 'OFF THE MAP', first: 'This page', second: 'does not exist.', description: 'The address may have changed. Return to VPN Digital and keep exploring.' },
+  categoryContent: {
+    'ung-dung': { name: 'Apps', eyebrow: 'DIGITAL EXPERIENCES', headline: 'Small beginnings.\nBig possibilities.', description: 'Explore app concepts for learning, entertainment, and creativity, including interactive games inspired by Vietnam.', imageAlt: 'Blue game controller glowing with floating pixels' },
+    'phan-mem': { name: 'Software', eyebrow: 'BETTER DIGITAL WORKFLOWS', headline: 'Work more clearly.\nCreate more freely.', description: 'Software concepts for organizing tasks, managing content, and collaborating on digital products.', imageAlt: 'Blue software dashboard with task boards and interface panels' },
+    'cong-cu': { name: 'Tools', eyebrow: 'FOR THE MAKERS', headline: 'A small tool.\nA new possibility.', description: 'Ideas for tools that help game and software creators manage assets, experiment, and build products.', imageAlt: 'Blue digital toolbox, gears and wrench' },
+  },
+};
+export type SiteStrings = typeof en;
+export default en;
