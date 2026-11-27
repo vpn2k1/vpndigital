@@ -16,7 +16,7 @@ export function ProductView({ locale, product }: { locale: Locale; product: Prod
   const category = getCategory(product.category)!;
   const categoryName = s.categoryContent[category.slug].name;
   const status = product.status === 'released' ? s.productPage.released : s.productPage.comingSoon;
-  const related = getProductsByCategory(product.category).filter(p => p.slug !== product.slug);
+  const related = getProductsByCategory(product.category).filter(p => p.slug !== product.slug).slice(0, 3);
   return <div className="site-shell" id="top" lang={locale}>
     <a className="skip-link" href="#noi-dung">{s.nav.home}</a><Header/>
     <main id="noi-dung"><div className="container">
@@ -72,8 +72,15 @@ export function ProductView({ locale, product }: { locale: Locale; product: Prod
           <p className="legal-links"><a href={legalHref(locale, product.slug, 'privacy')}>{s.productPage.privacy}</a><a href={legalHref(locale, product.slug, 'terms')}>{s.productPage.terms}</a></p>
         </aside>
       </section>
+      {copy.screenshots?.length ? <section className="section gallery-section" aria-labelledby="gallery-heading">
+        <div className="section-header" data-reveal><div><p className="section-eyebrow"><span>03 /</span> {s.productPage.galleryEyebrow}</p>
+          <h2 id="gallery-heading">{s.productPage.galleryTitle}</h2></div></div>
+        <div className="gallery" tabIndex={0} aria-label={s.productPage.galleryEyebrow}>{copy.screenshots.map(shot => <figure key={shot.src}>
+          <img src={shot.src} alt={shot.caption} loading="lazy" decoding="async"/><figcaption>{shot.caption}</figcaption>
+        </figure>)}</div>
+      </section> : null}
       {related.length > 0 && <section className="section related-section" aria-labelledby="related-heading">
-        <div className="section-header"><div><p className="section-eyebrow"><span>03 /</span> {s.productPage.relatedEyebrow}</p>
+        <div className="section-header"><div><p className="section-eyebrow"><span>{copy.screenshots?.length ? '04' : '03'} /</span> {s.productPage.relatedEyebrow}</p>
           <h2 id="related-heading">{s.productPage.relatedTitle}</h2></div>
           <a href={categoryHref(locale, category.slug)} className="inline-link">{s.productPage.all} {categoryName} <Icon name="arrow" size={17}/></a></div>
         <div className="product-grid related-products">{related.map((p,i)=><ProductCard product={p} locale={locale} key={p.slug} index={i}/>)}</div>

@@ -7,7 +7,8 @@ import { localizedProduct } from '@/lib/localized-content';
 import { Icon } from './Icon';
 
 export function AppCover({ product, alt, priority = false }: { product: Product; alt: string; priority?: boolean }) {
-  return <span className="app-cover" style={product.splashColor ? { background: product.splashColor } : undefined}>
+  // --icon feeds the blurred backdrop so every card gets its own colors from the app icon
+  return <span className="app-cover" style={{ '--icon': `url(${product.icon})` } as React.CSSProperties}>
     <img src={product.icon} alt={alt} width={512} height={512} loading={priority ? 'eager' : 'lazy'} decoding="async"/>
   </span>;
 }
