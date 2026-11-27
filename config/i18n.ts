@@ -14,6 +14,15 @@ export const homeHref = (locale: Locale) => '/' + locale + '/';
 export const categoryHref = (locale: Locale, category: CategorySlug) => '/' + locale + '/' + categorySegments[locale][category] + '/';
 export const productHref = (locale: Locale, slug: string) => '/' + locale + '/' + (locale === 'en' ? 'products' : 'san-pham') + '/' + slug + '/';
 
+export const legalDocs = ['privacy', 'terms'] as const;
+export type LegalDoc = (typeof legalDocs)[number];
+export const legalSegments: Record<Locale, Record<LegalDoc, string>> = {
+  en: { privacy: 'privacy', terms: 'terms' },
+  vi: { privacy: 'chinh-sach-bao-mat', terms: 'dieu-khoan' },
+};
+export const legalHref = (locale: Locale, slug: string, doc: LegalDoc) => productHref(locale, slug) + legalSegments[locale][doc] + '/';
+export const legalFromPathSegment = (locale: Locale, segment: string) => legalDocs.find(doc => legalSegments[locale][doc] === segment);
+
 export function categoryFromPathSegment(locale: Locale, segment: string): CategorySlug | undefined {
   return categorySlugs.find(slug => categorySegments[locale][slug] === segment);
 }
@@ -31,7 +40,10 @@ export function switchLocalePath(pathname: string, next: Locale): string {
     ?? categoryFromPathSegment(next, first)
     ?? categorySlugs.find(slug => slug === first);
   if (category) return categoryHref(next, category);
-  if ((first === 'products' || first === 'san-pham') && segments[1]) return productHref(next, segments[1]);
+  if ((first === 'products' || first === 'san-pham') && segments[1]) {
+    const doc = segments[2] ? legalFromPathSegment(previous, segments[2]) : undefined;
+    return doc ? legalHref(next, segments[1], doc) : productHref(next, segments[1]);
+  }
   if (first === 'game') return categoryHref(next, 'ung-dung');
   return homeHref(next);
 }

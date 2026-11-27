@@ -1,15 +1,14 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getProduct, products } from '@/lib/products';
+import { getProduct, allProducts } from '@/lib/products';
 import { localizedProduct } from '@/lib/localized-content';
 import { isLocale, locales, productHref } from '@/config/i18n';
-import { getStrings } from '@/config/strings';
 import { siteUrl } from '@/lib/seo';
 import { ProductView } from '@/components/pages/ProductView';
 
 export const dynamicParams = false;
 export function generateStaticParams() {
-  return locales.flatMap(locale => products.map(p => ({
+  return locales.flatMap(locale => allProducts.map(p => ({
     locale, category: locale === 'en' ? 'products' : 'san-pham', slug: p.slug,
   })));
 }
@@ -20,10 +19,10 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const original = getProduct(slug);
   if (!original) return {};
   const product = localizedProduct(locale, original);
-  const title = product.name + ' — ' + getStrings(locale).common.comingSoon + ' | VPN Digital';
+  const title = product.name + ' — ' + product.subtitle + ' | VPN Digital';
   const description = product.summary;
   return {
-    title, description,
+    title, description, ...(original.visible ? {} : { robots: { index: false } }),
     openGraph: { title, description, locale: locale === 'en' ? 'en_US' : 'vi_VN',
       ...(siteUrl ? { url: productHref(locale, slug), images: [{ url: '/og-image-' + locale + '.png', width: 1200, height: 630, alt: 'VPN Digital' }] } : {}) },
     ...(siteUrl ? { alternates: { canonical: productHref(locale, slug), languages: { en: productHref('en', slug), vi: productHref('vi', slug) } } } : {}),

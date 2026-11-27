@@ -29,6 +29,10 @@ const routes = [
     { path:'/en/products/' + p.slug + '/', locale:'en', kind:'product' },
     { path:'/vi/san-pham/' + p.slug + '/', locale:'vi', kind:'product' },
   ]),
+  ...products.slice(0, 2).flatMap(p => [
+    { path:'/en/products/' + p.slug + '/privacy/', locale:'en', kind:'legal' },
+    { path:'/vi/san-pham/' + p.slug + '/dieu-khoan/', locale:'vi', kind:'legal' },
+  ]),
 ];
 const redirectRoutes = [
   ['/', '/en/'],
@@ -82,22 +86,28 @@ try {
         }
         if (route.kind === 'product') {
           const heading = await page.locator('#detail-heading').innerText();
-          if (route.path.endsWith('/lang-viet-puzzle/')) {
-            assert(heading.includes(english ? 'Vietnamese Village Puzzle' : 'Làng Việt Puzzle'),
+          if (route.path.endsWith('/paper-war/')) {
+            assert(heading.includes(english ? 'Paper War' : 'Chiến Tranh Giấy'),
               'example product name not translated ' + route.path);
           }
-          if (route.path.endsWith('/hanh-trinh-phuong-nam/')) {
-            assert(heading.includes(english ? 'Southern Journey' : 'Hành Trình Phương Nam'),
+          if (route.path.endsWith('/100-dot-tre/')) {
+            assert(heading.includes(english ? '100 Bamboo Joints' : '100 Đốt Tre'),
               'second example product name not translated ' + route.path);
           }
+          assert.equal(await page.locator('.legal-links a').count(), 2, 'privacy/terms links missing ' + route.path);
           if (!english) {
             const body = await page.locator('.detail-story').innerText();
             assert(!/\bconcept\b/i.test(body), 'leftover English concept text in Vietnamese detail ' + route.path);
           }
         }
 
-        if (route.kind !== 'home') {
-          const status = route.locale === 'en' ? 'COMING SOON' : 'SẮP RA MẮT';
+        if (route.kind === 'legal') {
+          const text = await page.locator('main').innerText();
+          assert(text.includes('VPN Digital') && text.includes('Công ty TNHH Một Thành Viên Công Nghệ Số Phương Nam'), 'developer identity missing ' + route.path);
+        }
+        if (route.kind === 'category' || route.kind === 'product') {
+          const released = route.kind === 'product' && products.find(p => route.path.endsWith('/' + p.slug + '/'))?.status === 'released';
+          const status = released ? (route.locale === 'en' ? 'RELEASED' : 'ĐÃ PHÁT HÀNH') : (route.locale === 'en' ? 'COMING SOON' : 'SẮP RA MẮT');
           assert(await page.getByText(status, { exact:true }).count() > 0, 'translated release status missing ' + route.path);
         }
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
@@ -109,7 +119,9 @@ try {
         }
         assert(overflow < 3, 'horizontal overflow ' + route.path + ': ' + overflow + 'px');
 
+        // product and legal pages show the app icon/splash instead of the shared illustrations
         const artwork = page.locator('.theme-artwork');
+        if (route.kind !== 'product' && route.kind !== 'legal') {
         assert(await artwork.count() > 0, 'artwork not restored ' + route.path);
         const first = artwork.first().locator('img');
         assert.equal(await first.count(), 1, 'one shared WebP per artwork ' + route.path);
@@ -123,6 +135,7 @@ try {
           assert.equal(await first.getAttribute('src'), src, 'illustration changed with theme ' + route.path);
           await first.evaluate(async img => await img.decode());
           assert((await first.evaluate(img => img.naturalWidth)) > 0, 'undecodable artwork at ' + route.path);
+        }
         }
         await page.evaluate(() => document.documentElement.removeAttribute('data-theme'));
         const brokenImages = await page.locator('img').evaluateAll(imgs => imgs.filter(img => getComputedStyle(img).display !== 'none' && img.complete && img.naturalWidth === 0).map(img => img.src));
@@ -203,8 +216,9 @@ try {
       ['/vi/', 'en', '/en/', /Fresh ideas/i],
       ['/en/apps/', 'vi', '/vi/ung-dung/', /Ứng dụng/i],
       ['/vi/phan-mem/', 'en', '/en/software/', /Software/i],
-      ['/en/products/pn-workspace/', 'vi', '/vi/san-pham/pn-workspace/', /SẮP RA MẮT/i],
-      ['/vi/san-pham/sprite-kit/', 'en', '/en/products/sprite-kit/', /COMING SOON/i],
+      ['/en/products/triangle-master/', 'vi', '/vi/san-pham/triangle-master/', /SẮP RA MẮT/i],
+      ['/vi/san-pham/paper-war/', 'en', '/en/products/paper-war/', /RELEASED/i],
+      ['/en/products/keo/privacy/', 'vi', '/vi/san-pham/keo/chinh-sach-bao-mat/', /Chính sách quyền riêng tư/i],
     ];
     // Language changes must also update the theme and menu's ARIA descriptions.
     for (const [start, targetLocale, expectedPath, expectedText] of switches) {
