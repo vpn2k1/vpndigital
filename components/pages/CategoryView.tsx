@@ -51,7 +51,7 @@ export function CategoryView({ locale, slug }: { locale: Locale; slug: (typeof c
             <h2 id="collection-heading">{s.categoryPage.collectionFirst}<br/><span>{s.categoryPage.collectionAccent}</span></h2></div>
           <p>{String(list.length).padStart(2, '0')} {s.categoryPage.collectionText}</p>
         </div>
-        <div className="product-grid category-products">{list.map((product, i) => <ProductCard key={product.slug} product={product} locale={locale} index={i}/>)}</div>
+        {list.length ? <div className="product-grid category-products">{list.map((product, i) => <ProductCard key={product.slug} product={product} locale={locale} index={i}/>)}</div> : <p className="empty-state">{s.categoryPage.empty}</p>}
       </section>
       <section className="category-end-panel">
         <div><span className="section-eyebrow">{s.categoryPage.bottomEyebrow}</span><h2>{s.categoryPage.bottomTitle}</h2>

@@ -1,5 +1,5 @@
 import { LegacyRedirect } from '@/components/LegacyRedirect';
-import { products } from '@/lib/products';
+import { allProducts as products } from '@/lib/products';
 
 export const dynamicParams = false;
 export function generateStaticParams() { return products.map(product => ({ slug: product.slug })); }
