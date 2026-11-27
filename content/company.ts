@@ -8,7 +8,7 @@ export const company = {
   address: 'thôn Phú Nhạn, Xã Mễ Sở, Tỉnh Hưng Yên, Việt Nam',
   locality: 'Mễ Sở, Hưng Yên',
   mainIndustry: 'Phát triển trò chơi điện tử, phần mềm trò chơi điện tử và các công cụ phần mềm trò chơi điện tử',
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || '',
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || 'contact@vpndigital.io.vn',
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE?.trim() || '',
   fields: [
     { icon: 'game', title: 'Trò chơi điện tử', detail: 'Phát triển trò chơi điện tử.' },

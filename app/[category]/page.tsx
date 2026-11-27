@@ -41,9 +41,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
             <div className="launch-pill"><span className="launch-dot" aria-hidden="true" /> SẮP RA MẮT</div>
             <h1 id="launch-heading">{category.name}<span className="launch-period">.</span><br /><span className="launch-title-muted">Điều thú vị đang được tạo nên.</span></h1>
             <p className="launch-description">{category.description}</p>
-            <p className="launch-notice">Chức năng trong danh mục này đang được xây dựng. Hiện chưa có phiên bản để trải nghiệm hoặc tải xuống.</p>
+            <p className="launch-notice">Liên kết tải trên Google Play và App Store sẽ được cập nhật khi từng sản phẩm phát hành.</p>
             <div className="launch-actions">
-              <a className="button" href="#y-tuong">Khám phá ý tưởng <Icon name="down" size={18} /></a>
+              <a className="button" href="#y-tuong">Xem sản phẩm <Icon name="down" size={18} /></a>
               <a className="launch-link" href="/#lien-he">Liên hệ với chúng tôi <Icon name="external" size={17} /></a>
             </div>
           </div>
@@ -51,8 +51,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         </section>
         <CategoryNav active={category.slug} />
         <section id="y-tuong" className="launch-catalog" aria-labelledby="ideas-heading">
-          <div className="launch-section-top" data-reveal><div><p className="eyebrow">KHÁM PHÁ NHỮNG GÌ SẮP TỚI</p><h2 id="ideas-heading">Ý tưởng đang phát triển<span className="launch-period">.</span></h2></div><span className="launch-count">{String(products.length).padStart(2, '0')} Ý TƯỞNG</span></div>
-          <p className="launch-catalog-description">Các thẻ dưới đây giới thiệu hướng phát triển dự kiến. Nhấn vào một ý tưởng để xem thông tin; tất cả chức năng vẫn đang trong quá trình chuẩn bị.</p>
+          <div className="launch-section-top" data-reveal><div><p className="eyebrow">KHÁM PHÁ NHỮNG GÌ SẮP TỚI</p><h2 id="ideas-heading">Sản phẩm của chúng tôi<span className="launch-period">.</span></h2></div><span className="launch-count">{String(products.length).padStart(2, '0')} SẢN PHẨM</span></div>
+          <p className="launch-catalog-description">Nhấn vào một sản phẩm để xem giới thiệu, chính sách quyền riêng tư và điều khoản sử dụng.</p>
           {products.length ? <div className="product-grid category-grid">{products.map(product => <ProductCard key={product.slug} product={product} />)}</div> : <p className="empty-state">Nội dung đang được cập nhật. Vui lòng quay lại sau.</p>}
         </section>
         <aside className="launch-bottom-cta" data-reveal><div><p className="eyebrow">CÙNG PHÁT TRIỂN NHỮNG Ý TƯỞNG MỚI</p><h2>Một điều mới đang bắt đầu.</h2><p>Khám phá PhuongNam Digital hoặc kết nối với chúng tôi để trao đổi về lĩnh vực bạn quan tâm.</p></div><a className="button" href="/#lien-he">Thông tin liên hệ <Icon name="external" size={18} /></a></aside>

@@ -46,7 +46,7 @@ npx vercel --prod
 |---|---|
 |NEXT_PUBLIC_SITE_URL|Origin HTTPS thật của domain production. Để trống thì không canonical/sitemap URL.|
 |SITE_INDEXABLE|Mặc định false. Chỉ đặt true khi nội dung và domain production sẵn sàng. Vercel Preview luôn noindex.|
-|NEXT_PUBLIC_CONTACT_EMAIL|Email thật của công ty; trống thì không hiện.|
+|NEXT_PUBLIC_CONTACT_EMAIL|Email liên hệ; trống thì dùng contact@vpndigital.io.vn.|
 |NEXT_PUBLIC_CONTACT_PHONE|Số điện thoại thật; trống thì không hiện.|
 
 Biến được đọc lúc build; phải redeploy sau khi sửa. Không đặt secrets vào biến NEXT_PUBLIC_. Source đã có đường dẫn riêng phục vụ bản xem trên Sites; deployment Sites không phải Vercel. Nếu dùng repo cho dự án Vercel độc lập, có thể bỏ `.openai/hosting.json` (chỉ dùng cho Sites).
