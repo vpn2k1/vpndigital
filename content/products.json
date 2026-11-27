@@ -20,7 +20,6 @@
     "visible": true,
     "status": "released",
     "web": "https://paper-war-vn-872.web.app/play",
-    "packageId": "vp.nam.battle.paper",
     "ads": true,
     "online": false,
     "icon": "/apps/paper-war/icon.webp",
@@ -32,8 +31,8 @@
   {
     "slug": "triangle-master",
     "category": "ung-dung",
-    "name": "Triangle Master",
-    "subtitle": "Pencil Puzzle",
+    "name": "Nối Chấm",
+    "subtitle": "Triangle Master · Giải đố bút chì",
     "summary": "Nối các chấm thành tam giác với ít nét bút nhất.",
     "description": "Game giải đố nối chấm thành tam giác theo phong cách sổ tay vẽ chì. Mỗi màn có số nét tối ưu được kiểm chứng bằng bộ giải, kèm nhiều loại giấy và bút để chọn.",
     "features": [
@@ -50,11 +49,10 @@
     "visible": true,
     "status": "demo",
     "web": "",
-    "packageId": "vp.nam.noitamgiac",
     "ads": true,
     "online": false,
     "icon": "/apps/triangle-master/icon.webp",
-    "privacy": "<section>\n<h2>Tổng quan</h2>\n<p>Triangle Master là game giải đố chơi offline. Chúng tôi không yêu cầu tạo tài khoản, không yêu cầu tên, email hay số điện thoại và không bán dữ liệu của bạn.</p>\n</section>\n<section>\n<h2>Dữ liệu lưu trên thiết bị</h2>\n<p>Tiến trình chơi (màn đã hoàn thành, số nét, sao) và cài đặt (âm thanh, loại giấy, loại bút) được lưu trong vùng lưu trữ riêng của ứng dụng. Gỡ ứng dụng sẽ xoá toàn bộ dữ liệu này.</p>\n</section>\n<section>\n<h2>Quảng cáo</h2>\n<p>Ứng dụng hiển thị quảng cáo toàn màn hình và quảng cáo có thưởng (tuỳ chọn xem) qua Google AdMob. Bên cung cấp quảng cáo có thể xử lý mã nhận dạng quảng cáo của thiết bị, địa chỉ IP, loại thiết bị, hệ điều hành, khu vực và tương tác với quảng cáo để hiển thị quảng cáo và phòng chống gian lận.</p>\n<p>Bạn có thể quản lý quảng cáo cá nhân hoá trong cài đặt thiết bị: Android: Cài đặt → Google → Quảng cáo; iOS: Cài đặt → Quyền riêng tư &amp; Bảo mật → Theo dõi.</p>\n<p class=\"links\">Chính sách quyền riêng tư của <a href=\"https://policies.google.com/privacy\" rel=\"noopener\">Google</a>.</p>\n</section>\n<section>\n<h2>Lưu giữ và xoá dữ liệu</h2>\n<p>Dữ liệu trên thiết bị tồn tại cho đến khi bạn xoá dữ liệu ứng dụng hoặc gỡ ứng dụng. Dữ liệu kỹ thuật do Google xử lý được lưu giữ theo chính sách của Google.</p>\n</section>\n<section>\n<h2>Trẻ em</h2>\n<p>Ứng dụng không nhắm tới trẻ em dưới 13 tuổi và chúng tôi không chủ ý thu thập thông tin cá nhân của trẻ em. Nếu bạn là phụ huynh và cho rằng con bạn đã cung cấp thông tin cho chúng tôi, hãy liên hệ để chúng tôi xử lý.</p>\n</section>\n<section>\n<h2>Liên hệ</h2>\n<p>Mọi câu hỏi về chính sách này, vui lòng gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Thay đổi chính sách</h2>\n<p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này và ngày “Cập nhật lần cuối”.</p>\n</section>",
+    "privacy": "<section>\n<h2>Tổng quan</h2>\n<p>Nối Chấm (Triangle Master) là game giải đố chơi offline. Chúng tôi không yêu cầu tạo tài khoản, không yêu cầu tên, email hay số điện thoại và không bán dữ liệu của bạn.</p>\n</section>\n<section>\n<h2>Dữ liệu lưu trên thiết bị</h2>\n<p>Tiến trình chơi (màn đã hoàn thành, số nét, sao) và cài đặt (âm thanh, loại giấy, loại bút) được lưu trong vùng lưu trữ riêng của ứng dụng. Gỡ ứng dụng sẽ xoá toàn bộ dữ liệu này.</p>\n</section>\n<section>\n<h2>Quảng cáo</h2>\n<p>Ứng dụng hiển thị quảng cáo toàn màn hình và quảng cáo có thưởng (tuỳ chọn xem) qua Google AdMob. Bên cung cấp quảng cáo có thể xử lý mã nhận dạng quảng cáo của thiết bị, địa chỉ IP, loại thiết bị, hệ điều hành, khu vực và tương tác với quảng cáo để hiển thị quảng cáo và phòng chống gian lận.</p>\n<p>Bạn có thể quản lý quảng cáo cá nhân hoá trong cài đặt thiết bị: Android: Cài đặt → Google → Quảng cáo; iOS: Cài đặt → Quyền riêng tư &amp; Bảo mật → Theo dõi.</p>\n<p class=\"links\">Chính sách quyền riêng tư của <a href=\"https://policies.google.com/privacy\" rel=\"noopener\">Google</a>.</p>\n</section>\n<section>\n<h2>Lưu giữ và xoá dữ liệu</h2>\n<p>Dữ liệu trên thiết bị tồn tại cho đến khi bạn xoá dữ liệu ứng dụng hoặc gỡ ứng dụng. Dữ liệu kỹ thuật do Google xử lý được lưu giữ theo chính sách của Google.</p>\n</section>\n<section>\n<h2>Trẻ em</h2>\n<p>Ứng dụng không nhắm tới trẻ em dưới 13 tuổi và chúng tôi không chủ ý thu thập thông tin cá nhân của trẻ em. Nếu bạn là phụ huynh và cho rằng con bạn đã cung cấp thông tin cho chúng tôi, hãy liên hệ để chúng tôi xử lý.</p>\n</section>\n<section>\n<h2>Liên hệ</h2>\n<p>Mọi câu hỏi về chính sách này, vui lòng gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Thay đổi chính sách</h2>\n<p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này và ngày “Cập nhật lần cuối”.</p>\n</section>",
     "updated": "27/11/2026"
   },
   {
@@ -78,7 +76,6 @@
     "visible": true,
     "status": "demo",
     "web": "",
-    "packageId": "vp.nam.oanquan",
     "ads": true,
     "online": false,
     "icon": "/apps/o-quan-viet/icon.webp",
@@ -90,8 +87,8 @@
   {
     "slug": "iron-turn",
     "category": "ung-dung",
-    "name": "VPN Tank",
-    "subtitle": "Iron Turn",
+    "name": "Xe Tăng VPN",
+    "subtitle": "VPN Tank · Iron Turn",
     "summary": "Bắn tăng theo lượt, roguelike 2D nét mịn.",
     "description": "Chiến đấu theo lượt với đội xe tăng: chơi các chiến dịch, quản lý tiền và đồ trong game, rồi đấu với máy hoặc bạn bè trong phòng online. Chạy trên web (cài như PWA), iOS và Android.",
     "features": [
@@ -108,11 +105,10 @@
     "visible": true,
     "status": "demo",
     "web": "",
-    "packageId": "",
     "ads": false,
     "online": true,
     "icon": "/apps/iron-turn/icon.webp",
-    "privacy": "<section>\n<h2>Tổng quan</h2>\n<p>VPN Tank có tài khoản để lưu tiến trình và kết nối bạn bè khi chơi online. Chính sách này mô tả dữ liệu nào được lưu và lưu ở đâu.</p>\n</section>\n<section>\n<h2>Tài khoản</h2>\n<p>Bạn có thể chơi như khách: chỉ cần nhập tên hiển thị, hệ thống tạo một khoá khách lưu trên thiết bị để nhận diện bạn.</p>\n<p>Bạn cũng có thể đăng ký tài khoản bằng tên đăng nhập và mật khẩu. Mật khẩu được mã hoá một chiều (băm) trước khi lưu, chúng tôi không lưu mật khẩu gốc.</p>\n</section>\n<section>\n<h2>Dữ liệu lưu trên máy chủ</h2>\n<p>Khi bạn chơi online, máy chủ lưu: tên hiển thị, tiến trình chiến dịch, tiền và vật phẩm trong game, danh sách bạn bè và lời mời phòng, cùng kết quả các trận đấu (phòng, chế độ, số lượt, người thắng). Dữ liệu tài khoản khách sẽ được giữ cho đến khi bạn đăng ký tài khoản hoặc yêu cầu xoá.</p>\n</section>\n<section>\n<h2>Lưu trên thiết bị</h2>\n<p>Tiến trình và thiết lập được lưu trên thiết bị để bạn có thể tiếp tục chơi khi không có mạng.</p>\n</section>\n<section>\n<h2>Hạ tầng và cập nhật</h2>\n<p>Bên cung cấp hạ tầng máy chủ có thể xử lý dữ liệu kỹ thuật như địa chỉ IP và thời gian truy cập để vận hành dịch vụ. Ứng dụng có thể tải bản cập nhật từ máy chủ của chúng tôi; việc này không thu thập thêm dữ liệu cá nhân.</p>\n</section>\n<section>\n<h2>Quảng cáo và phân tích</h2>\n<p>VPN Tank hiện không hiển thị quảng cáo và không dùng công cụ phân tích hành vi của bên thứ ba.</p>\n</section>\n<section>\n<h2>Lưu giữ và xoá dữ liệu</h2>\n<p>Bạn có thể yêu cầu xoá tài khoản và dữ liệu trên máy chủ bằng cách gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>. Dữ liệu trên thiết bị bị xoá khi bạn xoá dữ liệu trình duyệt hoặc gỡ ứng dụng.</p>\n</section>\n<section>\n<h2>Trẻ em</h2>\n<p>Ứng dụng không nhắm tới trẻ em dưới 13 tuổi và chúng tôi không chủ ý thu thập thông tin cá nhân của trẻ em. Nếu bạn là phụ huynh và cho rằng con bạn đã cung cấp thông tin cho chúng tôi, hãy liên hệ để chúng tôi xử lý.</p>\n</section>\n<section>\n<h2>Liên hệ</h2>\n<p>Mọi câu hỏi về chính sách này, vui lòng gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Thay đổi chính sách</h2>\n<p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này và ngày “Cập nhật lần cuối”.</p>\n</section>",
+    "privacy": "<section>\n<h2>Tổng quan</h2>\n<p>Xe Tăng VPN có tài khoản để lưu tiến trình và kết nối bạn bè khi chơi online. Chính sách này mô tả dữ liệu nào được lưu và lưu ở đâu.</p>\n</section>\n<section>\n<h2>Tài khoản</h2>\n<p>Bạn có thể chơi như khách: chỉ cần nhập tên hiển thị, hệ thống tạo một khoá khách lưu trên thiết bị để nhận diện bạn.</p>\n<p>Bạn cũng có thể đăng ký tài khoản bằng tên đăng nhập và mật khẩu. Mật khẩu được mã hoá một chiều (băm) trước khi lưu, chúng tôi không lưu mật khẩu gốc.</p>\n</section>\n<section>\n<h2>Dữ liệu lưu trên máy chủ</h2>\n<p>Khi bạn chơi online, máy chủ lưu: tên hiển thị, tiến trình chiến dịch, tiền và vật phẩm trong game, danh sách bạn bè và lời mời phòng, cùng kết quả các trận đấu (phòng, chế độ, số lượt, người thắng). Dữ liệu tài khoản khách sẽ được giữ cho đến khi bạn đăng ký tài khoản hoặc yêu cầu xoá.</p>\n</section>\n<section>\n<h2>Lưu trên thiết bị</h2>\n<p>Tiến trình và thiết lập được lưu trên thiết bị để bạn có thể tiếp tục chơi khi không có mạng.</p>\n</section>\n<section>\n<h2>Hạ tầng và cập nhật</h2>\n<p>Bên cung cấp hạ tầng máy chủ có thể xử lý dữ liệu kỹ thuật như địa chỉ IP và thời gian truy cập để vận hành dịch vụ. Ứng dụng có thể tải bản cập nhật từ máy chủ của chúng tôi; việc này không thu thập thêm dữ liệu cá nhân.</p>\n</section>\n<section>\n<h2>Quảng cáo và phân tích</h2>\n<p>Xe Tăng VPN hiện không hiển thị quảng cáo và không dùng công cụ phân tích hành vi của bên thứ ba.</p>\n</section>\n<section>\n<h2>Lưu giữ và xoá dữ liệu</h2>\n<p>Bạn có thể yêu cầu xoá tài khoản và dữ liệu trên máy chủ bằng cách gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>. Dữ liệu trên thiết bị bị xoá khi bạn xoá dữ liệu trình duyệt hoặc gỡ ứng dụng.</p>\n</section>\n<section>\n<h2>Trẻ em</h2>\n<p>Ứng dụng không nhắm tới trẻ em dưới 13 tuổi và chúng tôi không chủ ý thu thập thông tin cá nhân của trẻ em. Nếu bạn là phụ huynh và cho rằng con bạn đã cung cấp thông tin cho chúng tôi, hãy liên hệ để chúng tôi xử lý.</p>\n</section>\n<section>\n<h2>Liên hệ</h2>\n<p>Mọi câu hỏi về chính sách này, vui lòng gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Thay đổi chính sách</h2>\n<p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này và ngày “Cập nhật lần cuối”.</p>\n</section>",
     "updated": "27/11/2026"
   },
   {
@@ -136,7 +132,6 @@
     "visible": true,
     "status": "demo",
     "web": "",
-    "packageId": "",
     "ads": false,
     "online": false,
     "icon": "/apps/100-dot-tre/icon.webp",
@@ -164,7 +159,6 @@
     "visible": true,
     "status": "demo",
     "web": "",
-    "packageId": "",
     "ads": false,
     "online": false,
     "icon": "/apps/dung-de-thay-thay/icon.webp",
@@ -174,8 +168,8 @@
   {
     "slug": "keo",
     "category": "ung-dung",
-    "name": "KEO",
-    "subtitle": "Vượt Phòng Tuyến",
+    "name": "KEO – Vượt Phòng Tuyến",
+    "subtitle": "KEO · Cross the Lines",
     "summary": "Vượt phòng tuyến — game offline.",
     "description": "Game vượt phòng tuyến 5 làn chơi offline, điều khiển bằng joystick, né đội canh gác do máy điều khiển và mở khoá dần các màn chơi.",
     "features": [
@@ -192,18 +186,17 @@
     "visible": true,
     "status": "demo",
     "web": "",
-    "packageId": "com.keo.keo_mobile",
     "ads": false,
     "online": false,
     "icon": "/apps/keo/icon.webp",
-    "privacy": "<section>\n<h2>Tổng quan</h2>\n<p>KEO là ứng dụng chơi offline. Ứng dụng không yêu cầu tài khoản, không thu thập thông tin cá nhân và không gửi dữ liệu ra ngoài thiết bị.</p>\n</section>\n<section>\n<h2>Dữ liệu lưu trên thiết bị</h2>\n<p>Cài đặt và tiến trình màn chơi được lưu trong vùng lưu trữ riêng của ứng dụng. Gỡ ứng dụng sẽ xoá toàn bộ dữ liệu này.</p>\n</section>\n<section>\n<h2>Lưu giữ và xoá dữ liệu</h2>\n<p>Không có dữ liệu nào được lưu trên máy chủ của chúng tôi. Gỡ ứng dụng sẽ xoá mọi dữ liệu cục bộ.</p>\n</section>\n<section>\n<h2>Trẻ em</h2>\n<p>Ứng dụng không nhắm tới trẻ em dưới 13 tuổi và chúng tôi không chủ ý thu thập thông tin cá nhân của trẻ em. Nếu bạn là phụ huynh và cho rằng con bạn đã cung cấp thông tin cho chúng tôi, hãy liên hệ để chúng tôi xử lý.</p>\n</section>\n<section>\n<h2>Liên hệ</h2>\n<p>Mọi câu hỏi về chính sách này, vui lòng gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Thay đổi chính sách</h2>\n<p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này và ngày “Cập nhật lần cuối”.</p>\n</section>",
+    "privacy": "<section>\n<h2>Tổng quan</h2>\n<p>KEO – Vượt Phòng Tuyến là ứng dụng chơi offline. Ứng dụng không yêu cầu tài khoản, không thu thập thông tin cá nhân và không gửi dữ liệu ra ngoài thiết bị.</p>\n</section>\n<section>\n<h2>Dữ liệu lưu trên thiết bị</h2>\n<p>Cài đặt và tiến trình màn chơi được lưu trong vùng lưu trữ riêng của ứng dụng. Gỡ ứng dụng sẽ xoá toàn bộ dữ liệu này.</p>\n</section>\n<section>\n<h2>Lưu giữ và xoá dữ liệu</h2>\n<p>Không có dữ liệu nào được lưu trên máy chủ của chúng tôi. Gỡ ứng dụng sẽ xoá mọi dữ liệu cục bộ.</p>\n</section>\n<section>\n<h2>Trẻ em</h2>\n<p>Ứng dụng không nhắm tới trẻ em dưới 13 tuổi và chúng tôi không chủ ý thu thập thông tin cá nhân của trẻ em. Nếu bạn là phụ huynh và cho rằng con bạn đã cung cấp thông tin cho chúng tôi, hãy liên hệ để chúng tôi xử lý.</p>\n</section>\n<section>\n<h2>Liên hệ</h2>\n<p>Mọi câu hỏi về chính sách này, vui lòng gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Thay đổi chính sách</h2>\n<p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này và ngày “Cập nhật lần cuối”.</p>\n</section>",
     "updated": "27/11/2026"
   },
   {
     "slug": "hidden-vision",
     "category": "ung-dung",
-    "name": "Hidden Vision",
-    "subtitle": "Bí mật trong màu sắc",
+    "name": "Bí Mật Trong Màu Sắc",
+    "subtitle": "Hidden Vision",
     "summary": "Tìm số, chữ, hình khối, con vật và đồ vật ẩn trong 30 bảng chấm màu.",
     "description": "Trò chơi giải đố 2D bằng tiếng Việt. Bảng chấm màu lấy cảm hứng từ Ishihara để giải trí; trò chơi không dùng để chẩn đoán thị giác.",
     "features": [
@@ -220,20 +213,19 @@
     "visible": true,
     "status": "demo",
     "web": "",
-    "packageId": "vn.hiddenvision.hidden_vision",
     "ads": false,
     "online": false,
     "icon": "/apps/hidden-vision/icon.webp",
-    "privacy": "<section>\n<h2>Tổng quan</h2>\n<p>Hidden Vision là ứng dụng chơi offline. Ứng dụng không yêu cầu tài khoản, không thu thập thông tin cá nhân và không gửi dữ liệu ra ngoài thiết bị. Ứng dụng không có quảng cáo.</p>\n</section>\n<section>\n<h2>Dữ liệu lưu trên thiết bị</h2>\n<p>Tiến trình và cài đặt (âm thanh) được lưu trong vùng lưu trữ riêng của ứng dụng. Gỡ ứng dụng sẽ xoá toàn bộ dữ liệu này.</p>\n</section>\n<section>\n<h2>Không phải công cụ y tế</h2>\n<p>Bảng chấm màu chỉ phục vụ giải trí và không dùng để chẩn đoán thị giác. Kết quả chơi không được gửi đi đâu.</p>\n</section>\n<section>\n<h2>Trẻ em</h2>\n<p>Ứng dụng không nhắm tới trẻ em dưới 13 tuổi và chúng tôi không chủ ý thu thập thông tin cá nhân của trẻ em. Nếu bạn là phụ huynh và cho rằng con bạn đã cung cấp thông tin cho chúng tôi, hãy liên hệ để chúng tôi xử lý.</p>\n</section>\n<section>\n<h2>Liên hệ</h2>\n<p>Mọi câu hỏi về chính sách này, vui lòng gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Thay đổi chính sách</h2>\n<p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này và ngày “Cập nhật lần cuối”.</p>\n</section>",
+    "privacy": "<section>\n<h2>Tổng quan</h2>\n<p>Bí Mật Trong Màu Sắc (Hidden Vision) là ứng dụng chơi offline. Ứng dụng không yêu cầu tài khoản, không thu thập thông tin cá nhân và không gửi dữ liệu ra ngoài thiết bị. Ứng dụng không có quảng cáo.</p>\n</section>\n<section>\n<h2>Dữ liệu lưu trên thiết bị</h2>\n<p>Tiến trình và cài đặt (âm thanh) được lưu trong vùng lưu trữ riêng của ứng dụng. Gỡ ứng dụng sẽ xoá toàn bộ dữ liệu này.</p>\n</section>\n<section>\n<h2>Không phải công cụ y tế</h2>\n<p>Bảng chấm màu chỉ phục vụ giải trí và không dùng để chẩn đoán thị giác. Kết quả chơi không được gửi đi đâu.</p>\n</section>\n<section>\n<h2>Trẻ em</h2>\n<p>Ứng dụng không nhắm tới trẻ em dưới 13 tuổi và chúng tôi không chủ ý thu thập thông tin cá nhân của trẻ em. Nếu bạn là phụ huynh và cho rằng con bạn đã cung cấp thông tin cho chúng tôi, hãy liên hệ để chúng tôi xử lý.</p>\n</section>\n<section>\n<h2>Liên hệ</h2>\n<p>Mọi câu hỏi về chính sách này, vui lòng gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Thay đổi chính sách</h2>\n<p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này và ngày “Cập nhật lần cuối”.</p>\n</section>",
     "updated": "27/11/2026"
   },
   {
     "slug": "my-eyes",
     "category": "ung-dung",
-    "name": "My Eyes",
-    "subtitle": "Nhìn qua đôi mắt của tôi",
+    "name": "Đôi Mắt",
+    "subtitle": "My Eyes · Nhìn qua đôi mắt của tôi",
     "summary": "Ứng dụng offline mô phỏng và so sánh khác biệt về cảm nhận màu sắc.",
-    "description": "My Eyes giúp khám phá và so sánh các mô hình khác biệt về cảm nhận màu qua camera, ảnh có sẵn hoặc cảnh minh hoạ. Giao diện tiếng Việt và tiếng Anh theo ngôn ngữ thiết bị. Ứng dụng mang tính giáo dục, không dùng để chẩn đoán.",
+    "description": "Đôi Mắt giúp khám phá và so sánh các mô hình khác biệt về cảm nhận màu qua camera, ảnh có sẵn hoặc cảnh minh hoạ. Giao diện tiếng Việt và tiếng Anh theo ngôn ngữ thiết bị. Ứng dụng mang tính giáo dục, không dùng để chẩn đoán.",
     "features": [
       "Mô phỏng qua camera trực tiếp",
       "Mô phỏng trên ảnh từ thư viện",
@@ -248,13 +240,12 @@
     "visible": true,
     "status": "demo",
     "web": "",
-    "packageId": "vpn.digital.myeyes",
     "ads": false,
     "online": false,
     "icon": "/apps/my-eyes/icon.webp",
     "splash": "/apps/my-eyes/splash.webp",
     "splashColor": "#141E35",
-    "privacy": "<section>\n<h2>Tổng quan</h2>\n<p>My Eyes xử lý mọi hình ảnh ngay trên thiết bị. Ứng dụng không yêu cầu tài khoản, không có quảng cáo và không tải ảnh hay dữ liệu cá nhân lên máy chủ.</p>\n</section>\n<section>\n<h2>Camera và ảnh</h2>\n<p>Ứng dụng xin quyền camera khi bạn mở màn hình camera để hiển thị mô phỏng theo thời gian thực, và quyền truy cập ảnh khi bạn chọn một ảnh để xem mô phỏng. Hình ảnh chỉ được xử lý trong bộ nhớ của thiết bị, không được lưu lại hay gửi đi. Ứng dụng không ghi âm.</p>\n<p>Bạn có thể thu hồi các quyền này bất cứ lúc nào trong cài đặt hệ thống.</p>\n</section>\n<section>\n<h2>Dữ liệu lưu trên thiết bị</h2>\n<p>Cài đặt của bạn được lưu trong vùng lưu trữ riêng của ứng dụng. Gỡ ứng dụng sẽ xoá toàn bộ dữ liệu này.</p>\n</section>\n<section>\n<h2>Liên kết ngoài</h2>\n<p>Một số nội dung có liên kết tới trang tham khảo bên ngoài, được mở trong trình duyệt và chịu chính sách của trang đó.</p>\n</section>\n<section>\n<h2>Không phải công cụ y tế</h2>\n<p>Mô phỏng chỉ mang tính giáo dục và không dùng để chẩn đoán thị giác.</p>\n</section>\n<section>\n<h2>Trẻ em</h2>\n<p>Ứng dụng không nhắm tới trẻ em dưới 13 tuổi và chúng tôi không chủ ý thu thập thông tin cá nhân của trẻ em. Nếu bạn là phụ huynh và cho rằng con bạn đã cung cấp thông tin cho chúng tôi, hãy liên hệ để chúng tôi xử lý.</p>\n</section>\n<section>\n<h2>Liên hệ</h2>\n<p>Mọi câu hỏi về chính sách này, vui lòng gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Thay đổi chính sách</h2>\n<p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này và ngày “Cập nhật lần cuối”.</p>\n</section>",
+    "privacy": "<section>\n<h2>Tổng quan</h2>\n<p>Đôi Mắt xử lý mọi hình ảnh ngay trên thiết bị. Ứng dụng không yêu cầu tài khoản, không có quảng cáo và không tải ảnh hay dữ liệu cá nhân lên máy chủ.</p>\n</section>\n<section>\n<h2>Camera và ảnh</h2>\n<p>Ứng dụng xin quyền camera khi bạn mở màn hình camera để hiển thị mô phỏng theo thời gian thực, và quyền truy cập ảnh khi bạn chọn một ảnh để xem mô phỏng. Hình ảnh chỉ được xử lý trong bộ nhớ của thiết bị, không được lưu lại hay gửi đi. Ứng dụng không ghi âm.</p>\n<p>Bạn có thể thu hồi các quyền này bất cứ lúc nào trong cài đặt hệ thống.</p>\n</section>\n<section>\n<h2>Dữ liệu lưu trên thiết bị</h2>\n<p>Cài đặt của bạn được lưu trong vùng lưu trữ riêng của ứng dụng. Gỡ ứng dụng sẽ xoá toàn bộ dữ liệu này.</p>\n</section>\n<section>\n<h2>Liên kết ngoài</h2>\n<p>Một số nội dung có liên kết tới trang tham khảo bên ngoài, được mở trong trình duyệt và chịu chính sách của trang đó.</p>\n</section>\n<section>\n<h2>Không phải công cụ y tế</h2>\n<p>Mô phỏng chỉ mang tính giáo dục và không dùng để chẩn đoán thị giác.</p>\n</section>\n<section>\n<h2>Trẻ em</h2>\n<p>Ứng dụng không nhắm tới trẻ em dưới 13 tuổi và chúng tôi không chủ ý thu thập thông tin cá nhân của trẻ em. Nếu bạn là phụ huynh và cho rằng con bạn đã cung cấp thông tin cho chúng tôi, hãy liên hệ để chúng tôi xử lý.</p>\n</section>\n<section>\n<h2>Liên hệ</h2>\n<p>Mọi câu hỏi về chính sách này, vui lòng gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Thay đổi chính sách</h2>\n<p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này và ngày “Cập nhật lần cuối”.</p>\n</section>",
     "updated": "27/11/2026"
   },
   {
@@ -278,7 +269,6 @@
     "visible": true,
     "status": "demo",
     "web": "",
-    "packageId": "vpn.digital.lockscreen",
     "ads": true,
     "online": true,
     "icon": "/apps/lumiverse/icon.webp",
@@ -290,10 +280,10 @@
   {
     "slug": "colorsense",
     "category": "ung-dung",
-    "name": "ColorSense",
-    "subtitle": "Bài tập màu sắc giáo dục",
+    "name": "Cảm Nhận Màu Sắc",
+    "subtitle": "ColorSense · Bài tập màu sắc giáo dục",
     "summary": "Ứng dụng giáo dục dành cho người từ 18 tuổi với các bài tập về màu sắc bằng tình huống giả lập.",
-    "description": "ColorSense cung cấp các bài tập giáo dục về màu sắc bằng tình huống giả lập, công cụ hỗ trợ màu và hồ sơ kết quả lưu trên thiết bị. Giao diện mặc định tiếng Việt, có tiếng Anh. Ứng dụng không thay thế khám chuyên môn.",
+    "description": "Cảm Nhận Màu Sắc cung cấp các bài tập giáo dục về màu sắc bằng tình huống giả lập, công cụ hỗ trợ màu và hồ sơ kết quả lưu trên thiết bị. Giao diện mặc định tiếng Việt, có tiếng Anh. Ứng dụng không thay thế khám chuyên môn.",
     "features": [
       "Bài tập màu sắc bằng tình huống giả lập",
       "Công cụ hỗ trợ màu",
@@ -308,11 +298,10 @@
     "visible": true,
     "status": "demo",
     "web": "",
-    "packageId": "vn.colorsense.demo.colorsense",
     "ads": false,
     "online": false,
     "icon": "/apps/colorsense/icon.webp",
-    "privacy": "<section>\n<h2>Tổng quan</h2>\n<p>ColorSense hoạt động hoàn toàn trên thiết bị. Ứng dụng không yêu cầu tài khoản, không có quảng cáo và không gửi dữ liệu ra ngoài thiết bị.</p>\n</section>\n<section>\n<h2>Kết quả bài tập</h2>\n<p>Kết quả chỉ được lưu khi bạn đồng ý, và được mã hoá trong vùng lưu trữ an toàn của hệ điều hành. Bạn có thể xem lại, xoá từng kết quả hoặc xoá toàn bộ trong mục Hồ sơ. Khi tắt lịch sử, tiến độ bài dở chỉ tồn tại khi ứng dụng đang mở.</p>\n</section>\n<section>\n<h2>Không phải công cụ y tế</h2>\n<p>Nội dung mang tính giáo dục, không dùng để chẩn đoán. Các cơ sở trong mục Phòng khám là ví dụ hư cấu.</p>\n</section>\n<section>\n<h2>Độ tuổi</h2>\n<p>Ứng dụng dành cho người từ 18 tuổi trở lên và không chủ ý thu thập thông tin của trẻ em.</p>\n</section>\n<section>\n<h2>Liên hệ</h2>\n<p>Mọi câu hỏi về chính sách này, vui lòng gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Thay đổi chính sách</h2>\n<p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này và ngày “Cập nhật lần cuối”.</p>\n</section>",
+    "privacy": "<section>\n<h2>Tổng quan</h2>\n<p>Cảm Nhận Màu Sắc hoạt động hoàn toàn trên thiết bị. Ứng dụng không yêu cầu tài khoản, không có quảng cáo và không gửi dữ liệu ra ngoài thiết bị.</p>\n</section>\n<section>\n<h2>Kết quả bài tập</h2>\n<p>Kết quả chỉ được lưu khi bạn đồng ý, và được mã hoá trong vùng lưu trữ an toàn của hệ điều hành. Bạn có thể xem lại, xoá từng kết quả hoặc xoá toàn bộ trong mục Hồ sơ. Khi tắt lịch sử, tiến độ bài dở chỉ tồn tại khi ứng dụng đang mở.</p>\n</section>\n<section>\n<h2>Không phải công cụ y tế</h2>\n<p>Nội dung mang tính giáo dục, không dùng để chẩn đoán. Các cơ sở trong mục Phòng khám là ví dụ hư cấu.</p>\n</section>\n<section>\n<h2>Độ tuổi</h2>\n<p>Ứng dụng dành cho người từ 18 tuổi trở lên và không chủ ý thu thập thông tin của trẻ em.</p>\n</section>\n<section>\n<h2>Liên hệ</h2>\n<p>Mọi câu hỏi về chính sách này, vui lòng gửi email tới <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Thay đổi chính sách</h2>\n<p>Khi có thay đổi, chúng tôi sẽ cập nhật trang này và ngày “Cập nhật lần cuối”.</p>\n</section>",
     "updated": "27/11/2026"
   }
 ]

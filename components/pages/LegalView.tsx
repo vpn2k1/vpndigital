@@ -4,6 +4,7 @@ import { getStrings } from '@/config/strings';
 import { company } from '@/content/company';
 import type { Product } from '@/lib/products';
 import { localizedProduct } from '@/lib/localized-content';
+import { productsEn } from '@/config/strings/products-en';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Icon } from '@/components/Icon';
@@ -12,7 +13,7 @@ const legalCopy = {
   en: {
     updated: 'Last updated', identity: 'App and developer information',
     intro: (app: string, dev: string) => <>This document applies to the app <strong>{app}</strong>, developed and published by <strong>{dev}</strong>. In this document, “we” means {dev}.</>,
-    appName: 'App name', packageId: 'Package name', developer: 'Developer', entity: 'Legal entity', taxId: 'Tax ID', address: 'Address', email: 'Email',
+    appName: 'App name', otherName: 'Vietnamese name', developer: 'Developer', entity: 'Legal entity', taxId: 'Tax ID', address: 'Address', email: 'Email',
     address_: 'Phu Nhan Hamlet, Me So Commune, Hung Yen Province, Vietnam',
     terms: (p: Product, kind: string, privacy: string) => [
       ['Acceptance', <>By downloading, installing or using {p.name}, you agree to these terms and the <a href={privacy}>Privacy Policy</a>. If you do not agree, please stop using and uninstall the {kind}.</>],
@@ -31,7 +32,7 @@ const legalCopy = {
   vi: {
     updated: 'Cập nhật lần cuối', identity: 'Thông tin ứng dụng và nhà phát triển',
     intro: (app: string, dev: string) => <>Văn bản này áp dụng cho ứng dụng <strong>{app}</strong> do <strong>{dev}</strong> phát triển và phát hành. Trong văn bản này, “chúng tôi” là {dev}.</>,
-    appName: 'Tên ứng dụng', packageId: 'Mã ứng dụng (package name)', developer: 'Nhà phát triển', entity: 'Pháp nhân', taxId: 'MST', address: 'Địa chỉ', email: 'Email',
+    appName: 'Tên ứng dụng', otherName: 'Tên tiếng Anh', developer: 'Nhà phát triển', entity: 'Pháp nhân', taxId: 'MST', address: 'Địa chỉ', email: 'Email',
     address_: company.address,
     terms: (p: Product, kind: string, privacy: string) => [
       ['Chấp nhận điều khoản', <>Khi tải, cài đặt hoặc sử dụng {p.name}, bạn đồng ý với các điều khoản này và <a href={privacy}>Chính sách quyền riêng tư</a>. Nếu không đồng ý, vui lòng ngừng sử dụng và gỡ {kind}.</>],
@@ -55,6 +56,8 @@ export function LegalView({ locale, product, doc }: { locale: Locale; product: P
   const copy = localizedProduct(locale, product);
   const title = doc === 'privacy' ? s.productPage.privacy : s.productPage.terms;
   const appName = copy.name + ' (' + copy.subtitle + ')';
+  // Play listings carry both names; show the other language's name unless it is identical
+  const otherName = locale === 'en' ? product.name : productsEn[product.slug].name;
   const kind = t.kind(!copy.tags.some(tag => tag === 'Giáo dục' || tag === 'Education' || tag === 'Hình nền' || tag === 'Wallpaper'));
   return <div className="site-shell" id="top" lang={locale}>
     <a className="skip-link" href="#noi-dung">{s.nav.home}</a><Header/>
@@ -70,8 +73,8 @@ export function LegalView({ locale, product, doc }: { locale: Locale; product: P
       <section><h2>{t.identity}</h2>
         <p>{t.intro(appName, company.shortName)}</p>
         <ul>
-          <li>{t.appName}: {appName}</li>
-          {product.packageId && <li>{t.packageId}: {product.packageId}</li>}
+          <li>{t.appName}: {copy.name}</li>
+          {otherName !== copy.name && <li>{t.otherName}: {otherName}</li>}
           <li>{t.developer}: {company.shortName}</li>
           <li>{t.entity}: {company.legalName} ({company.internationalName}), {t.taxId} {company.taxId}</li>
           <li>{t.address}: {t.address_}</li>
