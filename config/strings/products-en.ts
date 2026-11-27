@@ -23,7 +23,7 @@ export const productsEn: Record<string, TranslatedProduct> = {
   },
   'triangle-master': {
     "name": "Triangle Master",
-    "subtitle": "Pencil Puzzle",
+    "subtitle": "Pencil Puzzle · Nối Chấm",
     "summary": "Connect the dots into triangles with as few strokes as possible.",
     "description": "A pencil-sketch notebook puzzle about connecting dots into triangles. Every level has a solver-verified optimal stroke count, with many papers and pens to choose from.",
     "features": [
@@ -39,8 +39,8 @@ export const productsEn: Record<string, TranslatedProduct> = {
     "privacy": "<section>\n<h2>Overview</h2>\n<p>Triangle Master is an offline puzzle game. We do not require an account, do not ask for your name, email or phone number, and do not sell your data.</p>\n</section>\n<section>\n<h2>Data stored on your device</h2>\n<p>Game progress (completed levels, strokes, stars) and settings (sound, paper, pen) are stored in the app’s private storage. Uninstalling the app deletes all of this data.</p>\n</section>\n<section>\n<h2>Advertising</h2>\n<p>The app shows interstitial ads and optional rewarded ads through Google AdMob. The ad provider may process your device advertising ID, IP address, device type, operating system, region and ad interactions to serve ads and prevent fraud.</p>\n<p>You can manage personalized ads in your device settings: Android: Settings → Google → Ads; iOS: Settings → Privacy &amp; Security → Tracking.</p>\n<p class=\"links\">Privacy policy of <a href=\"https://policies.google.com/privacy\" rel=\"noopener\">Google</a>.</p>\n</section>\n<section>\n<h2>Retention and deletion</h2>\n<p>On-device data remains until you clear the app data or uninstall the app. Technical data processed by Google is retained under Google’s policies.</p>\n</section>\n<section>\n<h2>Children</h2>\n<p>The app is not directed at children under 13 and we do not knowingly collect personal information from children. If you are a parent and believe your child has provided us with information, please contact us and we will handle it.</p>\n</section>\n<section>\n<h2>Contact</h2>\n<p>For any questions about this policy, please email <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Changes to this policy</h2>\n<p>When this policy changes, we will update this page and the “Last updated” date.</p>\n</section>"
   },
   'o-quan-viet': {
-    "name": "Ô Quan Việt",
-    "subtitle": "Mandarin Square Capturing",
+    "name": "Mandarin Square Capturing",
+    "subtitle": "Ô Quan Việt · Folk Strategy",
     "summary": "The Vietnamese folk board game for 2–4 players.",
     "description": "Ô ăn quan (Mandarin square capturing) for 2–4 players: a rectangle board for two, a triangle for three and a square for four. Play the computer at three difficulty levels or a friend on one device.",
     "features": [
@@ -53,11 +53,11 @@ export const productsEn: Record<string, TranslatedProduct> = {
       "Folk game",
       "Strategy"
     ],
-    "privacy": "<section>\n<h2>Overview</h2>\n<p>Ô Quan Việt is an offline game. We do not require an account and do not collect your name, email or phone number. Player names you enter are stored only on your device.</p>\n</section>\n<section>\n<h2>Data stored on your device</h2>\n<p>Settings (language, sound, difficulty) and progress are stored in the app’s private storage. Uninstalling the app deletes all of this data.</p>\n</section>\n<section>\n<h2>Advertising</h2>\n<p>The app shows banner and interstitial ads through Google AdMob. The ad provider may process your device advertising ID, IP address, device type, operating system, region and ad interactions to serve ads and prevent fraud.</p>\n<p>You can manage personalized ads in your device settings: Android: Settings → Google → Ads; iOS: Settings → Privacy &amp; Security → Tracking.</p>\n<p class=\"links\">Privacy policy of <a href=\"https://policies.google.com/privacy\" rel=\"noopener\">Google</a>.</p>\n</section>\n<section>\n<h2>Update services</h2>\n<p>Firebase Remote Config, Google Play In-App Update and the Shorebird patch service may process the app version and device information to announce or deliver fixes. This data is retained under the providers’ policies.</p>\n<p class=\"links\">Privacy policy of <a href=\"https://policies.google.com/privacy\" rel=\"noopener\">Google</a>.</p>\n</section>\n<section>\n<h2>Retention and deletion</h2>\n<p>On-device data remains until you clear the app data or uninstall the app. Technical data processed by Google is retained under Google’s policies.</p>\n</section>\n<section>\n<h2>Children</h2>\n<p>The app is not directed at children under 13 and we do not knowingly collect personal information from children. If you are a parent and believe your child has provided us with information, please contact us and we will handle it.</p>\n</section>\n<section>\n<h2>Contact</h2>\n<p>For any questions about this policy, please email <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Changes to this policy</h2>\n<p>When this policy changes, we will update this page and the “Last updated” date.</p>\n</section>"
+    "privacy": "<section>\n<h2>Overview</h2>\n<p>Mandarin Square Capturing (Ô Quan Việt) is an offline game. We do not require an account and do not collect your name, email or phone number. Player names you enter are stored only on your device.</p>\n</section>\n<section>\n<h2>Data stored on your device</h2>\n<p>Settings (language, sound, difficulty) and progress are stored in the app’s private storage. Uninstalling the app deletes all of this data.</p>\n</section>\n<section>\n<h2>Advertising</h2>\n<p>The app shows banner and interstitial ads through Google AdMob. The ad provider may process your device advertising ID, IP address, device type, operating system, region and ad interactions to serve ads and prevent fraud.</p>\n<p>You can manage personalized ads in your device settings: Android: Settings → Google → Ads; iOS: Settings → Privacy &amp; Security → Tracking.</p>\n<p class=\"links\">Privacy policy of <a href=\"https://policies.google.com/privacy\" rel=\"noopener\">Google</a>.</p>\n</section>\n<section>\n<h2>Update services</h2>\n<p>Firebase Remote Config, Google Play In-App Update and the Shorebird patch service may process the app version and device information to announce or deliver fixes. This data is retained under the providers’ policies.</p>\n<p class=\"links\">Privacy policy of <a href=\"https://policies.google.com/privacy\" rel=\"noopener\">Google</a>.</p>\n</section>\n<section>\n<h2>Retention and deletion</h2>\n<p>On-device data remains until you clear the app data or uninstall the app. Technical data processed by Google is retained under Google’s policies.</p>\n</section>\n<section>\n<h2>Children</h2>\n<p>The app is not directed at children under 13 and we do not knowingly collect personal information from children. If you are a parent and believe your child has provided us with information, please contact us and we will handle it.</p>\n</section>\n<section>\n<h2>Contact</h2>\n<p>For any questions about this policy, please email <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Changes to this policy</h2>\n<p>When this policy changes, we will update this page and the “Last updated” date.</p>\n</section>"
   },
   'iron-turn': {
     "name": "VPN Tank",
-    "subtitle": "Iron Turn",
+    "subtitle": "Iron Turn · Xe Tăng VPN",
     "summary": "Turn-based tank combat with crisp 2D roguelike visuals.",
     "description": "Turn-based battles with a tank squad: play campaigns, manage in-game money and items, then fight the computer or friends in online rooms. Runs on the web (installable PWA), iOS and Android.",
     "features": [
@@ -107,8 +107,8 @@ export const productsEn: Record<string, TranslatedProduct> = {
     "privacy": "<section>\n<h2>Overview</h2>\n<p>Đừng Để Thầy Thấy! works offline. It requires no account, collects no personal information and sends no data off your device.</p>\n</section>\n<section>\n<h2>Data stored on your device</h2>\n<p>Game progress and settings (sound, language) are stored in the app’s private storage. Uninstalling the app deletes all of this data.</p>\n</section>\n<section>\n<h2>Retention and deletion</h2>\n<p>No data is stored on our servers. Uninstalling the app removes all local data.</p>\n</section>\n<section>\n<h2>Children</h2>\n<p>The app is not directed at children under 13 and we do not knowingly collect personal information from children. If you are a parent and believe your child has provided us with information, please contact us and we will handle it.</p>\n</section>\n<section>\n<h2>Contact</h2>\n<p>For any questions about this policy, please email <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Changes to this policy</h2>\n<p>When this policy changes, we will update this page and the “Last updated” date.</p>\n</section>"
   },
   'keo': {
-    "name": "KEO",
-    "subtitle": "Cross the Lines",
+    "name": "KEO – Cross the Lines",
+    "subtitle": "KEO · Vượt Phòng Tuyến",
     "summary": "Break through the guard lines — an offline game.",
     "description": "An offline five-line crossing game: steer with a joystick, dodge computer-controlled guards and unlock levels as you go.",
     "features": [
@@ -121,11 +121,11 @@ export const productsEn: Record<string, TranslatedProduct> = {
       "Action",
       "Folk game"
     ],
-    "privacy": "<section>\n<h2>Overview</h2>\n<p>KEO works offline. It requires no account, collects no personal information and sends no data off your device.</p>\n</section>\n<section>\n<h2>Data stored on your device</h2>\n<p>Settings and level progress are stored in the app’s private storage. Uninstalling the app deletes all of this data.</p>\n</section>\n<section>\n<h2>Retention and deletion</h2>\n<p>No data is stored on our servers. Uninstalling the app removes all local data.</p>\n</section>\n<section>\n<h2>Children</h2>\n<p>The app is not directed at children under 13 and we do not knowingly collect personal information from children. If you are a parent and believe your child has provided us with information, please contact us and we will handle it.</p>\n</section>\n<section>\n<h2>Contact</h2>\n<p>For any questions about this policy, please email <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Changes to this policy</h2>\n<p>When this policy changes, we will update this page and the “Last updated” date.</p>\n</section>"
+    "privacy": "<section>\n<h2>Overview</h2>\n<p>KEO – Vượt Phòng Tuyến works offline. It requires no account, collects no personal information and sends no data off your device.</p>\n</section>\n<section>\n<h2>Data stored on your device</h2>\n<p>Settings and level progress are stored in the app’s private storage. Uninstalling the app deletes all of this data.</p>\n</section>\n<section>\n<h2>Retention and deletion</h2>\n<p>No data is stored on our servers. Uninstalling the app removes all local data.</p>\n</section>\n<section>\n<h2>Children</h2>\n<p>The app is not directed at children under 13 and we do not knowingly collect personal information from children. If you are a parent and believe your child has provided us with information, please contact us and we will handle it.</p>\n</section>\n<section>\n<h2>Contact</h2>\n<p>For any questions about this policy, please email <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Changes to this policy</h2>\n<p>When this policy changes, we will update this page and the “Last updated” date.</p>\n</section>"
   },
   'hidden-vision': {
     "name": "Hidden Vision",
-    "subtitle": "Secrets in Color",
+    "subtitle": "Secrets in Color · Bí Mật Trong Màu Sắc",
     "summary": "Find numbers, letters, shapes, animals and objects hidden in 30 color-dot plates.",
     "description": "A 2D Vietnamese-language puzzle game. The dot plates are Ishihara-inspired for entertainment only; the game is not a vision test.",
     "features": [
@@ -138,11 +138,11 @@ export const productsEn: Record<string, TranslatedProduct> = {
       "Puzzle",
       "Color"
     ],
-    "privacy": "<section>\n<h2>Overview</h2>\n<p>Hidden Vision works offline. It requires no account, collects no personal information and sends no data off your device. The app has no ads.</p>\n</section>\n<section>\n<h2>Data stored on your device</h2>\n<p>Progress and settings (sound) are stored in the app’s private storage. Uninstalling the app deletes all of this data.</p>\n</section>\n<section>\n<h2>Not a medical tool</h2>\n<p>The dot plates are for entertainment only and are not a vision diagnosis. Results are never sent anywhere.</p>\n</section>\n<section>\n<h2>Children</h2>\n<p>The app is not directed at children under 13 and we do not knowingly collect personal information from children. If you are a parent and believe your child has provided us with information, please contact us and we will handle it.</p>\n</section>\n<section>\n<h2>Contact</h2>\n<p>For any questions about this policy, please email <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Changes to this policy</h2>\n<p>When this policy changes, we will update this page and the “Last updated” date.</p>\n</section>"
+    "privacy": "<section>\n<h2>Overview</h2>\n<p>Bí Mật Trong Màu Sắc (Hidden Vision) works offline. It requires no account, collects no personal information and sends no data off your device. The app has no ads.</p>\n</section>\n<section>\n<h2>Data stored on your device</h2>\n<p>Progress and settings (sound) are stored in the app’s private storage. Uninstalling the app deletes all of this data.</p>\n</section>\n<section>\n<h2>Not a medical tool</h2>\n<p>The dot plates are for entertainment only and are not a vision diagnosis. Results are never sent anywhere.</p>\n</section>\n<section>\n<h2>Children</h2>\n<p>The app is not directed at children under 13 and we do not knowingly collect personal information from children. If you are a parent and believe your child has provided us with information, please contact us and we will handle it.</p>\n</section>\n<section>\n<h2>Contact</h2>\n<p>For any questions about this policy, please email <a href=\"mailto:contact@vpndigital.io.vn\">contact@vpndigital.io.vn</a>.</p>\n</section>\n<section>\n<h2>Changes to this policy</h2>\n<p>When this policy changes, we will update this page and the “Last updated” date.</p>\n</section>"
   },
   'my-eyes': {
     "name": "My Eyes",
-    "subtitle": "See Through My Eyes",
+    "subtitle": "See Through My Eyes · Đôi Mắt",
     "summary": "An offline app to simulate and compare differences in color vision.",
     "description": "My Eyes lets you explore and compare modeled color-vision differences through the live camera, your photos or illustrated scenes. The interface follows your device language (English or Vietnamese). Educational only, not a diagnostic tool.",
     "features": [
@@ -176,7 +176,7 @@ export const productsEn: Record<string, TranslatedProduct> = {
   },
   'colorsense': {
     "name": "ColorSense",
-    "subtitle": "Educational Color Exercises",
+    "subtitle": "Educational Color Exercises · Cảm Nhận Màu Sắc",
     "summary": "An educational app for adults (18+) with color exercises based on simulated scenarios.",
     "description": "ColorSense offers educational color exercises built on simulated scenarios, color assistance tools and a results profile stored on your device. Vietnamese by default, with English available. It does not replace a professional examination.",
     "features": [
