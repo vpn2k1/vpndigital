@@ -35,10 +35,10 @@ const vi: SiteStrings = {
   categoryPage: {
     availability: 'Liên kết tải trên Google Play và App Store sẽ được cập nhật khi từng sản phẩm phát hành.',
     explore: 'Xem sản phẩm', contact: 'Liên hệ', areas: 'LĨNH VỰC',
-    collectionEyebrow: 'KHÁM PHÁ /', collectionFirst: 'Ý tưởng hôm nay.', collectionAccent: 'Tiềm năng ngày mai.',
+    collectionEyebrow: 'KHÁM PHÁ /', collectionFirst: 'Làm tại Việt Nam.', collectionAccent: 'Làm để bạn yêu thích.',
     collectionText: 'sản phẩm. Mở từng sản phẩm để xem giới thiệu, chính sách quyền riêng tư và điều khoản sử dụng.', empty: 'Sản phẩm thuộc lĩnh vực này đang được chuẩn bị. Vui lòng quay lại sau.',
-    bottomEyebrow: 'MỌI ĐIỀU ĐỀU BẮT ĐẦU TỪ Ý TƯỞNG', bottomTitle: 'Chưa phải điểm đến cuối cùng.',
-    bottomDescription: 'Những nội dung ở đây là bản giới thiệu định hướng. Khi có thông tin phát hành, chúng tôi sẽ cập nhật trên website.',
+    bottomEyebrow: 'CÒN NHIỀU ĐIỀU THÚ VỊ', bottomTitle: 'Chưa phải điểm đến cuối cùng.',
+    bottomDescription: 'Những game và ứng dụng mới đang được phát triển. Kết nối với chúng tôi để nhận tin phát hành hoặc hợp tác.',
     bottomCta: 'Kết nối với chúng tôi',
   },
   productPage: {
@@ -47,7 +47,7 @@ const vi: SiteStrings = {
     explore: 'Khám phá', contact: 'Liên hệ', storyEyebrow: 'GIỚI THIỆU',
     storyTitle: 'Về sản phẩm', featureEyebrow: 'TÍNH NĂNG CHÍNH', featureTitle: 'Bạn có thể làm gì.',
     facts: 'THÔNG TIN', released: 'Đã phát hành', comingSoon: 'Sắp ra mắt', category: 'Danh mục', platform: 'Nền tảng', statusLabel: 'Trạng thái',
-    playWeb: 'Chơi ngay trên web', ads: 'Quảng cáo', yes: 'Có', no: 'Không', legal: 'PHÁP LÝ', privacy: 'Chính sách quyền riêng tư', terms: 'Điều khoản sử dụng', iconAlt: 'Biểu tượng ứng dụng', splashAlt: 'Màn hình khởi động',
+    playWeb: 'Chơi ngay trên web', galleryEyebrow: 'HÌNH ẢNH', galleryTitle: 'Bên trong ứng dụng.', ads: 'Quảng cáo', yes: 'Có', no: 'Không', legal: 'PHÁP LÝ', privacy: 'Chính sách quyền riêng tư', terms: 'Điều khoản sử dụng', iconAlt: 'Biểu tượng ứng dụng', splashAlt: 'Màn hình khởi động',
     relatedEyebrow: 'CÙNG LĨNH VỰC', relatedTitle: 'Tiếp tục khám phá.', all: 'Tất cả', teaser: 'Xem chi tiết',
   },
   footer: { mission: 'Công nghệ Việt. Khát vọng số.', status: 'Đang kiến tạo những trải nghiệm mới', explore: 'KHÁM PHÁ', about: 'Về VPN Digital', connect: 'KẾT NỐI', contactInfo: 'Thông tin liên hệ', top: 'Về đầu trang', vietnam: 'Việt Nam', location: 'Mễ Sở, Hưng Yên' },

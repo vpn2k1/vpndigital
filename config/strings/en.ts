@@ -33,10 +33,10 @@ const en = {
   categoryPage: {
     availability: 'Google Play and App Store links will be added as each product launches.',
     explore: 'View products', contact: 'Contact us', areas: 'FIELDS',
-    collectionEyebrow: 'EXPLORE /', collectionFirst: 'Ideas today.', collectionAccent: 'Possibilities tomorrow.',
+    collectionEyebrow: 'EXPLORE /', collectionFirst: 'Made in Vietnam.', collectionAccent: 'Made to be enjoyed.',
     collectionText: 'products. Open one for details, its privacy policy and terms of use.', empty: 'Products in this field are on the way. Please check back later.',
-    bottomEyebrow: 'EVERYTHING STARTS WITH AN IDEA', bottomTitle: 'There is more to come.',
-    bottomDescription: 'These pages are previews of possible directions. We will post release information here when it becomes available.',
+    bottomEyebrow: 'MORE ON THE WAY', bottomTitle: 'There is more to come.',
+    bottomDescription: 'New games and apps are in the works. Get in touch to hear about launches or to work with us.',
     bottomCta: 'Connect with us',
   },
   productPage: {
@@ -45,7 +45,7 @@ const en = {
     explore: 'Explore', contact: 'Contact us', storyEyebrow: 'ABOUT',
     storyTitle: 'About the product', featureEyebrow: 'KEY FEATURES', featureTitle: 'What you can do.',
     facts: 'DETAILS', released: 'Released', comingSoon: 'Coming soon', category: 'Category', platform: 'Platforms', statusLabel: 'Status',
-    playWeb: 'Play on the web', ads: 'Ads', yes: 'Yes', no: 'No', legal: 'LEGAL', privacy: 'Privacy Policy', terms: 'Terms of Use', iconAlt: 'App icon', splashAlt: 'Splash screen',
+    playWeb: 'Play on the web', galleryEyebrow: 'SCREENSHOTS', galleryTitle: 'A look inside.', ads: 'Ads', yes: 'Yes', no: 'No', legal: 'LEGAL', privacy: 'Privacy Policy', terms: 'Terms of Use', iconAlt: 'App icon', splashAlt: 'Splash screen',
     relatedEyebrow: 'IN THE SAME FIELD', relatedTitle: 'Keep exploring.', all: 'All', teaser: 'View details',
   },
   footer: { mission: 'Vietnamese technology. Digital ambition.', status: 'Building new experiences', explore: 'EXPLORE', about: 'About VPN Digital', connect: 'CONNECT', contactInfo: 'Contact information', top: 'Back to top', vietnam: 'Vietnam', location: 'Me So, Hung Yen' },

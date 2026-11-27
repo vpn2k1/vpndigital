@@ -5,16 +5,37 @@
     "name": "Chiến Tranh Giấy",
     "subtitle": "Paper War · Battle Paper",
     "summary": "Chọi bút qua những tờ giấy gấp — 2 người chơi trên cùng một máy.",
-    "description": "Trò chọc bút qua giấy gấp của học trò Việt Nam. Chọn loại giấy, loại bút và tên lính cho mỗi bên, rồi chơi với bạn trên cùng một máy hoặc đấu với máy ở ba độ khó.",
+    "description": "Chiến Tranh Giấy đưa trò chọc bút qua giấy gấp của học trò Việt Nam lên điện thoại, kèm thêm chế độ Hạ tàu chiến. Bạn bí mật xếp quân hoặc tàu, gấp giấy rồi chọc bút để hạ đối thủ. Chơi với bạn trên cùng một máy hoặc đấu với máy ở 3 mức độ, không cần mạng.",
     "features": [
-      "Chơi với bạn: 2 người trên cùng một máy",
-      "Đấu với máy: Dễ / Vừa / Khó",
-      "Nhiều loại giấy, bút và tên lính để chọn"
+      "Hai trò trong một: Chiến tranh giấy và Hạ tàu chiến",
+      "Chơi với bạn trên một máy, có màn che khi chuyền máy để giấu đội hình",
+      "Đấu với máy 3 độ khó Dễ / Vừa / Khó",
+      "Tuỳ chỉnh 9 loại bút, 13 kiểu giấy và 3 hình nền",
+      "Hiệu ứng gấp giấy 2.5D và chọc bút sống động",
+      "Tự lưu ván, thống kê thắng/thua, chơi hoàn toàn offline"
     ],
     "platform": "Android · iOS · Web",
     "tags": [
       "Đối kháng",
       "Dân gian"
+    ],
+    "screenshots": [
+      {
+        "src": "/apps/paper-war/shots/vi-01.webp",
+        "caption": "Màn hình chính: chọn chơi với bạn hoặc đấu với máy"
+      },
+      {
+        "src": "/apps/paper-war/shots/vi-02.webp",
+        "caption": "Chế độ Hạ tàu chiến"
+      },
+      {
+        "src": "/apps/paper-war/shots/vi-03.webp",
+        "caption": "Thiết lập ván đấu với máy"
+      },
+      {
+        "src": "/apps/paper-war/shots/vi-04.webp",
+        "caption": "Đặt tàu lên giấy kẻ ô"
+      }
     ],
     "featured": true,
     "visible": true,
@@ -34,11 +55,14 @@
     "name": "Nối Chấm",
     "subtitle": "Triangle Master · Giải đố bút chì",
     "summary": "Nối các chấm thành tam giác với ít nét bút nhất.",
-    "description": "Game giải đố nối chấm thành tam giác theo phong cách sổ tay vẽ chì. Mỗi màn có số nét tối ưu được kiểm chứng bằng bộ giải, kèm nhiều loại giấy và bút để chọn.",
+    "description": "Nối Chấm là game giải đố theo phong cách sổ tay vẽ chì: nối các chấm thành tam giác, không để nét cắt nhau, sao cho đủ số tam giác và mọi chấm đều thuộc một tam giác — với càng ít nét càng tốt. Mỗi màn có số nét tối ưu được bộ giải kiểm chứng.",
     "features": [
-      "Nối chấm tạo tam giác với ít nét nhất",
-      "Màn chơi được kiểm chứng số nét tối ưu",
-      "Nhiều loại giấy và bút, chơi offline"
+      "160 màn chơi trong 8 chương",
+      "Chấm 1–3 sao theo số nét so với lời giải tối ưu",
+      "Gợi ý thông minh, Undo miễn phí và cảnh báo khi đi vào ngõ cụt",
+      "Bộ sưu tập 9 loại bút và 6 kiểu giấy",
+      "Phóng to, kéo bàn chơi; hỗ trợ chế độ tay trái",
+      "Âm thanh, nhạc thư giãn, rung; chơi offline"
     ],
     "platform": "Android · iOS · Web",
     "tags": [
@@ -61,16 +85,41 @@
     "name": "Ô Quan Việt",
     "subtitle": "Đấu Trí Dân Gian",
     "summary": "Ô ăn quan dân gian cho 2–4 người.",
-    "description": "Trò ô ăn quan dân gian cho 2–4 người: bàn chữ nhật cho 2 người, tam giác cho 3 người và hình vuông cho 4 người. Đấu máy ở ba độ khó hoặc chơi cùng bạn trên một máy.",
+    "description": "Ô Quan Việt là trò Ô ăn quan dân gian trên di động cho 2 đến 4 người, với bàn chữ nhật, tam giác hoặc vuông. Chơi với bạn hoặc đấu máy 3 độ khó, kèm gợi ý, đi lại, thành tích và mặt sân vẽ tay mang chất làng quê.",
     "features": [
-      "Bàn 2, 3 và 4 người",
-      "Đấu máy: Dễ / Vừa / Khó",
-      "Chơi cùng bạn trên cùng một máy"
+      "Bàn chữ nhật cho 2, tam giác cho 3, vuông cho 4 người",
+      "Chơi với bạn trên một máy hoặc đấu máy Dễ / Vừa / Khó",
+      "Gợi ý nước đi, đi lại (Undo) và tự lưu ván",
+      "Hướng dẫn chơi, thống kê và 6 thành tích",
+      "5 kiểu mặt sân vẽ tay: đất, xi măng, gạch với nét que, phấn, than",
+      "Trợ năng: giảm chuyển động, hỗ trợ mù màu bằng ký hiệu, giao diện sáng/tối"
     ],
     "platform": "Android · iOS · Web",
     "tags": [
       "Dân gian",
       "Chiến thuật"
+    ],
+    "screenshots": [
+      {
+        "src": "/apps/o-quan-viet/shots/01.webp",
+        "caption": "Ván 2 người trên bàn chữ nhật"
+      },
+      {
+        "src": "/apps/o-quan-viet/shots/02.webp",
+        "caption": "Ván 3 người trên bàn tam giác"
+      },
+      {
+        "src": "/apps/o-quan-viet/shots/03.webp",
+        "caption": "Ván 4 người trên bàn vuông"
+      },
+      {
+        "src": "/apps/o-quan-viet/shots/04.webp",
+        "caption": "Đấu với máy: chọn số người và độ khó"
+      },
+      {
+        "src": "/apps/o-quan-viet/shots/05.webp",
+        "caption": "Chơi với bạn: đặt tên người chơi"
+      }
     ],
     "featured": true,
     "visible": true,
@@ -171,11 +220,14 @@
     "name": "KEO – Vượt Phòng Tuyến",
     "subtitle": "KEO · Cross the Lines",
     "summary": "Vượt phòng tuyến — game offline.",
-    "description": "Game vượt phòng tuyến 5 làn chơi offline, điều khiển bằng joystick, né đội canh gác do máy điều khiển và mở khoá dần các màn chơi.",
+    "description": "KEO – Vượt Phòng Tuyến là game hành động ngắn: quan sát nhịp tuần tra của người canh, chọn thời điểm vượt qua 5 vạch tới đích rồi quay về mà không bị bắt. Có 10 màn khó dần, 3 nhân vật và lưu kỷ lục thời gian.",
     "features": [
-      "5 làn vượt phòng tuyến",
-      "Điều khiển bằng joystick",
-      "Mở khoá màn chơi, chơi offline"
+      "Vượt 5 vạch canh tới đích rồi quay về điểm xuất phát",
+      "10 màn chơi, số người canh và độ khó tăng dần",
+      "Điều khiển bằng joystick ảo",
+      "Chọn 1 trong 3 nhân vật: Kéo, Mai, Nam",
+      "Mở khoá màn và lưu kỷ lục thời gian",
+      "Chơi offline, cài đặt nhạc, âm thanh và rung"
     ],
     "platform": "Android · iOS",
     "tags": [
@@ -198,11 +250,14 @@
     "name": "Bí Mật Trong Màu Sắc",
     "subtitle": "Hidden Vision",
     "summary": "Tìm số, chữ, hình khối, con vật và đồ vật ẩn trong 30 bảng chấm màu.",
-    "description": "Trò chơi giải đố 2D bằng tiếng Việt. Bảng chấm màu lấy cảm hứng từ Ishihara để giải trí; trò chơi không dùng để chẩn đoán thị giác.",
+    "description": "Bí Mật Trong Màu Sắc (Hidden Vision) là trò giải đố 2D: tìm số, chữ, hình khối, con vật và đồ vật ẩn trong 30 bảng chấm màu lấy cảm hứng từ Ishihara. Trò chơi chỉ để giải trí, không dùng để chẩn đoán thị giác.",
     "features": [
-      "30 bảng chấm màu",
-      "Tìm số, chữ, hình khối, con vật, đồ vật",
-      "Chơi offline"
+      "30 bảng chấm màu với 5 bảng màu và 5 nhóm nội dung",
+      "Hai chế độ: Classic (3 mạng) và Relax (không mất mạng), không giới hạn thời gian",
+      "Tối đa 180 điểm và 3 sao mỗi màn, mở khoá màn tiếp theo",
+      "Kiếm xu để dùng trợ giúp Color Boost và 50/50",
+      "Trợ năng miễn phí: tương phản cao, câu hỏi dạng chữ, giảm chuyển động",
+      "Hồ sơ người chơi, âm thanh/rung, đặt lại tiến trình"
     ],
     "platform": "Android · iOS · Web",
     "tags": [
@@ -225,16 +280,37 @@
     "name": "Đôi Mắt",
     "subtitle": "My Eyes · Nhìn qua đôi mắt của tôi",
     "summary": "Ứng dụng offline mô phỏng và so sánh khác biệt về cảm nhận màu sắc.",
-    "description": "Đôi Mắt giúp khám phá và so sánh các mô hình khác biệt về cảm nhận màu qua camera, ảnh có sẵn hoặc cảnh minh hoạ. Giao diện tiếng Việt và tiếng Anh theo ngôn ngữ thiết bị. Ứng dụng mang tính giáo dục, không dùng để chẩn đoán.",
+    "description": "Đôi Mắt (My Eyes) là ứng dụng offline giúp trải nghiệm và so sánh cách người có rối loạn sắc giác nhìn màu, qua camera, ảnh hoặc cảnh mẫu. Ứng dụng còn có bộ lọc hỗ trợ phân biệt màu, mô phỏng kính mù màu và bài kiểm tra sắc giác tham khảo. Đây là công cụ giáo dục, không chẩn đoán.",
     "features": [
-      "Mô phỏng qua camera trực tiếp",
-      "Mô phỏng trên ảnh từ thư viện",
-      "Cảnh minh hoạ và nội dung giáo dục"
+      "Mô phỏng mù màu đỏ, lục, lam và không màu, chỉnh được mức độ",
+      "Dùng camera trực tiếp (có “Dừng hình và so sánh”), ảnh của bạn hoặc 6 cảnh mẫu",
+      "So sánh với ảnh gốc bằng thanh chia hoặc xem song song",
+      "Bộ lọc hỗ trợ phân biệt màu và mô phỏng kính mù màu",
+      "Bài kiểm tra sắc giác tham khảo 20 câu",
+      "Phần Khám phá và Tìm hiểu kèm nguồn tham khảo"
     ],
     "platform": "Android · iOS",
     "tags": [
       "Giáo dục",
       "Màu sắc"
+    ],
+    "screenshots": [
+      {
+        "src": "/apps/my-eyes/shots/01.webp",
+        "caption": "Cảnh mẫu: giao thông"
+      },
+      {
+        "src": "/apps/my-eyes/shots/02.webp",
+        "caption": "Cảnh mẫu: món ăn"
+      },
+      {
+        "src": "/apps/my-eyes/shots/03.webp",
+        "caption": "Cảnh mẫu: biểu đồ"
+      },
+      {
+        "src": "/apps/my-eyes/shots/04.webp",
+        "caption": "Cảnh mẫu: lớp học"
+      }
     ],
     "featured": true,
     "visible": true,
@@ -254,16 +330,29 @@
     "name": "LumiVerse",
     "subtitle": "Hình nền động tương tác",
     "summary": "Bộ hình nền động phong cách 3D cho Android, xem thử và áp dụng ngay trong ứng dụng.",
-    "description": "LumiVerse cung cấp các mẫu hình nền động tương tác phong cách 3D. Bạn có thể xem thử, tuỳ chỉnh và đặt làm hình nền hệ thống; mẫu mới được đồng bộ từ máy chủ.",
+    "description": "LumiVerse là ứng dụng hình nền động tương tác cho Android: chạm, nghiêng hoặc lắc máy là cảnh phản hồi. Duyệt mẫu theo danh mục, xem thử trực tiếp trong ứng dụng, lưu vào thư viện và đặt làm hình nền qua bộ chọn của hệ thống.",
     "features": [
-      "Hình nền động tương tác phong cách 3D",
-      "Xem thử, tuỳ chỉnh và áp dụng",
-      "Thư viện mẫu được cập nhật"
+      "Hình nền động phản hồi khi chạm và nghiêng máy",
+      "Duyệt theo 6 danh mục: Anime, Dễ thương, Thiên nhiên, Vật lý, Thư giãn, Vũ trụ",
+      "Xem thử tương tác, toàn màn hình và chọn thời điểm trong ngày",
+      "Đặt làm hình nền màn hình chính và/hoặc màn hình khoá",
+      "Thư viện lưu các mẫu yêu thích",
+      "Kiểm tra mức hỗ trợ của thiết bị; 5 ngôn ngữ giao diện"
     ],
     "platform": "Android",
     "tags": [
       "Hình nền",
       "Cá nhân hoá"
+    ],
+    "screenshots": [
+      {
+        "src": "/apps/lumiverse/shots/01.webp",
+        "caption": "Một số mẫu hình nền động"
+      },
+      {
+        "src": "/apps/lumiverse/shots/02.webp",
+        "caption": "Bộ mẫu động vật dễ thương"
+      }
     ],
     "featured": false,
     "visible": true,
@@ -283,11 +372,14 @@
     "name": "Cảm Nhận Màu Sắc",
     "subtitle": "ColorSense · Bài tập màu sắc giáo dục",
     "summary": "Ứng dụng giáo dục dành cho người từ 18 tuổi với các bài tập về màu sắc bằng tình huống giả lập.",
-    "description": "Cảm Nhận Màu Sắc cung cấp các bài tập giáo dục về màu sắc bằng tình huống giả lập, công cụ hỗ trợ màu và hồ sơ kết quả lưu trên thiết bị. Giao diện mặc định tiếng Việt, có tiếng Anh. Ứng dụng không thay thế khám chuyên môn.",
+    "description": "Cảm Nhận Màu Sắc (ColorSense) là ứng dụng giáo dục cho người từ 18 tuổi, gồm ba bài tập phân biệt sắc độ ngắn với bước khảo sát an toàn trước khi làm bài. Ứng dụng còn có công cụ ước lượng tên màu và bài viết kiến thức, chạy offline, không cần tài khoản.",
     "features": [
-      "Bài tập màu sắc bằng tình huống giả lập",
-      "Công cụ hỗ trợ màu",
-      "Hồ sơ kết quả, xoá được bất cứ lúc nào"
+      "3 bài tập: bảng chấm màu, sắp xếp dải màu và tìm ô khác màu",
+      "Khảo sát an toàn trước bài, hướng dẫn gặp chuyên gia khi có dấu hiệu cảnh báo",
+      "Tạm dừng/tiếp tục và báo cáo kết quả mang tính giáo dục",
+      "Hồ sơ lịch sử chỉ lưu khi đồng ý, xoá từng mục hoặc toàn bộ",
+      "Công cụ ước lượng tên màu",
+      "Bài viết kiến thức về màu sắc; giao diện tiếng Việt và tiếng Anh"
     ],
     "platform": "Android · iOS",
     "tags": [
