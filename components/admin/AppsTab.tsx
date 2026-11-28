@@ -14,7 +14,7 @@ import { AppForm } from './AppForm';
 import { api, send } from './api';
 import { enTemplate, tidy, viTemplate, type Entry } from './types';
 
-export function AppsTab({ onChange }: { onChange: () => void }) {
+export function AppsTab({ onChange, focus, onFocused }: { onChange: () => void; focus?: string; onFocused: () => void }) {
   const [entries, setEntries] = useState<Entry[]>();
   const [editing, setEditing] = useState<{ original?: string; entry: Entry }>();
   const [saving, setSaving] = useState(false);
@@ -22,6 +22,11 @@ export function AppsTab({ onChange }: { onChange: () => void }) {
   const [removing, setRemoving] = useState<Entry>();
   const load = useCallback(() => api<Entry[]>('products').then(setEntries).catch(err => toast.error(err.message)), []);
   useEffect(() => { load(); }, [load]);
+  // Opened from a dashboard link: jump straight into that app's editor.
+  useEffect(() => {
+    const entry = focus && entries?.find(item => item.slug === focus);
+    if (entry) { setEditing({ original: entry.slug, entry: { ...entry, vi: { ...viTemplate, ...entry.vi }, en: { ...enTemplate, ...entry.en } } }); onFocused(); }
+  }, [focus, entries, onFocused]);
 
   /** Saves a single-field change straight away (optimistic); it goes live on the next Publish. */
   async function patch(entry: Entry, change: Partial<Product>, done: string) {
@@ -57,7 +62,7 @@ export function AppsTab({ onChange }: { onChange: () => void }) {
   return <section className="space-y-4">
     <div className="flex flex-wrap items-center gap-3">
       <div className="mr-auto">
-        <h2 className="text-lg font-semibold">Apps ({entries.length})</h2>
+        <h2 className="text-base font-medium">{entries.length} app</h2>
         <p className="text-sm text-muted-foreground">Tắt “Hiển thị”: app biến khỏi trang chủ và danh mục, nhưng link trực tiếp và trang privacy vẫn mở (noindex).</p>
       </div>
       <Button onClick={() => setEditing({ entry: { slug: '', vi: { ...viTemplate }, en: { ...enTemplate } } })}><Plus/> Thêm app</Button>

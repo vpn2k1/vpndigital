@@ -30,7 +30,6 @@ export function UsersTab({ me }: { me: Me }) {
 
   return <section className="max-w-3xl space-y-4">
     <div>
-      <h2 className="text-lg font-semibold">Người dùng</h2>
       <p className="text-sm text-muted-foreground">Email cũng phải nằm trong policy Cloudflare Access để đăng nhập được. admin: mọi quyền + quản lý người dùng; editor: sửa nội dung, upload, Publish.</p>
     </div>
     <form className="flex flex-wrap gap-2" onSubmit={event => { event.preventDefault(); run(api('users', send('PUT', draft)).then(() => setDraft({ email: '', role: 'editor' }))); }}>

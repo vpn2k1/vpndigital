@@ -11,3 +11,5 @@ export const enTemplate: TranslatedProduct = { name: '', subtitle: '', summary: 
 // Optional fields left empty in the form are dropped so validation does not see empty strings.
 const optional = ['splash', 'splashColor', 'screenshots'];
 export const tidy = <T extends object>(item: T) => Object.fromEntries(Object.entries(item).filter(([key, value]) => !(optional.includes(key) && (value === '' || (Array.isArray(value) && !value.length))))) as T;
+
+export interface Activity { kind: 'app' | 'text'; target: string; at: string; by: string | null }
