@@ -16,7 +16,8 @@ bucket_name = "vpndigital-media"
 NODE_VERSION = "22"
 CF_ACCOUNT_ID = "6ea032c20dd2a44bdc0ae8cbfc91cb99"
 D1_DATABASE_ID = "c9315735-52d3-4364-a923-89cde60687de"
-# Add once Access exists: CF_ACCESS_TEAM_DOMAIN = "https://<team>.cloudflareaccess.com", CF_ACCESS_AUD = "<aud tag>"
+CF_ACCESS_TEAM_DOMAIN = "https://mute-hill-6fba.cloudflareaccess.com"
+CF_ACCESS_AUD = "7681af2e9b3b998ca390767556a9564d6a73ae2a3b3cb9e00fdab96a1c4d1913"
 
 # Secrets (dashboard → Settings → Variables and Secrets → Secret): CF_API_TOKEN, DEPLOY_HOOK_URL.
 # Local only (.dev.vars): DEV_ADMIN_EMAIL to skip Access on localhost.
