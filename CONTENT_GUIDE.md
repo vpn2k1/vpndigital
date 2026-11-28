@@ -3,7 +3,8 @@
 ## Trang quản trị `/admin` (cách chính)
 Dữ liệu apps (VI + EN) và toàn bộ chữ trên web (`strings-vi`, `strings-en`) lưu trong Cloudflare D1; ảnh upload lưu R2 (`https://media.vpndigital.io.vn/...`). Website vẫn là trang tĩnh: sửa xong bấm **Publish** để build lại (1–3 phút).
 
-- **Apps**: thêm / sửa / xoá, đổi thứ tự (↑↓), bật `visible`/`featured`, upload icon, splash, screenshot (WebP/PNG/JPEG ≤ 5 MB, nên dùng WebP đúng kích thước). Lưu bị từ chối nếu dữ liệu sai (slug trùng, thiếu trường, ảnh ngoài `/apps/` hoặc media domain…) — cùng luật với lúc build (`lib/product-schema.ts`).
+- **Apps**: thêm / sửa / xoá, đổi thứ tự (↑↓), upload icon, splash, screenshot (WebP/PNG/JPEG ≤ 5 MB, nên dùng WebP đúng kích thước). Lưu bị từ chối nếu dữ liệu sai (slug trùng, thiếu trường, ảnh ngoài `/apps/` hoặc media domain…) — cùng luật với lúc build (`lib/product-schema.ts`).
+- **Ẩn/hiện app**: công tắc **Hiển thị** ngay trên danh sách (lưu ngay, lên web sau khi Publish). Tắt = app biến khỏi trang chủ, danh mục, sitemap và mục "liên quan"; trang chi tiết và privacy/terms vẫn mở bằng link (noindex) để link đã khai báo trên cửa hàng ứng dụng không hỏng. Công tắc **Trang chủ** bật/tắt `featured` (tối đa 3 app hiện ở trang chủ).
 - **Nội dung web**: sửa chữ từng ngôn ngữ. Không thêm/xoá khoá được; hai ngôn ngữ phải cùng cấu trúc.
 - **Người dùng** (chỉ admin): cấp quyền `admin` (mọi thứ + quản lý người dùng) hoặc `editor` (sửa nội dung, upload, Publish). Email còn phải nằm trong policy Cloudflare Access.
 - Thông tin doanh nghiệp (`content/company.ts`) và cấu trúc danh mục (`content/catalog.ts`) vẫn sửa trong code.

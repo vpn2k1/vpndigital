@@ -1,25 +1,36 @@
-.admin{max-width:1400px;margin:0 auto;padding:16px 20px 80px;background:var(--bg);color:var(--text);font:14px/1.5 'Be Vietnam Pro',system-ui,sans-serif;min-height:100vh}
-.admin h2,.admin h3{color:var(--heading);margin:0}
-.admin button,.admin input,.admin select,.admin textarea{font:inherit;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
-.admin button{cursor:pointer}.admin button:disabled{opacity:.4;cursor:default}
-.admin button[aria-pressed=true],.admin .admin-primary{background:var(--primary);color:var(--primary-contrast);border-color:var(--primary)}
-.admin .admin-danger{color:#C0392B}
-.admin-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.admin-header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--line)}
-.admin-sticky{position:sticky;top:0;z-index:1;background:var(--bg);padding:10px 0;margin-bottom:8px}
-.admin-badge{background:#F5B041;color:#3B2600;border-radius:99px;padding:2px 10px}
-.admin-error{color:#C0392B}
-.admin-table{width:100%;border-collapse:collapse;margin-top:12px}
-.admin-table td,.admin-table th{border-bottom:1px solid var(--line);padding:8px;text-align:left;vertical-align:middle}
-.admin-table img{border-radius:8px;object-fit:cover}
-.admin-columns{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-@media(max-width:900px){.admin-columns{grid-template-columns:1fr}}
-.admin-field{display:flex;flex-direction:column;gap:4px;margin:8px 0}
-.admin-field input,.admin-field textarea,.admin-field select{width:100%;box-sizing:border-box}
-.admin-label{font-size:12px;font-weight:600;color:var(--muted)}
-.admin-check{display:flex;gap:6px;align-items:center;margin:8px 0}
-.admin-group{border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:10px 0}
-.admin-group legend{font-weight:600;color:var(--heading);padding:0 4px}
-.admin-item{border-left:3px solid var(--surface-soft);padding-left:10px;margin-bottom:8px}
-.admin-image{display:flex;gap:10px;align-items:flex-start}.admin-image>div{flex:1;display:flex;flex-direction:column;gap:4px}
-.admin-image img{border-radius:8px;object-fit:cover;background:var(--surface-soft)}
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Admin-only tokens. The --adm-* prefix keeps them apart from the public site's --primary/--muted/--accent. */
+:root {
+  --adm-background: #f8fafc; --adm-foreground: #0f172a;
+  --adm-card: #ffffff; --adm-card-foreground: #0f172a;
+  --adm-popover: #ffffff; --adm-popover-foreground: #0f172a;
+  --adm-primary: #0879c6; --adm-primary-foreground: #ffffff;
+  --adm-secondary: #f1f5f9; --adm-secondary-foreground: #0f172a;
+  --adm-muted: #f1f5f9; --adm-muted-foreground: #64748b;
+  --adm-accent: #e2eef8; --adm-accent-foreground: #0f172a;
+  --adm-destructive: #dc2626;
+  --adm-border: #e2e8f0; --adm-input: #cbd5e1; --adm-ring: #0879c6;
+  --adm-radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--adm-background); --color-foreground: var(--adm-foreground);
+  --color-card: var(--adm-card); --color-card-foreground: var(--adm-card-foreground);
+  --color-popover: var(--adm-popover); --color-popover-foreground: var(--adm-popover-foreground);
+  --color-primary: var(--adm-primary); --color-primary-foreground: var(--adm-primary-foreground);
+  --color-secondary: var(--adm-secondary); --color-secondary-foreground: var(--adm-secondary-foreground);
+  --color-muted: var(--adm-muted); --color-muted-foreground: var(--adm-muted-foreground);
+  --color-accent: var(--adm-accent); --color-accent-foreground: var(--adm-accent-foreground);
+  --color-destructive: var(--adm-destructive);
+  --color-border: var(--adm-border); --color-input: var(--adm-input); --color-ring: var(--adm-ring);
+  --radius-sm: calc(var(--adm-radius) - 4px); --radius-md: calc(var(--adm-radius) - 2px);
+  --radius-lg: var(--adm-radius); --radius-xl: calc(var(--adm-radius) + 4px);
+}
+
+@layer base {
+  /* Tailwind v4 defaults borders to currentColor; this file only loads on /admin, portals included. */
+  *, ::after, ::before { border-color: var(--color-border); }
+  .admin { font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif; }
+}
