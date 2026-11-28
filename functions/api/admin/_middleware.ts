@@ -19,7 +19,13 @@ const authorize: PagesFunction<Env, string, Data & Partial<PluginData>> = async 
   if (path.startsWith('/api/admin/users') && row.role !== 'admin') return fail('Chỉ admin được quản lý người dùng', 403);
   context.data.email = email;
   context.data.role = row.role;
-  return context.next();
+  try { return await context.next(); }
+  catch (error) {
+    console.error(error);
+    // Handlers do not catch D1 failures; turn them into a JSON message the admin UI can show.
+    if (/free tier daily row write limit/i.test(String(error))) return fail('D1 đã hết hạn mức ghi trong ngày (reset lúc 7:00 sáng giờ Việt Nam). Thử lại sau.', 503);
+    return fail('Lỗi máy chủ, thử lại sau.', 500);
+  }
 };
 
 export const onRequest = [access, authorize];
