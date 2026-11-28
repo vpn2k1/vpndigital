@@ -1,0 +1,15 @@
+name = "vpndigital"
+pages_build_output_dir = "out"
+compatibility_date = "2026-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "vpndigital"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "vpndigital-media"
+
+# Secrets/vars set in the Pages dashboard: CF_ACCESS_TEAM_DOMAIN, CF_ACCESS_AUD, DEPLOY_HOOK_URL.
+# Local only (.dev.vars): DEV_ADMIN_EMAIL to skip Access on localhost.

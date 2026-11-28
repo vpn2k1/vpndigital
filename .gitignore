@@ -6,3 +6,6 @@ out/
 .vercel/
 .sites-runtime/
 *.tsbuildinfo
+.dev.vars
+.wrangler/
+db/seed.sql

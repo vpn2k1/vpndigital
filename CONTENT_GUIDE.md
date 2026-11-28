@@ -1,9 +1,31 @@
-# Thêm, sửa và xóa sản phẩm
+# Quản lý nội dung
 
-Website hiện dùng dữ liệu JSON, không có trang quản trị/CMS. Sau khi chỉnh file, chạy build và deploy lại để thay đổi có hiệu lực.
+## Trang quản trị `/admin` (cách chính)
+Dữ liệu apps (VI + EN) và toàn bộ chữ trên web (`strings-vi`, `strings-en`) lưu trong Cloudflare D1; ảnh upload lưu R2 (`https://media.vpndigital.io.vn/...`). Website vẫn là trang tĩnh: sửa xong bấm **Publish** để build lại (1–3 phút).
+
+- **Apps**: thêm / sửa / xoá, đổi thứ tự (↑↓), bật `visible`/`featured`, upload icon, splash, screenshot (WebP/PNG/JPEG ≤ 5 MB, nên dùng WebP đúng kích thước). Lưu bị từ chối nếu dữ liệu sai (slug trùng, thiếu trường, ảnh ngoài `/apps/` hoặc media domain…) — cùng luật với lúc build (`lib/product-schema.ts`).
+- **Nội dung web**: sửa chữ từng ngôn ngữ. Không thêm/xoá khoá được; hai ngôn ngữ phải cùng cấu trúc.
+- **Người dùng** (chỉ admin): cấp quyền `admin` (mọi thứ + quản lý người dùng) hoặc `editor` (sửa nội dung, upload, Publish). Email còn phải nằm trong policy Cloudflare Access.
+- Thông tin doanh nghiệp (`content/company.ts`) và cấu trúc danh mục (`content/catalog.ts`) vẫn sửa trong code.
+
+## Thiết lập Cloudflare (một lần)
+1. `npx wrangler d1 create vpndigital` → điền `database_id` vào `wrangler.toml`. `npx wrangler r2 bucket create vpndigital-media`, bật public custom domain `media.vpndigital.io.vn` cho bucket.
+2. `npx wrangler d1 execute vpndigital --remote --file db/schema.sql`, rồi `node scripts/seed-d1.mjs <email-admin>` và `npx wrangler d1 execute vpndigital --remote --file db/seed.sql` (nạp dữ liệu hiện có).
+3. Tạo Pages project nối repo: build command `npm run build:cf`, output `out`. Biến môi trường build: `CF_ACCOUNT_ID`, `CF_API_TOKEN` (quyền D1 Read), `D1_DATABASE_ID`, `NEXT_PUBLIC_SITE_URL`; `SITE_INDEXABLE=true` chỉ đặt ở môi trường Production.
+4. Zero Trust → Access → Application cho `vpndigital.io.vn/admin*` và `vpndigital.io.vn/api/admin*`, policy theo email. Đặt biến Functions `CF_ACCESS_TEAM_DOMAIN` (`https://<team>.cloudflareaccess.com`), `CF_ACCESS_AUD` (AUD tag), secret `DEPLOY_HOOK_URL` (Pages → Settings → Deploy hooks).
+
+## Chạy admin ở máy local
+`npm run build`, tạo `.dev.vars` với `DEV_ADMIN_EMAIL=<email đã seed>` (chỉ có hiệu lực trên localhost), nạp D1 local bằng hai lệnh ở bước 2 với `--local`, rồi `npm run dev:cf` và mở `http://localhost:8788/admin/`.
+
+---
+
+# Sửa trực tiếp file (khi chạy local, không dùng D1)
+
+Khi build không có biến D1, `scripts/pull-content.mjs` bỏ qua và dùng các file JSON đang commit. Lưu ý: build trên Pages sẽ ghi đè các file này bằng dữ liệu D1.
 
 ## File cần sửa
-- `content/products.json`: mọi game, phần mềm và công cụ.
+- `content/products.json`: mọi app (tiếng Việt); `content/products-en.json`: bản tiếng Anh theo slug.
+- `content/strings-vi.json`, `content/strings-en.json`: chữ giao diện.
 - `content/catalog.ts`: tên, mô tả, ảnh hero của 3 danh mục.
 - `content/company.ts`: thông tin doanh nghiệp và menu.
 - `public/images/`: ảnh WebP, gồm bản chuẩn 1600×1067 và bản nhỏ 640×427.
