@@ -11,5 +11,12 @@ database_id = "c9315735-52d3-4364-a923-89cde60687de"
 binding = "MEDIA"
 bucket_name = "vpndigital-media"
 
-# Secrets/vars set in the Pages dashboard: CF_ACCESS_TEAM_DOMAIN, CF_ACCESS_AUD, DEPLOY_HOOK_URL.
+# Plain vars (not secret). With wrangler.toml the dashboard only manages secrets.
+[vars]
+NODE_VERSION = "22"
+CF_ACCOUNT_ID = "6ea032c20dd2a44bdc0ae8cbfc91cb99"
+D1_DATABASE_ID = "c9315735-52d3-4364-a923-89cde60687de"
+# Add once Access exists: CF_ACCESS_TEAM_DOMAIN = "https://<team>.cloudflareaccess.com", CF_ACCESS_AUD = "<aud tag>"
+
+# Secrets (dashboard → Settings → Variables and Secrets → Secret): CF_API_TOKEN, DEPLOY_HOOK_URL.
 # Local only (.dev.vars): DEV_ADMIN_EMAIL to skip Access on localhost.
