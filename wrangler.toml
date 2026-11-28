@@ -5,7 +5,7 @@ compatibility_date = "2026-11-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "vpndigital"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_id = "c9315735-52d3-4364-a923-89cde60687de"
 
 [[r2_buckets]]
 binding = "MEDIA"
